@@ -5,3 +5,9 @@
 body {
   @apply bg-background px-40 text-text;
 }
+
+@layer components {
+  .scroll {
+    @apply scrollbar-thin scrollbar-track-primaryhover scrollbar-thumb-primary scrollbar-thumb-rounded-full;
+  }
+}
