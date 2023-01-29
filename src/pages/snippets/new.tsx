@@ -35,43 +35,39 @@ const NewSnippet: NextPage = () => {
             <span className="text-primary">Snippet</span>
           </h1>
           <p className="text-xl leading-7 text-textdim">Paste your code below and select the corresponding language.</p>
-          <div className="grid grid-cols-[1fr_20%] items-center gap-4">
+          <div className="flex items-center gap-4">
             <textarea
               value={code}
               rows={1}
               onChange={e => setCode(e.currentTarget.value)}
-              className="scroll flex-1 resize-none rounded bg-background p-3 outline-none ring-2 ring-text"
+              className="scroll w-4/5 resize-none rounded bg-background p-3 outline-none ring-2 ring-text"
             />
             <DropdownMenu.Root>
-              <DropdownMenu.Trigger asChild>
-                <button className="flex justify-between gap-3 rounded p-3 outline-none ring-2 ring-text hover:bg-black/5">
-                  {language.name}
-                  <CaretDown className="h-6 w-6" />
-                </button>
+              <DropdownMenu.Trigger className="flex w-1/5 justify-between gap-3 rounded p-3 outline-none ring-2 ring-text hover:bg-black/5">
+                {language.name}
+                <CaretDown className="h-6 w-6" />
               </DropdownMenu.Trigger>
 
-              <DropdownMenu.Portal>
-                <DropdownMenu.Content
-                  sideOffset={6}
-                  className="scroll max-h-[30vh] overflow-y-scroll rounded bg-background shadow-lg shadow-text/20">
-                  <DropdownMenu.RadioGroup
-                    className="divide-y divide-text/20"
-                    value={language.value}
-                    onValueChange={value => {
-                      const newLang = langs.find(lang => lang.value === value)
-                      setLanguage(newLang!)
-                    }}>
-                    {langs.map(lang => (
-                      <DropdownMenu.RadioItem
-                        key={lang.value}
-                        value={lang.value}
-                        className="cursor-pointer py-1 px-2 hover:bg-black/5">
-                        {lang.name}
-                      </DropdownMenu.RadioItem>
-                    ))}
-                  </DropdownMenu.RadioGroup>
-                </DropdownMenu.Content>
-              </DropdownMenu.Portal>
+              <DropdownMenu.Content
+                sideOffset={8}
+                className="scroll max-h-[30vh] min-w-[138px] overflow-y-scroll rounded bg-background shadow-lg shadow-text/20 ring-2 ring-text">
+                <DropdownMenu.RadioGroup
+                  className="divide-y divide-text/20"
+                  value={language.value}
+                  onValueChange={value => {
+                    const newLang = langs.find(lang => lang.value === value)
+                    setLanguage(newLang!)
+                  }}>
+                  {langs.map(lang => (
+                    <DropdownMenu.RadioItem
+                      key={lang.value}
+                      value={lang.value}
+                      className="cursor-pointer py-1 px-2 focus-visible:outline-none hover:bg-gradient-to-r hover:from-primary/20 hover:to-transparent">
+                      {lang.name}
+                    </DropdownMenu.RadioItem>
+                  ))}
+                </DropdownMenu.RadioGroup>
+              </DropdownMenu.Content>
             </DropdownMenu.Root>
           </div>
           <button className="mt-4 w-full rounded  bg-primary p-3 text-background" onClick={handleCreateSnippet}>
