@@ -14,10 +14,11 @@ datasource db {
     url      = env("DATABASE_URL")
 }
 
-model Example {
+model Snippet {
     id        String   @id @default(cuid())
     createdAt DateTime @default(now())
-    updatedAt DateTime @updatedAt
+    text      String
+    language  String
 }
 
 // Necessary for Next auth
