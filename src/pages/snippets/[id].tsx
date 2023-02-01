@@ -1,18 +1,18 @@
-import { Title } from "components"
+import { CodeBlock, Title } from "components"
 import type { NextPage } from "next"
-import dynamic from "next/dynamic"
+/* import dynamic from "next/dynamic" */
 import Head from "next/head"
 import { useRouter } from "next/router"
 import { api } from "utils/api"
 
-const CodeBlock = dynamic(() => import("components").then(module => module.CodeBlock), {
+/* const CodeBlock = dynamic(() => import("components").then(module => module.CodeBlock), {
   ssr: false
 })
-
+ */
 const Snippet: NextPage = () => {
   const router = useRouter()
   const { id } = router.query
-  const snippet = api.snippet.getOne.useQuery({ id: id as string })
+  const { data: snippet } = api.snippet.getOne.useQuery({ id: id as string })
 
   return (
     <>
@@ -25,7 +25,7 @@ const Snippet: NextPage = () => {
         <Title>
           Viewing a <span className="text-primary">Snippet</span>
         </Title>
-        <CodeBlock snippet={snippet.data!} />
+        <CodeBlock snippet={snippet} />
       </div>
     </>
   )

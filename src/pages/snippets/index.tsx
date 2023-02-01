@@ -4,7 +4,7 @@ import Head from "next/head"
 import { api } from "utils/api"
 
 const Snippets: NextPage = () => {
-  const snippets = api.snippet.getAll.useQuery()
+  const { data: snippets } = api.snippet.getAll.useQuery()
   return (
     <>
       <Head>
@@ -17,11 +17,9 @@ const Snippets: NextPage = () => {
           All <span className="text-primary">Snippets</span>
         </Title>
         <div className="flex flex-col gap-2">
-          {snippets.data ? (
-            snippets.data.map((snippet, idx) => <CodeBlock key={idx} snippet={snippet} />)
-          ) : (
-            <CodeBlock snippet={{ id: "1", createdAt: new Date(), language: "md", text: "Loading..." }} />
-          )}
+          {snippets
+            ? snippets.map((snippet, idx) => <CodeBlock key={idx} snippet={snippet} />)
+            : new Array(Math.floor(Math.random() * 5) + 1).map((_, idx) => <CodeBlock key={idx} snippet={undefined} />)}
         </div>
       </div>
     </>

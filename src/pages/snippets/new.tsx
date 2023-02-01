@@ -1,10 +1,10 @@
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu"
+import { CaretDownIcon } from "@radix-ui/react-icons"
 import { Title } from "components"
 import type { GetServerSideProps, NextPage } from "next"
 import { getSession } from "next-auth/react"
 import Head from "next/head"
 import { useRouter } from "next/router"
-import { CaretDown } from "phosphor-react"
 import { useState } from "react"
 import { api } from "utils/api"
 import { langs } from "utils/md-supported-langs"
@@ -46,7 +46,7 @@ const NewSnippet: NextPage = () => {
             <DropdownMenu.Root>
               <DropdownMenu.Trigger className="flex w-1/5 justify-between gap-3 rounded p-3 outline-none ring-2 ring-text hover:bg-black/5">
                 {language.name}
-                <CaretDown className="h-6 w-6" />
+                <CaretDownIcon width={22} height={22} />
               </DropdownMenu.Trigger>
 
               <DropdownMenu.Content
@@ -88,7 +88,7 @@ export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   if (!session || session.user?.name !== "neru") {
     return {
       redirect: {
-        destination: "/login",
+        destination: "/snippets",
         permanent: false
       }
     }
