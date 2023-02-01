@@ -1,3 +1,4 @@
+import { Title } from "components"
 import type { NextPage } from "next"
 import dynamic from "next/dynamic"
 import Head from "next/head"
@@ -21,10 +22,9 @@ const Snippet: NextPage = () => {
         <link rel="icon" href="/favicon.png" />
       </Head>
       <div className="flex flex-col items-center py-20">
-        <h1 className="mb-8 text-center text-7xl font-bold">
-          {"Viewing a "}
-          <span className="text-primary">Snippet</span>
-        </h1>
+        <Title>
+          Viewing a <span className="text-primary">Snippet</span>
+        </Title>
         <CodeBlock snippet={snippet.data!} />
       </div>
     </>

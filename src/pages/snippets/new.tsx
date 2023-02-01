@@ -1,4 +1,5 @@
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu"
+import { Title } from "components"
 import type { GetServerSideProps, NextPage } from "next"
 import { getSession } from "next-auth/react"
 import Head from "next/head"
@@ -31,10 +32,9 @@ const NewSnippet: NextPage = () => {
       </Head>
       <div className="flex h-screen w-full items-center justify-center">
         <div>
-          <h1 className="mb-8 text-center text-7xl font-bold">
-            {"Create a new "}
-            <span className="text-primary">Snippet</span>
-          </h1>
+          <Title>
+            Create a new <span className="text-primary">Snippet</span>
+          </Title>
           <p className="text-xl leading-7 text-textdim">Paste your code below and select the corresponding language.</p>
           <div className="flex items-center gap-4">
             <textarea

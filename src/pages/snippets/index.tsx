@@ -1,4 +1,4 @@
-import { CodeBlock } from "components"
+import { CodeBlock, Title } from "components"
 import type { NextPage } from "next"
 import Head from "next/head"
 import { api } from "utils/api"
@@ -13,13 +13,12 @@ const Snippets: NextPage = () => {
         <link rel="icon" href="/favicon.png" />
       </Head>
       <div className="flex flex-col items-center justify-center py-20">
-        <h1 className="mb-8 text-center text-7xl font-bold">
-          {"All "}
-          <span className="text-primary">Snippets</span>
-        </h1>
+        <Title>
+          All <span className="text-primary">Snippets</span>
+        </Title>
         <div className="flex flex-col gap-2">
           {snippets?.data?.map((snippet, idx) => (
-            <CodeBlock snippet={snippet} />
+            <CodeBlock key={idx} snippet={snippet} />
           ))}
         </div>
       </div>
