@@ -1,6 +1,6 @@
 import { Snippet } from "@prisma/client"
 import { useState } from "react"
-import { PrismLight as SyntaxHighlighter } from "react-syntax-highlighter"
+import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import { oneLight } from "react-syntax-highlighter/dist/cjs/styles/prism"
 
 interface Props {
