@@ -17,9 +17,11 @@ const Snippets: NextPage = () => {
           All <span className="text-primary">Snippets</span>
         </Title>
         <div className="flex flex-col gap-2">
-          {snippets?.data?.map((snippet, idx) => (
-            <CodeBlock key={idx} snippet={snippet} />
-          ))}
+          {snippets.data ? (
+            snippets.data.map((snippet, idx) => <CodeBlock key={idx} snippet={snippet} />)
+          ) : (
+            <CodeBlock snippet={{ id: "1", createdAt: new Date(), language: "md", text: "Loading..." }} />
+          )}
         </div>
       </div>
     </>
