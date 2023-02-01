@@ -17,6 +17,7 @@ const NewSnippet: NextPage = () => {
   const router = useRouter()
 
   async function handleCreateSnippet() {
+    if (language.name === "Language") return
     const createdSnippet = await snippetCreate.mutateAsync({ language: language.value, text: code })
     router.push(`/snippets/${createdSnippet.id}`)
   }
@@ -30,7 +31,7 @@ const NewSnippet: NextPage = () => {
       </Head>
       <div className="flex h-screen w-full items-center justify-center">
         <div>
-          <h1 className="mb-8 text-7xl font-bold">
+          <h1 className="mb-8 text-center text-7xl font-bold">
             {"Create a new "}
             <span className="text-primary">Snippet</span>
           </h1>
