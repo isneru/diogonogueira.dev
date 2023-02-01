@@ -19,7 +19,7 @@ const Snippets: NextPage = () => {
         <div className="flex flex-col gap-2">
           {snippets
             ? snippets.map((snippet, idx) => <CodeBlock key={idx} snippet={snippet} />)
-            : new Array(Math.floor(Math.random() * 5) + 1).map((_, idx) => <CodeBlock key={idx} snippet={undefined} />)}
+            : [...new Array(3)].map((_, idx) => <CodeBlock key={idx} snippet={undefined} />)}
         </div>
       </div>
     </>
