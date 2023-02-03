@@ -11,18 +11,18 @@ const Home: NextPage = () => {
       </Head>
       <div className="flex h-screen w-full items-center justify-center">
         <div>
-          <h2 className="mb-6 text-7xl font-bold">
-            {"I'm "}
-            <span className="text-primary">
-              Diogo
-              <br />
+          <h1 className="mb-6 flex flex-col text-7xl font-bold">
+            <span>
+              I'm <span className="text-primary">Diogo</span>
             </span>
-            Nogueira,
-          </h2>
-          <h1 className="text-xl leading-7 text-textdim">
-            a <strong className="font-bold text-text">front-end developer</strong> who chose
-            <br /> to hard code his life.
+            <span>Nogueira,</span>
           </h1>
+          <h2 className="flex flex-col text-xl leading-7 text-textdim">
+            <span>
+              a <strong className="font-bold text-text">front-end developer</strong> who chose
+            </span>
+            <span>to hard code his life.</span>
+          </h2>
         </div>
       </div>
     </>
