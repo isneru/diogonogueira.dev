@@ -1,4 +1,5 @@
 import { Snippet } from "@prisma/client"
+import * as HoverCard from "@radix-ui/react-hover-card"
 import { CheckIcon, CopyIcon, Link1Icon } from "@radix-ui/react-icons"
 import { useState } from "react"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
@@ -29,12 +30,34 @@ export const CodeBlock = ({ snippet }: Props) => {
         {snippet.text}
       </SyntaxHighlighter>
       <div className="absolute right-2 top-4 hidden items-center gap-1 group-hover:flex">
-        <button className="text-primary hover:text-primaryhover" onClick={() => handleLinkCopy(snippet.id)}>
-          {hasUserCopiedLink ? <CheckIcon width={22} height={22} /> : <Link1Icon width={22} height={22} />}
-        </button>
-        <button className="text-primary hover:text-primaryhover" onClick={() => handleCodeCopy(snippet.text)}>
-          {hasUserCopiedCode ? <CheckIcon width={22} height={22} /> : <CopyIcon width={22} height={22} />}
-        </button>
+        <HoverCard.Root openDelay={0} closeDelay={0}>
+          <HoverCard.Trigger asChild>
+            <button
+              className="relative text-primary hover:text-primaryhover"
+              onClick={() => handleLinkCopy(snippet.id)}>
+              {hasUserCopiedLink ? <CheckIcon width={22} height={22} /> : <Link1Icon width={22} height={22} />}
+            </button>
+          </HoverCard.Trigger>
+          <HoverCard.Content asChild>
+            <>
+              <span className="rounded bg-background px-2 py-1 text-primary">Copy Link</span>
+              <HoverCard.Arrow className="fill-background" />
+            </>
+          </HoverCard.Content>
+        </HoverCard.Root>
+        <HoverCard.Root openDelay={0} closeDelay={0}>
+          <HoverCard.Trigger asChild>
+            <button className="group text-primary hover:text-primaryhover" onClick={() => handleCodeCopy(snippet.text)}>
+              {hasUserCopiedCode ? <CheckIcon width={22} height={22} /> : <CopyIcon width={22} height={22} />}
+            </button>
+          </HoverCard.Trigger>
+          <HoverCard.Content asChild>
+            <>
+              <span className="rounded bg-background px-2 py-1 text-primary">Copy Snippet</span>
+              <HoverCard.Arrow className="fill-background" />
+            </>
+          </HoverCard.Content>
+        </HoverCard.Root>
       </div>
     </div>
   ) : (
