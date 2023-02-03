@@ -1,28 +1,42 @@
-# Create T3 App
+![](https://i.imgur.com/mrZTDN4.png)
 
-This is a [T3 Stack](https://create.t3.gg/) project bootstrapped with `create-t3-app`.
+# Full Stack Application
 
-## What's next? How do I make an app with this?
+With the main goal being to build an efficient portfolio and codeblock snippet storing system.
 
-We try to keep this project as simple as possible, so you can start with just the scaffolding we set up for you, and add additional things later when they become necessary.
+## Install Dependencies
 
-If you are not familiar with the different technologies used in this project, please refer to the respective docs. If you still are in the wind, please join our [Discord](https://t3.gg/discord) and ask for help.
+In your terminal after you clone your project down, remember to run either `yarn` or `npm install` to build all the dependencies in the project.
 
-- [Next.js](https://nextjs.org)
-- [NextAuth.js](https://next-auth.js.org)
-- [Prisma](https://prisma.io)
-- [Tailwind CSS](https://tailwindcss.com)
-- [tRPC](https://trpc.io)
+## Environment Variables
 
-## Learn More
+Don't forget to create a `.env` file in your root directory.
+Check `.env.example` for all variables used.
 
-To learn more about the [T3 Stack](https://create.t3.gg/), take a look at the following resources:
+## Prisma
 
-- [Documentation](https://create.t3.gg/)
-- [Learn the T3 Stack](https://create.t3.gg/en/faq#what-learning-resources-are-currently-available) — Check out these awesome tutorials
+Run `npx prisma db push` or `yarn prisma db push` to save any changes made in your `schema.prisma` file.
 
-You can check out the [create-t3-app GitHub repository](https://github.com/t3-oss/create-t3-app) — your feedback and contributions are welcome!
+## Run the Project
 
-## How do I deploy this?
+After you are done installing the dependencies run `npm run dev` or `yarn dev`.
 
-Follow our deployment guides for [Vercel](https://create.t3.gg/en/deployment/vercel), [Netlify](https://create.t3.gg/en/deployment/netlify) and [Docker](https://create.t3.gg/en/deployment/docker) for more information.
+## You can access this project's deploy by clicking [here](https://diogonogueira.dev).
+
+#### Technologies
+
+- [x] [Next.js](https://nextjs.org)
+- [x] [TypeScript](https://typescriptlang.org)
+- [x] [NextAuth.js](https://next-auth.js.org)
+- [x] [Prisma](https://prisma.io)
+- [x] [tRPC](https://trpc.io)
+
+#### Styling
+
+- [x] [Tailwind CSS](https://tailwindcss.com)
+- [x] [Radix Icons](https://icons.radix-ui.com)
+- [ ] Responsive Design
+
+<p align='center'>
+Made with 💙 by me.
+</p>
