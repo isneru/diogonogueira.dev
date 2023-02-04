@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-background px-40 text-text;
+  @apply bg-background text-text lg:px-40;
 }
 
 @layer components {
