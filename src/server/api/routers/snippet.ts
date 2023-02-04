@@ -14,7 +14,11 @@ export const snippetRouter = createTRPCRouter({
     }),
 
   getAll: publicProcedure.query(async ({ ctx }) => {
-    const allSnippets = await ctx.prisma.snippet.findMany()
+    const allSnippets = await ctx.prisma.snippet.findMany({
+      orderBy: {
+        createdAt: "desc"
+      }
+    })
 
     return allSnippets
   }),
