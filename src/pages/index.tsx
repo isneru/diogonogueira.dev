@@ -1,6 +1,8 @@
 import { ChevronDownIcon } from "@radix-ui/react-icons"
+import { Card } from "components"
 import { type NextPage } from "next"
 import Head from "next/head"
+import { projects } from "utils/projects"
 
 const Home: NextPage = () => {
   return (
@@ -29,24 +31,25 @@ const Home: NextPage = () => {
           <ChevronDownIcon width={22} height={22} className="animate-bounce" />
         </div>
       </div>
-      <div className="flex h-screen w-full items-center justify-center">
-        <div>
-          <h1 className="mb-6 flex flex-col text-7xl font-bold">
-            <span>
-              I'm <span className="text-primary">Diogo</span>
-            </span>
-            <span>Nogueira,</span>
-          </h1>
-          <h2 className="flex flex-col text-xl leading-7 text-textdim">
-            <span>
-              a <strong className="font-bold text-text">front-end developer</strong> who chose
-            </span>
-            <span>to hard code his life.</span>
-          </h2>
-        </div>
-      </div>
+      <ProjectsSection />
+      {/* next section below */}
+      <div className="flex h-screen w-full flex-col items-center pt-16"></div>
     </>
   )
 }
 
 export default Home
+
+const ProjectsSection = () => {
+  return (
+    <div className="flex flex-col items-center pb-10 pt-16">
+      {/* ^ remove pb-10 in the future ^ */}
+      <h3 className="mb-8 text-5xl font-bold">Projects</h3>
+      <div className="grid grid-cols-3 gap-x-8 gap-y-6">
+        {projects.map((project, idx) => (
+          <Card key={idx} project={project} />
+        ))}
+      </div>
+    </div>
+  )
+}
