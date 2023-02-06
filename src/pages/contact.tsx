@@ -1,3 +1,4 @@
+import { Title } from "components"
 import type { NextPage } from "next"
 import Head from "next/head"
 
@@ -10,20 +11,7 @@ const Contact: NextPage = () => {
         <link rel="icon" href="/favicon.png" />
       </Head>
       <div className="flex h-screen w-full items-center justify-center">
-        <div>
-          <h1 className="mb-6 flex flex-col text-7xl font-bold">
-            <span>
-              I'm <span className="text-primary">Diogo</span>
-            </span>
-            <span>Nogueira,</span>
-          </h1>
-          <h2 className="flex flex-col text-xl leading-7 text-textdim">
-            <span>
-              a <strong className="font-bold text-text">front-end developer</strong> who chose
-            </span>
-            <span>to hard code his life.</span>
-          </h2>
-        </div>
+        <Title>Contact Page</Title>
       </div>
     </>
   )
