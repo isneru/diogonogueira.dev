@@ -40,7 +40,8 @@ export const projects: TProject[] = [
   },
   {
     name: "Night Talk",
-    description: "Social network based on music taste. Uses Spotify Provider for authentication. (WORK IN PROGRESS)",
+    description:
+      "Social network based on music taste. Uses Spotify Provider for authentication. (WORK IN PROGRESS)",
     img: {
       path: "/project-images/nighttalk.png",
       alt: "authenticated user profile playlists preview"
@@ -63,11 +64,23 @@ export const projects: TProject[] = [
     }
   },
   {
+    name: "Learning Go Lang",
+    description:
+      "A Monorepo of small Go Lang projects used for studying purposes",
+    img: {
+      path: "/project-images/rseatvault.png",
+      alt: "image split in 3 project previews"
+    },
+    links: {
+      repo: "https://github.com/isneru/learning-go"
+    }
+  },
+  {
     name: "Rseat Vault",
     description: "A small group of projects hosted by Rocketseat",
     img: {
       path: "/project-images/rseatvault.png",
-      alt: "image split in 3 project previews"
+      alt: "image of one of the rocketseat's community projects"
     },
     links: {
       repo: "https://github.com/isneru/rseat-vault"
