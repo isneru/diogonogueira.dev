@@ -24,8 +24,11 @@ export const Navbar = () => {
         </Link>
         {links.map(link => (
           <Link
+            key={link.name}
             href={link.pathname}
-            className={clsx("text-xl hover:text-primary", { "text-primary": pathname === link.pathname })}>
+            className={clsx("text-xl hover:text-primary", {
+              "text-primary": pathname === link.pathname
+            })}>
             {link.name}
           </Link>
         ))}
