@@ -68,8 +68,8 @@ export const projects: TProject[] = [
     description:
       "A Monorepo of small Go Lang projects used for studying purposes",
     img: {
-      path: "/project-images/rseatvault.png",
-      alt: "image split in 3 project previews"
+      path: "/project-images/learninggo.png",
+      alt: "todo cli app in go"
     },
     links: {
       repo: "https://github.com/isneru/learning-go"
