@@ -76,6 +76,18 @@ export const projects: TProject[] = [
     }
   },
   {
+    name: "Lol Client (UI)",
+    description: "A game's client user interface. (WORK IN PROGRESS)",
+    img: {
+      path: "/project-images/lolclient.png",
+      alt: "lol client preview"
+    },
+    links: {
+      repo: "https://github.com/isneru/lol-client",
+      demo: "https://lolclient.vercel.app"
+    }
+  },
+  {
     name: "Rseat Vault",
     description: "A small group of projects hosted by Rocketseat",
     img: {
