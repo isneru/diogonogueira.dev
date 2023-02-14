@@ -1,10 +1,19 @@
 import { ChevronDownIcon } from "@radix-ui/react-icons"
-import { Card } from "components"
+import { Card, ImageModal } from "components"
 import { type NextPage } from "next"
 import Head from "next/head"
-import { projects } from "utils/projects"
+import { useState } from "react"
+import { projects, TProject } from "utils/projects"
 
 const Home: NextPage = () => {
+  const [clickedImg, setClickedImg] = useState<string>()
+  const [currentIndex, setCurrentIndex] = useState<number>()
+
+  function handleClick(project: TProject, index: number) {
+    setCurrentIndex(index)
+    setClickedImg(project.img.path)
+  }
+
   return (
     <>
       <Head>
@@ -22,7 +31,11 @@ const Home: NextPage = () => {
           </h1>
           <h2 className="flex flex-col text-xl leading-7 text-textdim">
             <span>
-              a <strong className="font-bold text-text">front-end developer</strong> who chose
+              a{" "}
+              <strong className="font-bold text-text">
+                front-end developer
+              </strong>{" "}
+              who chose
             </span>
             <span>to hard code his life.</span>
           </h2>
@@ -31,7 +44,28 @@ const Home: NextPage = () => {
           <ChevronDownIcon width={22} height={22} className="animate-bounce" />
         </div>
       </div>
-      <ProjectsSection />
+      <div className="flex flex-col items-center pb-10 pt-16">
+        {/* ^ remove pb-10 in the future ^ */}
+        <h3 className="mb-8 text-5xl font-bold">Projects</h3>
+        <div className="grid grid-cols-1 gap-x-8 gap-y-6 lg:grid-cols-2 xl:grid-cols-3">
+          {projects.map((project, idx) => (
+            <Card
+              id={idx}
+              handleClick={handleClick}
+              key={idx}
+              project={project}
+            />
+          ))}
+          {clickedImg && (
+            <ImageModal
+              setCurrentIndex={setCurrentIndex}
+              currentIndex={currentIndex}
+              setClickedImg={setClickedImg}
+              clickedImg={clickedImg}
+            />
+          )}
+        </div>
+      </div>
       {/* next section below */}
       <div className="flex h-screen w-full flex-col items-center pt-16"></div>
     </>
@@ -39,17 +73,3 @@ const Home: NextPage = () => {
 }
 
 export default Home
-
-const ProjectsSection = () => {
-  return (
-    <div className="flex flex-col items-center pb-10 pt-16">
-      {/* ^ remove pb-10 in the future ^ */}
-      <h3 className="mb-8 text-5xl font-bold">Projects</h3>
-      <div className="grid grid-cols-1 gap-x-8 gap-y-6 lg:grid-cols-2 xl:grid-cols-3">
-        {projects.map((project, idx) => (
-          <Card key={idx} project={project} />
-        ))}
-      </div>
-    </div>
-  )
-}

@@ -3,18 +3,19 @@ import { TProject } from "utils/projects"
 
 interface CardProps {
   project: TProject
+  id: number
+  handleClick: (project: TProject, index: number) => void
 }
 
-export const Card = ({ project }: CardProps) => {
+export const Card = ({ project, id, handleClick }: CardProps) => {
   return (
     <div className="flex max-w-sm flex-col rounded-lg border border-text/20 bg-background shadow">
-      <a href="#">
-        <img
-          className="f-hull max-h-40 w-full rounded-t-lg object-cover"
-          src={project.img.path}
-          alt={project.img.alt}
-        />
-      </a>
+      <img
+        onClick={() => handleClick(project, id)}
+        className="f-hull max-h-40 w-full cursor-pointer rounded-t-lg object-cover"
+        src={project.img.path}
+        alt={project.img.alt}
+      />
       <div className="flex h-full flex-col p-5">
         <h5 className="mb-2 text-2xl font-bold tracking-tight">
           {project.name}
