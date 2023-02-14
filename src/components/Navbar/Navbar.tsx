@@ -17,7 +17,7 @@ const links: { name: string; pathname: string }[] = [
 export const Navbar = () => {
   const { pathname } = useRouter()
   return (
-    <nav className="fixed top-0 left-0 z-50 flex h-16 w-full items-center justify-between px-20 backdrop-blur-[3px]">
+    <nav className="fixed top-0 left-0 z-50 flex h-16 w-full items-center justify-between bg-background/50 px-20 backdrop-blur-[3px]">
       <div className="flex items-center gap-4">
         <Link href="/" className="flex items-center justify-center gap-1">
           {pathname === "/" ? <BreathingLogo /> : <Logo />}
