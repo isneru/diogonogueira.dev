@@ -48,18 +48,18 @@ export const ImageModal = ({
     <div className="fixed top-0 left-0 z-[9999] flex h-[100vh] w-[100vw] items-center justify-center bg-black/75">
       <div className="relative flex h-[80vh] w-[80vw] items-center justify-center gap-2">
         <button
-          className="absolute top-0 left-0 h-full items-center justify-center rounded bg-primary px-3 text-background outline-none hover:bg-primaryhover lg:static lg:flex lg:px-6"
+          className="hidden h-full items-center justify-center rounded bg-primary px-3 text-background outline-none hover:bg-primaryhover lg:flex lg:px-6"
           onClick={handleSwipeLeft}>
           <ChevronLeftIcon width={20} height={20} />
         </button>
         <img
           src={clickedImg}
           onClick={() => setClickedImg(undefined)}
-          className="h-full w-full cursor-pointer rounded-md object-cover"
+          className="h-full w-full cursor-pointer overflow-hidden rounded-md object-cover"
           alt="Focused image"
         />
         <button
-          className="absolute top-0 right-0 h-full items-center justify-center rounded bg-primary px-3 text-background outline-none hover:bg-primaryhover lg:static lg:flex lg:px-6"
+          className="hidden h-full items-center justify-center rounded bg-primary px-3 text-background outline-none hover:bg-primaryhover lg:flex lg:px-6"
           onClick={handleSwipeRight}>
           <ChevronRightIcon width={20} height={20} />
         </button>
