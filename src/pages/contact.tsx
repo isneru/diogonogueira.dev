@@ -1,8 +1,7 @@
 import { Title } from "components"
-import type { NextPage } from "next"
 import Head from "next/head"
 
-const Contact: NextPage = () => {
+export default function Contact() {
   return (
     <>
       <Head>
@@ -16,5 +15,3 @@ const Contact: NextPage = () => {
     </>
   )
 }
-
-export default Contact

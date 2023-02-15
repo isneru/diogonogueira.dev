@@ -1,11 +1,10 @@
 import { ChevronDownIcon } from "@radix-ui/react-icons"
 import { Card, ImageModal } from "components"
-import { type NextPage } from "next"
 import Head from "next/head"
 import { useState } from "react"
 import { projects, TProject } from "utils/projects"
 
-const Home: NextPage = () => {
+export default function Home() {
   const [clickedImg, setClickedImg] = useState<string>()
   const [currentIndex, setCurrentIndex] = useState<number>()
 
@@ -71,5 +70,3 @@ const Home: NextPage = () => {
     </>
   )
 }
-
-export default Home

@@ -1,7 +1,7 @@
-import type { GetServerSideProps, NextPage } from "next"
+import type { GetServerSideProps } from "next"
 import { getSession, signIn } from "next-auth/react"
 
-const Login: NextPage = () => {
+export default function Login() {
   function handleLogin() {
     signIn("discord", { callbackUrl: "/" })
   }
@@ -12,8 +12,6 @@ const Login: NextPage = () => {
     </main>
   )
 }
-
-export default Login
 
 export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   const session = await getSession({ req })
