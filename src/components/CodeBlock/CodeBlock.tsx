@@ -1,4 +1,4 @@
-import { Snippet } from "@prisma/client"
+import { Snippet, Tag } from "@prisma/client"
 import * as HoverCard from "@radix-ui/react-hover-card"
 import { CheckIcon, CopyIcon, Link1Icon } from "@radix-ui/react-icons"
 import { useState } from "react"
@@ -37,9 +37,9 @@ export const CodeBlock = ({ snippet }: Props) => {
           })}
         </span>
         <div className="flex items-center gap-2">
-          {snippet.tags.map(tag => (
+          {(snippet.tags as Tag[]).map(tag => (
             <span
-              key={tag}
+              key={tag.text}
               className="flex items-center justify-center rounded-full bg-primary px-3 py-px text-sm font-light text-white hover:bg-primaryhover">
               {`#${tag.text}`}
             </span>
