@@ -16,7 +16,7 @@ model Snippet {
     createdAt DateTime @default(now())
     text      String   @db.LongText
     language  String
-    tag       Tag[]
+    tags      Tag[]
 }
 
 model Tag {
