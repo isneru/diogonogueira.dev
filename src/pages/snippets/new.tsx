@@ -85,7 +85,8 @@ const NewSnippet: NextPage = () => {
               </DropdownMenu.Content>
             </DropdownMenu.Root>
           </div>
-          <div className="">
+          <div className="flex flex-col gap-2">
+            <span className="text-xl leading-7 text-textdim">Tags</span>
             <input
               value={tag}
               onKeyUp={e => e.key === "Enter" && confirmTagSubmit()}
@@ -93,6 +94,15 @@ const NewSnippet: NextPage = () => {
               type="text"
               className="w-full rounded bg-background p-3 outline-none ring-2 ring-text"
             />
+            <div className="flex items-center gap-2">
+              {tags.map(tag => (
+                <span
+                  key={tag}
+                  className="flex items-center justify-center rounded-full bg-primary px-3 py-px text-sm font-light text-white hover:bg-primaryhover">
+                  {`#${tag}`}
+                </span>
+              ))}
+            </div>
           </div>
           <button
             className="mt-4 w-full rounded  bg-primary p-3 text-background"
