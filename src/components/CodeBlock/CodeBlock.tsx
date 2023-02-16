@@ -21,48 +21,83 @@ export const CodeBlock = ({ snippet }: Props) => {
   function handleLinkCopy(snippetId: string) {
     setHasUserCopiedLink(true)
     setTimeout(() => setHasUserCopiedLink(false), 2000)
-    navigator.clipboard.writeText(`${process.env.NEXT_PUBLIC_PROJECT_URL}/snippets/${snippetId}`)
+    navigator.clipboard.writeText(
+      `${process.env.NEXT_PUBLIC_PROJECT_URL}/snippets/${snippetId}`
+    )
   }
 
   return snippet ? (
-    <div className="group relative w-[80vw] md:w-[60vw]">
-      <SyntaxHighlighter wrapLongLines className="scroll w-full rounded" language={snippet.language} style={oneLight}>
-        {snippet.text}
-      </SyntaxHighlighter>
-      <div className="absolute right-2 top-4 hidden items-center gap-1 group-hover:flex">
-        <HoverCard.Root openDelay={0} closeDelay={0}>
-          <HoverCard.Trigger asChild>
-            <button
-              className="relative text-primary hover:text-primaryhover"
-              onClick={() => handleLinkCopy(snippet.id)}>
-              {hasUserCopiedLink ? <CheckIcon width={22} height={22} /> : <Link1Icon width={22} height={22} />}
-            </button>
-          </HoverCard.Trigger>
-          <HoverCard.Content asChild>
-            <>
-              <span className="rounded bg-background px-2 py-1 text-primary">Copy Link</span>
-              <HoverCard.Arrow className="fill-background" />
-            </>
-          </HoverCard.Content>
-        </HoverCard.Root>
-        <HoverCard.Root openDelay={0} closeDelay={0}>
-          <HoverCard.Trigger asChild>
-            <button className="group text-primary hover:text-primaryhover" onClick={() => handleCodeCopy(snippet.text)}>
-              {hasUserCopiedCode ? <CheckIcon width={22} height={22} /> : <CopyIcon width={22} height={22} />}
-            </button>
-          </HoverCard.Trigger>
-          <HoverCard.Content asChild>
-            <>
-              <span className="rounded bg-background px-2 py-1 text-primary">Copy Snippet</span>
-              <HoverCard.Arrow className="fill-background" />
-            </>
-          </HoverCard.Content>
-        </HoverCard.Root>
+    <div className="mb-8 flex flex-col gap-1">
+      <div className="flex items-center pl-1">
+        <span className="text-2xl font-semibold">
+          {snippet.createdAt.toLocaleDateString("en-US", {
+            year: "numeric",
+            month: "long",
+            day: "numeric"
+          })}
+        </span>
+      </div>
+      <div className="group relative w-[80vw] md:w-[60vw]">
+        <SyntaxHighlighter
+          wrapLongLines
+          className="scroll w-full rounded"
+          language={snippet.language}
+          style={oneLight}>
+          {snippet.text}
+        </SyntaxHighlighter>
+        <div className="absolute right-2 top-4 hidden items-center gap-1 group-hover:flex">
+          <HoverCard.Root openDelay={0} closeDelay={0}>
+            <HoverCard.Trigger asChild>
+              <button
+                className="relative text-primary hover:text-primaryhover"
+                onClick={() => handleLinkCopy(snippet.id)}>
+                {hasUserCopiedLink ? (
+                  <CheckIcon width={22} height={22} />
+                ) : (
+                  <Link1Icon width={22} height={22} />
+                )}
+              </button>
+            </HoverCard.Trigger>
+            <HoverCard.Content asChild>
+              <>
+                <span className="rounded bg-background px-2 py-1 text-primary">
+                  {hasUserCopiedLink ? "Copied!" : "Copy Link"}
+                </span>
+                <HoverCard.Arrow className="fill-background" />
+              </>
+            </HoverCard.Content>
+          </HoverCard.Root>
+          <HoverCard.Root openDelay={0} closeDelay={0}>
+            <HoverCard.Trigger asChild>
+              <button
+                className="group text-primary hover:text-primaryhover"
+                onClick={() => handleCodeCopy(snippet.text)}>
+                {hasUserCopiedCode ? (
+                  <CheckIcon width={22} height={22} />
+                ) : (
+                  <CopyIcon width={22} height={22} />
+                )}
+              </button>
+            </HoverCard.Trigger>
+            <HoverCard.Content asChild>
+              <>
+                <span className="rounded bg-background px-2 py-1 text-primary">
+                  {hasUserCopiedCode ? "Copied!" : "Copy Snippet"}
+                </span>
+                <HoverCard.Arrow className="fill-background" />
+              </>
+            </HoverCard.Content>
+          </HoverCard.Root>
+        </div>
       </div>
     </div>
   ) : (
     <div className="group relative w-[80vw] animate-pulse md:w-[60vw]">
-      <SyntaxHighlighter wrapLongLines className="scroll w-full rounded" language="md" style={oneLight}>
+      <SyntaxHighlighter
+        wrapLongLines
+        className="scroll w-full rounded"
+        language="md"
+        style={oneLight}>
         Loading...
       </SyntaxHighlighter>
     </div>
