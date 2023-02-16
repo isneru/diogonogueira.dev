@@ -16,6 +16,16 @@ model Snippet {
     createdAt DateTime @default(now())
     text      String   @db.LongText
     language  String
+    tag       Tag[]
+}
+
+model Tag {
+    id        String   @id @default(cuid())
+    text      String
+    Snippet   Snippet? @relation(fields: [snippetId], references: [id])
+    snippetId String?
+
+    @@index([snippetId])
 }
 
 // Necessary for Next auth
