@@ -23,7 +23,8 @@ const NewSnippet: NextPage = () => {
     if (language.name === "Language") return
     const createdSnippet = await snippetCreate.mutateAsync({
       language: language.value,
-      text: code
+      text: code,
+      tags: tags
     })
     router.push(`/snippets/${createdSnippet.id}`)
   }
