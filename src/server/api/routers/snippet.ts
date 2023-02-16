@@ -39,7 +39,8 @@ export const snippetRouter = createTRPCRouter({
     const allSnippets = await ctx.prisma.snippet.findMany({
       orderBy: {
         createdAt: "desc"
-      }
+      },
+      include: { tags: true }
     })
 
     return allSnippets
@@ -51,7 +52,8 @@ export const snippetRouter = createTRPCRouter({
       const snippet = await ctx.prisma.snippet.findUnique({
         where: {
           id: input.id
-        }
+        },
+        include: { tags: true }
       })
 
       return snippet

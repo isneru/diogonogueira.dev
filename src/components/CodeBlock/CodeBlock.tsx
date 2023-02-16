@@ -27,8 +27,8 @@ export const CodeBlock = ({ snippet }: Props) => {
   }
 
   return snippet ? (
-    <div className="mb-8 flex flex-col gap-1">
-      <div className="flex items-center pl-1">
+    <div className="mb-4 flex flex-col gap-1 border-b border-text/10 pb-4">
+      <div className="flex flex-col justify-center gap-2 pl-1">
         <span className="text-2xl font-semibold">
           {snippet.createdAt.toLocaleDateString("en-US", {
             year: "numeric",
@@ -36,6 +36,15 @@ export const CodeBlock = ({ snippet }: Props) => {
             day: "numeric"
           })}
         </span>
+        <div className="flex items-center gap-2">
+          {snippet.tags.map(tag => (
+            <span
+              key={tag}
+              className="flex items-center justify-center rounded-full bg-primary px-3 py-px text-sm font-light text-white hover:bg-primaryhover">
+              {`#${tag.text}`}
+            </span>
+          ))}
+        </div>
       </div>
       <div className="group relative w-[80vw] md:w-[60vw]">
         <SyntaxHighlighter
