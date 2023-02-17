@@ -1,5 +1,5 @@
 import * as DropdownMenu from "@radix-ui/react-dropdown-menu"
-import { CaretDownIcon } from "@radix-ui/react-icons"
+import { CaretDownIcon, Cross1Icon } from "@radix-ui/react-icons"
 import { Title } from "components"
 import type { GetServerSideProps, NextPage } from "next"
 import { getSession } from "next-auth/react"
@@ -24,15 +24,19 @@ const NewSnippet: NextPage = () => {
     const createdSnippet = await snippetCreate.mutateAsync({
       language: language.value,
       text: code,
-      tags: tags
+      tags: [language.value, ...tags]
     })
     router.push(`/snippets/${createdSnippet.id}`)
   }
 
   function confirmTagSubmit() {
     if (tag === "") return
-    setTags([...tags, tag])
+    setTags([...tags, tag.replace(" ", "-").toLocaleLowerCase()])
     setTag("")
+  }
+
+  function deleteTag(tag: string) {
+    setTags(previousValue => previousValue.filter(item => item !== tag))
   }
 
   return (
@@ -85,23 +89,29 @@ const NewSnippet: NextPage = () => {
               </DropdownMenu.Content>
             </DropdownMenu.Root>
           </div>
-          <div className="flex flex-col gap-2">
-            <span className="text-xl leading-7 text-textdim">Tags</span>
-            <input
-              value={tag}
-              onKeyUp={e => e.key === "Enter" && confirmTagSubmit()}
-              onChange={e => setTag(e.currentTarget.value)}
-              type="text"
-              className="w-full rounded bg-background p-3 outline-none ring-2 ring-text"
-            />
-            <div className="flex items-center gap-2">
-              {tags.map(tag => (
-                <span
-                  key={tag}
-                  className="flex items-center justify-center rounded-full bg-primary px-3 py-px text-sm font-light text-white hover:bg-primaryhover">
-                  {`#${tag}`}
-                </span>
+          <div className="flex flex-col">
+            <label htmlFor="tag" className="text-xl leading-7 text-textdim">
+              Tags
+            </label>
+            <div className="flex w-full gap-2 rounded bg-background p-3 ring-2 ring-text">
+              {tags.map((tag, idx) => (
+                <div
+                  key={idx}
+                  className="flex min-w-fit items-center gap-1 rounded-full bg-primary px-3 py-px text-sm font-light text-white hover:bg-primaryhover">
+                  <span>{`#${tag}`}</span>
+                  <button onClick={() => deleteTag(tag)}>
+                    <Cross1Icon width={12} height={12} />
+                  </button>
+                </div>
               ))}
+              <input
+                value={tag}
+                id="tag"
+                onKeyUp={e => e.key === "Enter" && confirmTagSubmit()}
+                onChange={e => setTag(e.currentTarget.value)}
+                type="text"
+                className="w-full bg-transparent outline-none"
+              />
             </div>
           </div>
           <button
