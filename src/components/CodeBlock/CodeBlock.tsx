@@ -1,6 +1,7 @@
 import { Tag } from "@prisma/client"
 import * as HoverCard from "@radix-ui/react-hover-card"
 import { CheckIcon, CopyIcon, Link1Icon } from "@radix-ui/react-icons"
+import Link from "next/link"
 import { useState } from "react"
 import { Prism as SyntaxHighlighter } from "react-syntax-highlighter"
 import { oneLight } from "react-syntax-highlighter/dist/cjs/styles/prism"
@@ -47,11 +48,12 @@ export const CodeBlock = ({ snippet }: Props) => {
         </span>
         <div className="flex items-center gap-2">
           {snippet.tags.map(tag => (
-            <span
+            <Link
+              href={`/snippets/tags/${tag.text}`}
               key={tag.text}
               className="flex items-center justify-center rounded-full bg-primary px-3 py-px text-sm font-light text-white hover:bg-primaryhover">
               {`#${tag.text}`}
-            </span>
+            </Link>
           ))}
         </div>
       </div>

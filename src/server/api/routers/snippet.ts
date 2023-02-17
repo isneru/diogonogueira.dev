@@ -57,5 +57,22 @@ export const snippetRouter = createTRPCRouter({
       })
 
       return snippet
+    }),
+
+  getByTag: publicProcedure
+    .input(z.object({ tag: z.string() }))
+    .query(async ({ ctx, input }) => {
+      const snippets = await ctx.prisma.snippet.findMany({
+        where: {
+          tags: {
+            some: {
+              text: input.tag
+            }
+          }
+        },
+        include: { tags: true }
+      })
+
+      return snippets
     })
 })
