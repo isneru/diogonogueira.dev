@@ -130,7 +130,8 @@ export default NewSnippet
 export const getServerSideProps: GetServerSideProps = async ({ req }) => {
   const session = await getSession({ req })
 
-  if (!session || session.user?.name !== "neru") {
+  console.log(session?.user)
+  if (!session || session.user?.id !== "cldhha2iz0000ruasw0vywsme") {
     return {
       redirect: {
         destination: "/snippets",
