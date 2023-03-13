@@ -1,6 +1,7 @@
 import { ChevronDownIcon } from "@radix-ui/react-icons"
 import { Card, ImageModal } from "components"
 import Head from "next/head"
+import Link from "next/link"
 import { useState } from "react"
 import { projects, TProject } from "utils/projects"
 
@@ -38,6 +39,24 @@ export default function Home() {
             </span>
             <span>to hard code his life.</span>
           </h2>
+          <div className="mt-2 flex flex-col gap-2">
+            <Link
+              className="inline-flex w-full items-center justify-center rounded border border-text/50 p-2 transition-colors hover:border-primary/50 hover:bg-text/5 hover:text-primary"
+              href="/curriculum.pdf">
+              Curriculum
+            </Link>
+            {/* <div className="flex items-center divide-x-[1px] divide-text/50">
+              <h3 className="pr-2 text-lg leading-7 text-textdim">
+                Tech Stack
+              </h3>
+              <div className="flex items-center gap-2 pl-2">
+                <JavascripIcon />
+                <TypescriptIcon />
+                <ReactIcon />
+                <TailwindIcon />
+              </div>
+            </div> */}
+          </div>
         </div>
         <div className="absolute bottom-5 left-1/2 -translate-x-1/2">
           <ChevronDownIcon width={22} height={22} className="animate-bounce" />

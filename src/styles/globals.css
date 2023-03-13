@@ -6,6 +6,10 @@ body {
   @apply bg-background text-text lg:px-40;
 }
 
+::selection {
+  @apply bg-primary text-background;
+}
+
 @layer components {
   .scroll {
     @apply scrollbar-thin scrollbar-track-transparent scrollbar-thumb-primary scrollbar-thumb-rounded-full hover:scrollbar-thumb-primaryhover;
