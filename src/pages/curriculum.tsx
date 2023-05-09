@@ -111,7 +111,7 @@ export default function Curriculum() {
         <title>Curriculum</title>
         <meta name="description" content="Curriculum" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <div className="prose-xl prose-invert mx-auto mt-20 px-8 lg:px-0">
         <h1>Diogo Nogueira</h1>

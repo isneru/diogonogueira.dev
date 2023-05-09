@@ -13,7 +13,7 @@ export default function Tag() {
         <title>Snippets | #{tag}</title>
         <meta name="description" content="Tag" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <link rel="icon" href="/favicon.svg" />
+        <link rel="icon" href="/favicon.png" />
       </Head>
       <div className="flex flex-col items-center justify-center py-20">
         <Title>
