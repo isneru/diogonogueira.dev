@@ -199,22 +199,21 @@ const LineSpans = ({ before, after }: { before: string; after: string }) => {
   )
 }
 
-const LinkOrSpan = ({
-  href,
-  children
-}: {
+type TLinkOrSpan = {
   href?: string
   children: React.ReactNode
-}) => {
-  return href ? (
-    <a
-      href={href}
-      rel="noreferrer"
-      target="_blank"
-      className="flex items-center gap-2">
-      {children}
-    </a>
-  ) : (
-    <span className="flex items-center gap-2">{children}</span>
-  )
+}
+const LinkOrSpan = ({ href, children }: TLinkOrSpan) => {
+  if (href) {
+    return (
+      <a
+        href={href}
+        rel="noreferrer"
+        target="_blank"
+        className="flex w-fit items-center gap-2 decoration-primary hover:underline">
+        {children}
+      </a>
+    )
+  }
+  return <span className="flex items-center gap-2">{children}</span>
 }
