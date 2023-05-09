@@ -1,4 +1,4 @@
-import { GitHubLogoIcon, ReaderIcon } from "@radix-ui/react-icons"
+import { GitHubLogoIcon } from "@radix-ui/react-icons"
 import clsx from "clsx"
 import Link from "next/link"
 import { useRouter } from "next/router"
@@ -30,17 +30,26 @@ export const Navbar = () => {
           <Link
             key={link.name}
             href={link.pathname}
-            className={clsx("text-xl hover:text-primary", {
+            className={clsx("hidden text-xl hover:text-primary sm:inline", {
               "text-primary": pathname === link.pathname
             })}>
             {link.name}
           </Link>
         ))}
       </div>
-      <div className="flex items-center justify-center gap-5">
-        <Link className="hover:text-primary" href="/curriculum.pdf">
-          <ReaderIcon role="img" width={20} height={20} />
-        </Link>
+      <div className="flex items-center gap-4 sm:hidden">
+        {links.map(link => (
+          <Link
+            key={link.name}
+            href={link.pathname}
+            className={clsx("text-lg hover:text-primary", {
+              "text-primary": pathname === link.pathname
+            })}>
+            {link.name}
+          </Link>
+        ))}
+      </div>
+      <div className="hidden items-center justify-center gap-5 sm:flex">
         <a
           className="hover:text-primary"
           href="https://github.com/isneru"
