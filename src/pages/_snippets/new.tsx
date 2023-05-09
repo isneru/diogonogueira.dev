@@ -51,7 +51,7 @@ const NewSnippet: NextPage = () => {
           <Title>
             Create a new <span className="text-primary">Snippet</span>
           </Title>
-          <p className="text-xl leading-7 text-textdim">
+          <p className="text-xl leading-7 text-primary">
             Paste your code below and select the corresponding language.
           </p>
           <div className="mb-3 flex items-center gap-4">
@@ -90,14 +90,14 @@ const NewSnippet: NextPage = () => {
             </DropdownMenu.Root>
           </div>
           <div className="flex flex-col">
-            <label htmlFor="tag" className="text-xl leading-7 text-textdim">
+            <label htmlFor="tag" className="text-xl leading-7 text-primary">
               Tags
             </label>
             <div className="flex w-full gap-2 rounded bg-background p-3 ring-2 ring-text">
               {tags.map((tag, idx) => (
                 <div
                   key={idx}
-                  className="flex min-w-fit items-center gap-1 rounded-full bg-primary px-3 py-px text-sm font-light text-white hover:bg-primaryhover">
+                  className="flex min-w-fit items-center gap-1 rounded-full bg-primary px-3 py-px text-sm font-light text-white hover:bg-primary">
                   <span>{`#${tag}`}</span>
                   <button onClick={() => deleteTag(tag)}>
                     <Cross1Icon width={12} height={12} />

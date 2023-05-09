@@ -1,13 +1,13 @@
-import { GitHubLogoIcon } from "@radix-ui/react-icons"
+import { GitHubLogoIcon, ReaderIcon } from "@radix-ui/react-icons"
 import clsx from "clsx"
 import Link from "next/link"
 import { useRouter } from "next/router"
 
 const links: { name: string; pathname: string }[] = [
-  {
+  /*   {
     name: "snippets",
     pathname: "/snippets"
-  },
+  }, */
   {
     name: "contact",
     pathname: "/contact"
@@ -17,7 +17,7 @@ const links: { name: string; pathname: string }[] = [
 export const Navbar = () => {
   const { pathname } = useRouter()
   return (
-    <nav className="fixed top-0 left-0 z-50 flex h-16 w-full items-center justify-between bg-background/50 px-20 backdrop-blur-[3px]">
+    <nav className="fixed top-0 left-0 z-50 flex h-16 w-full items-center justify-between bg-background/50 px-20 shadow-[0_1px_4px_0_#151517] backdrop-blur-[3px]">
       <div className="flex items-center gap-4">
         <Link href="/" className="flex items-center justify-center gap-1">
           {pathname === "/" ? <BreathingLogo /> : <Logo />}
@@ -33,8 +33,15 @@ export const Navbar = () => {
           </Link>
         ))}
       </div>
-      <div className="flex items-center justify-center hover:text-primary">
-        <a href="https://github.com/isneru" target="_blank" rel="noreferrer">
+      <div className="flex items-center justify-center gap-5">
+        <Link className="hover:text-primary" href="/curriculum.pdf">
+          <ReaderIcon role="img" width={20} height={20} />
+        </Link>
+        <a
+          className="hover:text-primary"
+          href="https://github.com/isneru"
+          target="_blank"
+          rel="noreferrer">
           <GitHubLogoIcon role="img" width={20} height={20} />
         </a>
       </div>
@@ -46,7 +53,7 @@ const BreathingLogo = () => {
   return (
     <>
       <div className="flex h-8 w-8 animate-background items-center justify-center rounded-xl bg-primary sm:h-6 sm:w-6 sm:rounded-lg">
-        <div className="h-3.5 w-0.5 rotate-[30deg] rounded-full bg-white sm:h-3 sm:w-0.5" />
+        <div className="h-3.5 w-0.5 rotate-[30deg] rounded-full bg-background sm:h-3 sm:w-0.5" />
       </div>
       <div className="hidden text-xl font-bold sm:block">
         <span className="animate-color">diogo</span>

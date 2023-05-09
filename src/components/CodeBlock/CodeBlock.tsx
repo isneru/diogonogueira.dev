@@ -51,7 +51,7 @@ export const CodeBlock = ({ snippet }: Props) => {
             <Link
               href={`/snippets/tags/${tag.text}`}
               key={tag.text}
-              className="flex items-center justify-center rounded-full bg-primary px-3 py-px text-sm font-light text-white hover:bg-primaryhover">
+              className="flex items-center justify-center rounded-full bg-primary px-3 py-px text-sm font-light text-white hover:bg-primary">
               {`#${tag.text}`}
             </Link>
           ))}
@@ -69,7 +69,7 @@ export const CodeBlock = ({ snippet }: Props) => {
           <HoverCard.Root openDelay={0} closeDelay={0}>
             <HoverCard.Trigger asChild>
               <button
-                className="relative text-primary hover:text-primaryhover"
+                className="relative text-primary hover:text-primary"
                 onClick={() => handleLinkCopy(snippet.id)}>
                 {hasUserCopiedLink ? (
                   <CheckIcon width={22} height={22} />
@@ -90,7 +90,7 @@ export const CodeBlock = ({ snippet }: Props) => {
           <HoverCard.Root openDelay={0} closeDelay={0}>
             <HoverCard.Trigger asChild>
               <button
-                className="group text-primary hover:text-primaryhover"
+                className="group text-primary hover:text-primary"
                 onClick={() => handleCodeCopy(snippet.text)}>
                 {hasUserCopiedCode ? (
                   <CheckIcon width={22} height={22} />
