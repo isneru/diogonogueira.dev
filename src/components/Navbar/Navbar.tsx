@@ -11,6 +11,10 @@ const links: { name: string; pathname: string }[] = [
   {
     name: "contact",
     pathname: "/contact"
+  },
+  {
+    name: "curriculum",
+    pathname: "/curriculum"
   }
 ]
 
