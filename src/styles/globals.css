@@ -3,7 +3,7 @@
 @tailwind utilities;
 
 body {
-  @apply bg-background text-text lg:px-40;
+  @apply bg-background text-text scrollbar-thin scrollbar-track-transparent scrollbar-thumb-primary scrollbar-thumb-rounded-full hover:scrollbar-thumb-primary lg:px-40;
 }
 
 ::selection {
