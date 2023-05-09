@@ -33,20 +33,9 @@ export default function Curriculum() {
     }
   ]
 
-  const education = [
+  const internships = [
     {
-      title: "College",
-      where: "Escola Superior de Tecnologia e Gestão",
-      when: "10/2022 - Present",
-      location: "Felgueiras",
-      tasks: [
-        "Currently finishing my first year of the degree in Computer Security and Computer Networks",
-        "Studying Web Development in my free time"
-      ]
-    },
-    {
-      title: "Internship",
-      where: "Erasmus+",
+      where: "Computer repair & service",
       when: "01/2022 - 05/2022",
       location: "Rethymno, Greece",
       tasks: [
@@ -60,7 +49,6 @@ export default function Curriculum() {
       ]
     },
     {
-      title: "Internship",
       where: "ITSector",
       when: "04/2021 - 07/2021",
       location: "Porto, Portugal",
@@ -70,15 +58,21 @@ export default function Curriculum() {
         "Helped streamline repair processes and update procedures for support action consistency",
         "Configured hardware, devices and software to set up workstations for employees"
       ]
+    }
+  ]
+
+  const education = [
+    {
+      title: "College",
+      where: "Escola Superior de Tecnologia e Gestão, Felgueiras",
+      before: "Computer Security and Computer Networks",
+      after: "10/2022 - Present"
     },
     {
       title: "High School",
-      where: "Instituto Profissional de Tecnologias Avançadas",
-      when: "09/2018 - 07/2021",
-      location: "Porto, Portugal",
-      tasks: [
-        "Completed the 12th grade in the area of Hardware and Software Management"
-      ]
+      where: "Instituto Profissional de Tecnologias Avançadas, Porto",
+      before: "Hardware and Software Management",
+      after: "09/2018 - 07/2021"
     }
   ]
 
@@ -115,39 +109,33 @@ export default function Curriculum() {
       </Head>
       <div className="prose-xl prose-invert mx-auto mt-20 px-8 lg:px-0">
         <h1>Diogo Nogueira</h1>
-        <h2>Cybersecurity Student & Self-taught Front-end Developer</h2>
+        <h2 className="text-primary">
+          Cybersecurity Student & Self-taught Front-end Developer
+        </h2>
         <div className="grid gap-3 text-center md:grid-cols-2 md:grid-rows-3">
-          {info.map(({ icon, text, href }, idx) =>
-            href ? (
-              <a
-                key={idx}
-                href={href}
-                rel="noreferrer"
-                target="_blank"
-                className="flex items-center gap-2">
-                {icon} <span>{text}</span>
-              </a>
-            ) : (
-              <span key={idx} className="flex items-center gap-2">
-                {icon} <span>{text}</span>
-              </span>
-            )
-          )}
+          {info.map(({ icon, text, href }, idx) => (
+            <LinkOrSpan key={idx} href={href}>
+              {icon} <span>{text}</span>
+            </LinkOrSpan>
+          ))}
         </div>
         <div className="lg:grid lg:grid-cols-2 lg:gap-6">
           <div>
-            <h2>Education</h2>
-            {education.map((section, idx) => (
+            <h2 className="text-primary">Education</h2>
+            {education.map((edu, idx) => (
               <div key={idx}>
-                <h3>{section.title}</h3>
-                <p>{section.where}</p>
-                <span className="relative flex w-full items-center justify-between">
-                  <span className="absolute inset-x-0 top-1/2 -z-10 h-px -translate-y-1/2 bg-[url('/pattern.png')]" />
-                  <span className="bg-background pr-2">{section.when}</span>
-                  <span className="bg-background pl-2">{section.location}</span>
-                </span>
+                <h3>{edu.title}</h3>
+                <span>{edu.where}</span>
+                <LineSpans before={edu.before} after={edu.after} />
+              </div>
+            ))}
+            <h2 className="text-primary">Internships</h2>
+            {internships.map((intern, idx) => (
+              <div key={idx}>
+                <span>{intern.where}</span>
+                <LineSpans before={intern.location} after={intern.when} />
                 <ul className="list-disc">
-                  {section.tasks.map((task, idx) => (
+                  {intern.tasks.map((task, idx) => (
                     <li key={idx}>{task}</li>
                   ))}
                 </ul>
@@ -155,7 +143,7 @@ export default function Curriculum() {
             ))}
           </div>
           <div>
-            <h2>Skills</h2>
+            <h2 className="text-primary">Skills</h2>
             <div className="flex flex-wrap gap-3">
               {skills.map((skill, idx) => (
                 <span
@@ -165,32 +153,20 @@ export default function Curriculum() {
                 </span>
               ))}
             </div>
-            <h2>Languages</h2>
-            <span className="relative flex w-full items-center justify-between">
-              <span className="absolute inset-x-0 top-1/2 -z-10 h-px -translate-y-1/2 bg-[url('/pattern.png')]" />
-              <span className="bg-background pr-2">Portuguese</span>
-              <span className="bg-background pl-2">Native</span>
-            </span>
-            <span className="relative flex w-full items-center justify-between">
-              <span className="absolute inset-x-0 top-1/2 -z-10 h-px -translate-y-1/2 bg-[url('/pattern.png')]" />
-              <span className="bg-background pr-2">English</span>
-              <span className="bg-background pl-2">
-                Professional Working Proficiency
-              </span>
-            </span>
-            <h2>Certificates</h2>
-            <span className="relative flex w-full items-center justify-between">
-              <span>The Web Developer Bootcamp 2022</span>
-            </span>
-            <h2>Achievements</h2>
-            <span className="relative flex w-full items-center justify-between">
-              <span className="absolute inset-x-0 top-1/2 -z-10 h-px -translate-y-1/2 bg-[url('/pattern.png')]" />
-              <span className="bg-background pr-2">
-                Acquired drivers license
-              </span>
-              <span className="bg-background pl-2">07/2022 - 01/2023</span>
-            </span>
-            <h2>Interests</h2>
+            <h2 className="text-primary">Languages</h2>
+            <LineSpans before={"Portuguese"} after={"Native"} />
+            <LineSpans
+              before={"English"}
+              after={"Professional Working Proficiency"}
+            />
+            <h2 className="text-primary">Certificates</h2>
+            <span>The Web Developer Bootcamp 2022</span>
+            <h2 className="text-primary">Achievements</h2>
+            <LineSpans
+              before={"Acquired drivers license"}
+              after={"07/2022 - 01/2023"}
+            />
+            <h2 className="text-primary">Interests</h2>
             <div className="flex flex-wrap gap-3">
               <span className="rounded px-2 leading-relaxed ring-2 ring-primary/50">
                 Driving
@@ -210,5 +186,35 @@ export default function Curriculum() {
         </div>
       </div>
     </>
+  )
+}
+
+const LineSpans = ({ before, after }: { before: string; after: string }) => {
+  return (
+    <span className="relative flex w-full items-center justify-between">
+      <span className="absolute inset-x-0 top-1/2 -z-10 h-px -translate-y-1/2 bg-[url('/pattern.png')]" />
+      <span className="bg-background pr-2">{before}</span>
+      <span className="bg-background pl-2">{after}</span>
+    </span>
+  )
+}
+
+const LinkOrSpan = ({
+  href,
+  children
+}: {
+  href?: string
+  children: React.ReactNode
+}) => {
+  return href ? (
+    <a
+      href={href}
+      rel="noreferrer"
+      target="_blank"
+      className="flex items-center gap-2">
+      {children}
+    </a>
+  ) : (
+    <span className="flex items-center gap-2">{children}</span>
   )
 }
