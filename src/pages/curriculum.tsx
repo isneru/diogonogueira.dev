@@ -79,24 +79,27 @@ export default function Curriculum() {
   const skills = [
     "HTML",
     "CSS",
-    "PHP",
     "JavaScript",
-    "TypeScript",
     "Node.js",
     "Express.js",
+    "React",
+    "TypeScript",
+    "Next.js",
     "MongoDB",
     "SQL",
-    "React",
-    "Next.js",
     "Prisma",
     "TailwindCSS",
     "Git",
     "GitHub",
+    "Svelte",
+    "SvelteKit",
+    "Astro",
+    "C",
+    "PHP",
+    "Java",
     "VSCode",
     "Figma",
-    "Adobe Photoshop",
-    "Windows",
-    "Linux"
+    "Adobe Photoshop"
   ]
 
   return (
