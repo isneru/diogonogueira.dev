@@ -1,0 +1,16 @@
+---
+interface Props {
+  before: string
+  after: string
+}
+
+const { before, after } = Astro.props
+---
+
+<span class="relative flex w-full items-center justify-between">
+  <span
+    class="absolute inset-x-0 top-1/2 -z-10 h-px -translate-y-1/2 bg-[url('/pattern.png')]"
+  ></span>
+  <span class="bg-background pr-2">{before}</span>
+  <span class="bg-background pl-2">{after}</span>
+</span>

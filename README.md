@@ -25,17 +25,14 @@ After you are done installing the dependencies run `npm run dev` or `yarn dev`.
 
 #### Technologies
 
-- [x] [Next.js](https://nextjs.org)
+- [x] [Astro](https://astro.build)
 - [x] [TypeScript](https://typescriptlang.org)
-- [x] [NextAuth.js](https://next-auth.js.org)
-- [x] [Prisma](https://prisma.io)
-- [x] [tRPC](https://trpc.io)
 
 #### Styling
 
 - [x] [Tailwind CSS](https://tailwindcss.com)
 - [x] [Radix Icons](https://icons.radix-ui.com)
-- [ ] Responsive Design
+- [x] Responsive Design
 
 <p align='center'>
 Made with 💙 by me.

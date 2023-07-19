@@ -1,0 +1,11 @@
+---
+import type { HTMLAttributes } from "astro/types"
+
+interface Props extends HTMLAttributes<"h1"> {}
+
+const props = Astro.props
+---
+
+<h1 {...props} class="mb-8 text-center text-7xl font-bold">
+  {props.children}
+</h1>

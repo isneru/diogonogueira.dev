@@ -1,0 +1,50 @@
+---
+import Card from "../components/Card.astro"
+import Layout from "../components/Layout.astro"
+import { projects } from "../utils/projects"
+---
+
+<Layout>
+  <div class="relative flex h-screen w-full items-center justify-center">
+    <div>
+      <h1 class="mb-6 flex flex-col text-7xl font-bold">
+        <span>
+          I'm <span class="text-primary">Diogo</span>
+        </span>
+        <span>Nogueira,</span>
+      </h1>
+      <h2 class="flex flex-col text-xl leading-7 text-primary">
+        <span>
+          a{" "}
+          <strong class="font-bold text-text"> front-end developer</strong>{" "}
+          who chose
+        </span>
+        <span>to hard code his life.</span>
+      </h2>
+    </div>
+    <div class="absolute bottom-5 left-1/2 -translate-x-1/2">
+      <svg
+        width="22"
+        height="22"
+        viewBox="0 0 15 15"
+        fill="none"
+        class="animate-bounce stroke-primary">
+        <path
+          d="M3.13523 6.15803C3.3241 5.95657 3.64052 5.94637 3.84197 6.13523L7.5 9.56464L11.158 6.13523C11.3595 5.94637 11.6759 5.95657 11.8648 6.15803C12.0536 6.35949 12.0434 6.67591 11.842 6.86477L7.84197 10.6148C7.64964 10.7951 7.35036 10.7951 7.15803 10.6148L3.15803 6.86477C2.95657 6.67591 2.94637 6.35949 3.13523 6.15803Z"
+          fill="currentColor"
+          fill-rule="evenodd"
+          clip-rule="evenodd"
+          data-darkreader-inline-fill=""
+          style="--darkreader-inline-fill: currentColor;">
+        </path>
+      </svg>
+    </div>
+  </div>
+  <div class="flex flex-col items-center pb-10 pt-16">
+    <h3 class="mb-8 text-5xl font-bold">Projects</h3>
+    <div class="grid grid-cols-1 gap-x-8 gap-y-6 lg:grid-cols-2 xl:grid-cols-3">
+      {projects.map(project => <Card project={project} />)}
+    </div>
+  </div>
+  <div class="flex h-screen w-full flex-col items-center pt-16"></div>
+</Layout>

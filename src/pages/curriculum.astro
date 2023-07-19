@@ -1,0 +1,153 @@
+---
+import CurriculumInfo from "../components/CurriculumInfo"
+import Layout from "../components/Layout.astro"
+import LineSpans from "../components/LineSpans.astro"
+
+const internships = [
+  {
+    where: "Computer repair & service",
+    when: "01/2022 - 05/2022",
+    location: "Rethymno, Greece",
+    tasks: [
+      "Assistance in computers' formats and operational systems upgrades",
+      "Computers installation and set up in a school environment",
+      "Wi-Fi network installations",
+      "Camera services and repairs",
+      "Computer services and repairs",
+      "General assistance to my supervisor",
+      "Acquisition of knowledge in the field of IT and electronics"
+    ]
+  },
+  {
+    where: "ITSector",
+    when: "04/2021 - 07/2021",
+    location: "Porto, Portugal",
+    tasks: [
+      "Linked computers to certain networks and peripheral equipment, including printers and scanners",
+      "Patched software and installed new versions to eliminate security vulnerabilities and protect data",
+      "Helped streamline repair processes and update procedures for support action consistency",
+      "Configured hardware, devices and software to set up workstations for employees"
+    ]
+  }
+]
+
+const education = [
+  {
+    title: "College",
+    where: "Escola Superior de Tecnologia e Gestão, Felgueiras",
+    before: "Computer Security and Computer Networks",
+    after: "10/2022 - Present"
+  },
+  {
+    title: "High School",
+    where: "Instituto Profissional de Tecnologias Avançadas, Porto",
+    before: "Hardware and Software Management",
+    after: "09/2018 - 07/2021"
+  }
+]
+
+const skills = [
+  "HTML",
+  "CSS",
+  "JavaScript",
+  "Node.js",
+  "Express.js",
+  "React",
+  "TypeScript",
+  "Next.js",
+  "MongoDB",
+  "SQL",
+  "Prisma",
+  "TailwindCSS",
+  "Git",
+  "GitHub",
+  "Svelte",
+  "SvelteKit",
+  "Astro",
+  "C",
+  "PHP",
+  "Java",
+  "VSCode",
+  "Figma",
+  "Adobe Photoshop"
+]
+---
+
+<Layout>
+  <div class="prose-xl prose-invert mx-auto mt-20 px-8 lg:px-0">
+    <h1>Diogo Nogueira</h1>
+    <h2 class="text-primary">
+      Cybersecurity Student & Self-taught Front-end Developer
+    </h2>
+    <CurriculumInfo />
+    <div class="lg:grid lg:grid-cols-2 lg:gap-6">
+      <div>
+        <h2 class="text-primary">Education</h2>
+        {
+          education.map(edu => (
+            <div>
+              <h3>{edu.title}</h3>
+              <span>{edu.where}</span>
+              <LineSpans before={edu.before} after={edu.after} />
+            </div>
+          ))
+        }
+        <h2 class="text-primary">Internships</h2>
+        {
+          internships.map(intern => (
+            <div>
+              <span>{intern.where}</span>
+              <LineSpans before={intern.location} after={intern.when} />
+              <ul class="list-disc">
+                {intern.tasks.map(task => (
+                  <li>{task}</li>
+                ))}
+              </ul>
+            </div>
+          ))
+        }
+      </div>
+      <div>
+        <h2 class="text-primary">Skills</h2>
+        <div class="flex flex-wrap gap-3">
+          {
+            skills.map(skill => (
+              <span class="rounded bg-primary px-2 leading-relaxed text-background">
+                {skill}
+              </span>
+            ))
+          }
+        </div>
+        <h2 class="text-primary">Languages</h2>
+        <LineSpans before={"Portuguese"} after={"Native"} />
+        <LineSpans
+          before={"English"}
+          after={"Professional Working Proficiency"}
+        />
+        <h2 class="text-primary">Certificates</h2>
+        <span>The Web Developer Bootcamp 2022</span>
+        <h2 class="text-primary">Achievements</h2>
+        <LineSpans
+          before={"Acquired drivers license"}
+          after={"07/2022 - 01/2023"}
+        />
+        <h2 class="text-primary">Interests</h2>
+        <div class="flex flex-wrap gap-3">
+          <span class="rounded px-2 leading-relaxed ring-2 ring-primary/50">
+            Driving
+          </span>
+          <span class="rounded px-2 leading-relaxed ring-2 ring-primary/50">
+            Coding
+          </span>
+          <span class="rounded px-2 leading-relaxed ring-2 ring-primary/50">
+            Coffee
+          </span>
+          <span class="rounded px-2 leading-relaxed ring-2 ring-primary/50">
+            Working out
+          </span>
+        </div>
+        <div class="h-32 lg:hidden"></div>
+      </div>
+    </div>
+  </div>
+</Layout>)

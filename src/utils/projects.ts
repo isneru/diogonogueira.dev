@@ -1,4 +1,4 @@
-export interface TProject {
+export type Project = {
   name: string
   description: string
   img: {
@@ -11,7 +11,7 @@ export interface TProject {
   }
 }
 
-export const projects: TProject[] = [
+export const projects: Project[] = [
   {
     name: "Genshin Pity Tracker",
     description:

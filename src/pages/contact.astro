@@ -1,0 +1,78 @@
+---
+import Layout from "../components/Layout.astro"
+import Title from "../components/Title.astro"
+---
+
+<Layout>
+  <div class="flex flex-col items-center justify-center gap-7 py-20">
+    <Title>Contact</Title>
+    <div class="mt-20 flex w-full flex-col gap-20">
+      <div>
+        <h2 class="block text-5xl font-semibold text-primary">Work</h2>
+        <div
+          class="container mt-2 flex overflow-hidden rounded-md border border-text/20">
+          <div class="flex w-full flex-col divide-y divide-text/20">
+            <strong class="bg-primary py-1 pl-5 text-background"> Type</strong>
+            <div class="flex flex-col pl-5">
+              <p class="py-1">Address</p>
+              <p class="py-1">E-mail</p>
+            </div>
+          </div>
+          <div class="flex w-full flex-col divide-y divide-text/20">
+            <strong class="bg-primary py-1 text-background"> Info</strong>
+            <div class="flex flex-col">
+              <p class="py-1">Valongo, Porto, Portugal</p>
+              <a
+                class="py-1 hover:underline"
+                href="mailto:diogoclanogueira@gmail.com">
+                diogoclanogueira@gmail.com
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <h2 class="block text-5xl font-semibold text-primary">Social Media</h2>
+        <div
+          class="container mt-2 flex overflow-hidden rounded-md border border-text/20">
+          <div class="flex w-full flex-col divide-y divide-text/20">
+            <strong class="bg-primary py-1 pl-5 text-background">
+              Platform
+            </strong>
+            <div class="flex flex-col pl-5">
+              <p class="py-1">LinkedIn</p>
+              <p class="py-1">Instagram</p>
+              <p class="py-1">Github</p>
+            </div>
+          </div>
+          <div class="flex w-full flex-col divide-y divide-text/20">
+            <strong class="bg-primary py-1 text-background"> Info</strong>
+            <div class="flex flex-col">
+              <a
+                class="py-1 hover:underline"
+                rel="noreferrer"
+                target="_blank"
+                href="https://www.linkedin.com/in/diogoclanogueira">
+                linkedin.com/in/diogoclanogueira
+              </a>
+              <a
+                class="py-1 hover:underline"
+                rel="noreferrer"
+                target="_blank"
+                href="https://www.instagram.com/diog6l">
+                instagram.com/diog6l
+              </a>
+              <a
+                class="py-1 hover:underline"
+                rel="noreferrer"
+                target="_blank"
+                href="https://github.com/isneru">
+                github.com/isneru
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</Layout>
