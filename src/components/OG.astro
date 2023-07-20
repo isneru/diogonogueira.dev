@@ -27,8 +27,11 @@ const variants: Record<string, VariantInfo> = {
   }
 }
 
+interface Props {
+  pathname: string
+}
+
 const { pathname } = Astro.url
-console.log(pathname)
 ---
 
 <meta property="og:url" content={variants[pathname].website} />
