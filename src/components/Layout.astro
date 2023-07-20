@@ -1,5 +1,13 @@
 ---
 import Navbar from "./Navbar.astro"
+import OG from "./OG.astro"
+
+interface Props {
+  title: string
+  description: string
+}
+
+const { title, description } = Astro.props
 ---
 
 <html lang="en">
@@ -12,26 +20,27 @@ import Navbar from "./Navbar.astro"
     />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <title>Astro</title>
+    <meta name="description" content={description} />
+    <title>{title}</title>
+    <OG />
   </head>
   <body>
     <Navbar />
     <main>
       <slot />
     </main>
+    <style lang="postcss" is:global>
+      body {
+        @apply bg-background text-text scrollbar-thin scrollbar-track-transparent scrollbar-thumb-primary lg:px-40;
+      }
+
+      ::selection {
+        @apply bg-primary text-background;
+      }
+
+      .scroll {
+        @apply scrollbar-thin scrollbar-track-transparent scrollbar-thumb-primary scrollbar-thumb-rounded-full hover:scrollbar-thumb-primary;
+      }
+</style>
   </body>
 </html>
-
-<style lang="postcss" is:global>
-  body {
-    @apply bg-background text-text scrollbar-thin scrollbar-track-transparent scrollbar-thumb-primary lg:px-40;
-  }
-
-  ::selection {
-    @apply bg-primary text-background;
-  }
-
-  .scroll {
-    @apply scrollbar-thin scrollbar-track-transparent scrollbar-thumb-primary scrollbar-thumb-rounded-full hover:scrollbar-thumb-primary;
-  }
-</style>
