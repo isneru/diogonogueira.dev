@@ -13,13 +13,13 @@ const variants: Record<string, VariantInfo> = {
     description: "Developer, student and @WeBuy employee.",
     image: "https://diogonogueira.dev/og/index.png"
   },
-  contact: {
+  "/contact": {
     website: "https://diogonogueira.dev/contact",
     title: "Contact",
     description: "Get in touch with me.",
     image: "https://diogonogueira.dev/og/contact.png"
   },
-  curriculum: {
+  "/curriculum": {
     website: "https://diogonogueira.dev/curriculum",
     title: "Curriculum",
     description: "All the good bits.",
@@ -28,6 +28,7 @@ const variants: Record<string, VariantInfo> = {
 }
 
 const { pathname } = Astro.url
+console.log(pathname)
 ---
 
 <meta property="og:url" content={variants[pathname].website} />
