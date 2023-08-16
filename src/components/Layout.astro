@@ -8,6 +8,7 @@ interface Props {
 }
 
 const { title, description } = Astro.props
+const { pathname } = Astro.url
 ---
 
 <html lang="en">
@@ -22,10 +23,10 @@ const { title, description } = Astro.props
     <meta name="generator" content={Astro.generator} />
     <meta name="description" content={description} />
     <title>{title}</title>
-    <OG />
+    <OG pathname={pathname} />
   </head>
   <body>
-    <Navbar />
+    {pathname !== "/curriculum" && <Navbar />}
     <main>
       <slot />
     </main>

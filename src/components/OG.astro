@@ -31,7 +31,7 @@ interface Props {
   pathname: string
 }
 
-const pathname = "/"
+const { pathname } = Astro.props
 ---
 
 <meta property="og:url" content={variants[pathname].website} />
