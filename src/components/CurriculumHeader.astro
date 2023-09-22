@@ -1,0 +1,49 @@
+---
+import LinkOrSpan from "./LinkOrSpan.astro"
+import Email from "./icons/Email.astro"
+import Github from "./icons/Github.astro"
+import LinkedIn from "./icons/LinkedIn.astro"
+import Location from "./icons/Location.astro"
+import Phone from "./icons/Phone.astro"
+import Twitter from "./icons/Twitter.astro"
+
+const info = [
+  {
+    icon: Email,
+    text: "diogoclanogueira@gmail.com"
+  },
+  {
+    icon: Phone,
+    text: "(+351) 916 977 715"
+  },
+  {
+    icon: Location,
+    text: "Porto, Portugal"
+  },
+  {
+    icon: LinkedIn,
+    text: "linkedin.com/in/diogoclanogueira",
+    href: "https://linkedin.com/in/diogoclanogueira"
+  },
+  {
+    icon: Github,
+    text: "github.com/isneru",
+    href: "https://github.com/isneru"
+  },
+  {
+    icon: Twitter,
+    text: "twitter.com/nerudevs",
+    href: "https://twitter.com/nerudevs"
+  }
+]
+---
+
+<div class="grid gap-3 text-center md:grid-cols-2 md:grid-rows-3">
+  {
+    info.map(({ icon: Icon, text, href }) => (
+      <LinkOrSpan href={href}>
+        {<Icon />} <span>{text}</span>
+      </LinkOrSpan>
+    ))
+  }
+</div>

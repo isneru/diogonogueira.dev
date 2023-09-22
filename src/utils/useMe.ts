@@ -1,4 +1,4 @@
-export const internships = [
+const internships = [
   {
     where: "Computer repair & service",
     when: "01/2022 - 05/2022",
@@ -26,7 +26,7 @@ export const internships = [
   }
 ]
 
-export const education = [
+const education = [
   {
     title: "College",
     where: "Escola Superior de Tecnologia e Gestão, Felgueiras",
@@ -41,7 +41,7 @@ export const education = [
   }
 ]
 
-export const career = [
+const career = [
   {
     title: "Current Position",
     where: "CeX - Computer Entertainment Exchange",
@@ -50,7 +50,7 @@ export const career = [
   }
 ]
 
-export const skills = [
+const skills = [
   "HTML",
   "CSS",
   "JavaScript",
@@ -75,3 +75,12 @@ export const skills = [
   "Figma",
   "Adobe Photoshop"
 ]
+
+export default function useMe() {
+  return {
+    internships,
+    education,
+    career,
+    skills
+  }
+}
