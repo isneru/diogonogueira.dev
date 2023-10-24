@@ -8,27 +8,32 @@ import { links } from "../utils/links"
   class="fixed top-0 left-0 z-50 flex h-16 w-full items-center justify-between bg-background/50 px-20 shadow-[0_1px_4px_0_#151517] backdrop-blur-[3px]">
   <div class="flex items-center gap-4">
     <a href="/" class="flex items-center justify-center gap-1">
-      {
-        pathname === "/" ? (
-          <>
-            <div class="flex h-8 w-8 animate-background items-center justify-center rounded-xl bg-primary sm:h-6 sm:w-6 sm:rounded-lg">
-              <div class="h-3.5 w-0.5 rotate-[30deg] rounded-full bg-background sm:h-3 sm:w-0.5" />
-            </div>
-            <div class="hidden text-xl font-bold sm:block">
-              <span class="animate-color">diogo</span>
-            </div>
-          </>
-        ) : (
-          <>
-            <div class="flex h-8 w-8 items-center justify-center rounded-xl border-2 border-text bg-background sm:h-6 sm:w-6 sm:rounded-lg">
-              <div class="h-3.5 w-0.5 rotate-[30deg] rounded-full bg-text sm:h-3 sm:w-0.5" />
-            </div>
-            <div class="hidden text-xl font-bold sm:block">
-              <span>diogo</span>
-            </div>
-          </>
-        )
-      }
+      <div
+        class={clsx(
+          "flex h-8 w-8 items-center justify-center rounded-xl sm:h-6 sm:w-6 sm:rounded-lg",
+          {
+            "animate-background bg-primary": pathname === "/",
+            "border-2 border-text bg-background": pathname !== "/"
+          }
+        )}>
+        <div
+          class={clsx(
+            "h-3.5 w-0.5 rotate-[30deg] rounded-full bg-background sm:h-3 sm:w-0.5",
+            {
+              "bg-background": pathname === "/",
+              "bg-text": pathname !== "/"
+            }
+          )}>
+        </div>
+      </div>
+      <div class="hidden text-xl font-bold sm:block">
+        <span
+          class={clsx({
+            "animate-color": pathname === "/"
+          })}>
+          diogo
+        </span>
+      </div>
     </a>
     {
       links.map(link => (
