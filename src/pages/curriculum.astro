@@ -4,48 +4,59 @@ import Layout from "../components/Layout.astro"
 import LineSpans from "../components/LineSpans.astro"
 import useMe from "../utils/useMe"
 
-const { career, education, internships, skills } = useMe()
+const {
+  career,
+  education,
+  internships,
+  skills,
+  hobbies,
+  name,
+  about,
+  achievements,
+  certificates,
+  languages
+} = useMe()
 ---
 
 <Layout title="Curriculum" description="All the good bits.">
   <div class="prose-xl prose-invert mx-auto mt-20 px-8 lg:px-0">
     <h1>
-      <a class="hover:underline decoration-primary" href="/">Diogo Nogueira</a>
+      <a class="hover:underline decoration-primary" href="/">{name}</a>
     </h1>
     <h2 class="text-primary">
-      Cybersecurity Student & Self-taught Front-end Developer
+      {about}
     </h2>
     <CurriculumHeader />
     <div class="lg:grid lg:grid-cols-2 lg:gap-10">
       <div>
         <h2 class="text-primary">Career</h2>
         {
-          career.map(edu => (
+          career.map(job => (
             <div>
-              <h3>{edu.title}</h3>
-              <span>{edu.where}</span>
-              <LineSpans before={edu.before} after={edu.after} />
+              <h3>{job.title}</h3>
+              <span>{job.description}</span>
+              <LineSpans start={job.start} end={job.end} />
             </div>
           ))
         }
         <h2 class="text-primary">Education</h2>
         {
-          education.map(edu => (
+          education.map(step => (
             <div>
-              <h3>{edu.title}</h3>
-              <span>{edu.where}</span>
-              <LineSpans before={edu.before} after={edu.after} />
+              <h3>{step.title}</h3>
+              <span>{step.description}</span>
+              <LineSpans start={step.start} end={step.end} />
             </div>
           ))
         }
         <h2 class="text-primary">Internships</h2>
         {
-          internships.map(intern => (
+          internships.map(internship => (
             <div>
-              <span>{intern.where}</span>
-              <LineSpans before={intern.location} after={intern.when} />
+              <span>{internship.title}</span>
+              <LineSpans start={internship.start} end={internship.end} />
               <ul class="list-disc">
-                {intern.tasks.map(task => (
+                {internship.tasks.map(task => (
                   <li>{task}</li>
                 ))}
               </ul>
@@ -65,32 +76,28 @@ const { career, education, internships, skills } = useMe()
           }
         </div>
         <h2 class="text-primary">Languages</h2>
-        <LineSpans before={"Portuguese"} after={"Native"} />
-        <LineSpans
-          before={"English"}
-          after={"Professional Working Proficiency"}
-        />
+        {
+          languages.map(language => (
+            <LineSpans start={language.title} end={language.level} />
+          ))
+        }
         <h2 class="text-primary">Certificates</h2>
-        <span>The Web Developer Bootcamp 2022</span>
+        {certificates.map(certificate => <span>{certificate}</span>)}
         <h2 class="text-primary">Achievements</h2>
-        <LineSpans
-          before={"Acquired drivers license"}
-          after={"07/2022 - 01/2023"}
-        />
+        {
+          achievements.map(achievement => (
+            <LineSpans start={achievement.title} end={achievement.date} />
+          ))
+        }
         <h2 class="text-primary">Interests</h2>
         <div class="flex flex-wrap gap-3">
-          <span class="rounded px-2 leading-relaxed ring-2 ring-primary/50">
-            Driving
-          </span>
-          <span class="rounded px-2 leading-relaxed ring-2 ring-primary/50">
-            Coding
-          </span>
-          <span class="rounded px-2 leading-relaxed ring-2 ring-primary/50">
-            Coffee
-          </span>
-          <span class="rounded px-2 leading-relaxed ring-2 ring-primary/50">
-            Working out
-          </span>
+          {
+            hobbies.map(hobby => (
+              <span class="rounded px-2 leading-relaxed ring-2 ring-primary/50">
+                {hobby}
+              </span>
+            ))
+          }
         </div>
         <div class="h-32 lg:hidden"></div>
       </div>

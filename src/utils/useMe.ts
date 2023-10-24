@@ -1,8 +1,59 @@
+const name = "Diogo Nogueira"
+const about = "Cybersecurity Student & Self-taught Front-end Developer"
+
+const info = [
+  {
+    text: "diogoclanogueira@gmail.com"
+  },
+  {
+    text: "(+351) 916 977 715"
+  },
+  {
+    text: "Porto, Portugal"
+  },
+  {
+    text: "linkedin.com/in/diogoclanogueira",
+    href: "https://linkedin.com/in/diogoclanogueira"
+  },
+  {
+    text: "github.com/isneru",
+    href: "https://github.com/isneru"
+  },
+  {
+    text: "twitter.com/nerudevs",
+    href: "https://twitter.com/nerudevs"
+  }
+]
+
+const career = [
+  {
+    title: "Current Position",
+    description: "Employee at CeX - Computer Entertainment Exchange (PT)",
+    start: "06/2023",
+    end: "Present"
+  }
+]
+
+const education = [
+  {
+    title: "College - Escola Superior de Tecnologia e Gestão",
+    description: "Computer Security and Computer Networks",
+    start: "10/2022",
+    end: "Present"
+  },
+  {
+    title: "High School - Instituto Profissional de Tecnologias Avançadas",
+    description: "Hardware and Software Management",
+    start: "09/2018",
+    end: "07/2021"
+  }
+]
+
 const internships = [
   {
-    where: "Computer repair & service",
-    when: "01/2022 - 05/2022",
-    location: "Rethymno, Greece",
+    title: "Computer repair & service, Rethymno, Greece",
+    start: "05/2022",
+    end: "01/2022",
     tasks: [
       "Assistance in computers' formats and operational systems upgrades",
       "Computers installation and set up in a school environment",
@@ -14,39 +65,15 @@ const internships = [
     ]
   },
   {
-    where: "ITSector",
-    when: "04/2021 - 07/2021",
-    location: "Porto, Portugal",
+    title: "ITSector, Porto, Portugal",
+    start: "07/2021",
+    end: "04/2021",
     tasks: [
       "Linked computers to certain networks and peripheral equipment, including printers and scanners",
       "Patched software and installed new versions to eliminate security vulnerabilities and protect data",
       "Helped streamline repair processes and update procedures for support action consistency",
       "Configured hardware, devices and software to set up workstations for employees"
     ]
-  }
-]
-
-const education = [
-  {
-    title: "College",
-    where: "Escola Superior de Tecnologia e Gestão, Felgueiras",
-    before: "Computer Security and Computer Networks",
-    after: "10/2022 - Present"
-  },
-  {
-    title: "High School",
-    where: "Instituto Profissional de Tecnologias Avançadas, Porto",
-    before: "Hardware and Software Management",
-    after: "09/2018 - 07/2021"
-  }
-]
-
-const career = [
-  {
-    title: "Current Position",
-    where: "CeX - Computer Entertainment Exchange",
-    before: "Portugal",
-    after: "06/2023 - Present"
   }
 ]
 
@@ -76,11 +103,40 @@ const skills = [
   "Adobe Photoshop"
 ]
 
+const languages = [
+  {
+    title: "Portuguese",
+    level: "Native"
+  },
+  {
+    title: "English",
+    level: "Professional Working Proficiency"
+  }
+]
+
+const certificates = ["The Web Developer Bootcamp 2022"]
+
+const achievements = [
+  {
+    title: "Acquired drivers license",
+    date: "01/2023"
+  }
+]
+
+const hobbies = ["Driving", "Gaming", "Coffee", "Running"]
+
 export default function useMe() {
   return {
-    internships,
-    education,
+    name,
+    about,
+    info,
     career,
-    skills
+    education,
+    internships,
+    skills,
+    languages,
+    certificates,
+    achievements,
+    hobbies
   }
 }
