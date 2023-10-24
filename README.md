@@ -1,25 +1,14 @@
 ![](https://i.imgur.com/mrZTDN4.png)
 
-# Full Stack Application
+## Getting started
 
-With the main goal being to build an efficient portfolio and codeblock snippet storing system.
+- In your terminal after you clone the repo, remember to `npm install` to install all the dependencies in the project.
 
-## Install Dependencies
+- After you are done installing the dependencies run `npm run dev`.
 
-In your terminal after you clone your project down, remember to run either `yarn` or `npm install` to build all the dependencies in the project.
+## Making it your own
 
-## Environment Variables
-
-Don't forget to create a `.env` file in your root directory.
-Check `.env.example` for all variables used.
-
-## Prisma
-
-Run `npx prisma db push` or `yarn prisma db push` to save any changes made in your `schema.prisma` file.
-
-## Run the Project
-
-After you are done installing the dependencies run `npm run dev` or `yarn dev`.
+I've made it easy for anyone to edit all the information out in the `src/utils/` folder, especially the `useMe.ts` file
 
 ## You can access this project's deploy by clicking [here](https://diogonogueira.dev).
 
@@ -32,7 +21,6 @@ After you are done installing the dependencies run `npm run dev` or `yarn dev`.
 
 - [x] [Tailwind CSS](https://tailwindcss.com)
 - [x] [Radix Icons](https://icons.radix-ui.com)
-- [x] Responsive Design
 
 <p align='center'>
 Made with 💙 by me.
