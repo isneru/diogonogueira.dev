@@ -8,7 +8,7 @@
 
 ## Making it your own
 
-I've made it easy for anyone to edit all the information out in the `src/utils/` folder, especially the `useMe.ts` file
+I've made it easy for anyone to edit all the information out in the `src/utils/` folder, especially the `me.ts` file
 
 ## You can access this project's deploy by clicking [here](https://diogonogueira.dev).
 

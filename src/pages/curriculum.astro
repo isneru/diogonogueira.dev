@@ -2,9 +2,7 @@
 import CurriculumHeader from "../components/CurriculumHeader.astro"
 import Layout from "../components/Layout.astro"
 import LineSpans from "../components/LineSpans.astro"
-import useMe from "../utils/useMe"
-
-const {
+import {
   career,
   education,
   internships,
@@ -15,7 +13,7 @@ const {
   achievements,
   certificates,
   languages
-} = useMe()
+} from "../utils/me"
 ---
 
 <Layout title="Curriculum" description="All the good bits.">

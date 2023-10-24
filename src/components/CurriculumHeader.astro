@@ -7,9 +7,8 @@ import Location from "./icons/Location.astro"
 import Phone from "./icons/Phone.astro"
 import Twitter from "./icons/Twitter.astro"
 
-import useMe from "../utils/useMe"
+import { info } from "../utils/me"
 
-const { info } = useMe()
 const icons = [Email, Phone, Location, LinkedIn, Github, Twitter]
 
 const newInfo = info.map((item, id) => ({

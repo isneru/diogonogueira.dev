@@ -125,18 +125,16 @@ const achievements = [
 
 const hobbies = ["Driving", "Gaming", "Coffee", "Running"]
 
-export default function useMe() {
-  return {
-    name,
-    about,
-    info,
-    career,
-    education,
-    internships,
-    skills,
-    languages,
-    certificates,
-    achievements,
-    hobbies
-  }
+export {
+  name,
+  about,
+  info,
+  career,
+  education,
+  internships,
+  skills,
+  languages,
+  certificates,
+  achievements,
+  hobbies
 }
