@@ -1,104 +1,103 @@
 ---
-import CurriculumHeader from "../components/CurriculumHeader.astro"
-import Layout from "../components/Layout.astro"
-import LineSpans from "../components/LineSpans.astro"
+import CurriculumHeader from '../components/CurriculumHeader.astro'
+import Layout from '../components/Layout.astro'
+import LineSpans from '../components/LineSpans.astro'
 import {
-  career,
-  education,
-  internships,
-  skills,
-  hobbies,
-  name,
-  about,
-  achievements,
-  certificates,
-  languages
-} from "../utils/me"
+	career,
+	education,
+	internships,
+	skills,
+	hobbies,
+	name,
+	about,
+	achievements,
+	certificates,
+	languages
+} from '../utils/me'
 ---
 
-<Layout title="Curriculum" description="All the good bits.">
-  <div class="prose-xl prose-invert mx-auto mt-20 px-8 lg:px-0">
-    <h1>
-      <a class="hover:underline decoration-primary" href="/">{name}</a>
-    </h1>
-    <h2 class="text-primary">
-      {about}
-    </h2>
-    <CurriculumHeader />
-    <div class="lg:grid lg:grid-cols-2 lg:gap-10">
-      <div>
-        <h2 class="text-primary">Career</h2>
-        {
-          career.map(job => (
-            <div>
-              <h3>{job.title}</h3>
-              <span>{job.description}</span>
-              <LineSpans start={job.start} end={job.end} />
-            </div>
-          ))
-        }
-        <h2 class="text-primary">Education</h2>
-        {
-          education.map(step => (
-            <div>
-              <h3>{step.title}</h3>
-              <span>{step.description}</span>
-              <LineSpans start={step.start} end={step.end} />
-            </div>
-          ))
-        }
-        <h2 class="text-primary">Internships</h2>
-        {
-          internships.map(internship => (
-            <div>
-              <span>{internship.title}</span>
-              <LineSpans start={internship.start} end={internship.end} />
-              <ul class="list-disc">
-                {internship.tasks.map(task => (
-                  <li>{task}</li>
-                ))}
-              </ul>
-            </div>
-          ))
-        }
-      </div>
-      <div>
-        <h2 class="text-primary">Skills</h2>
-        <div class="flex flex-wrap gap-3">
-          {
-            skills.map(skill => (
-              <span class="rounded bg-primary px-2 leading-relaxed text-background">
-                {skill}
-              </span>
-            ))
-          }
-        </div>
-        <h2 class="text-primary">Languages</h2>
-        {
-          languages.map(language => (
-            <LineSpans start={language.title} end={language.level} />
-          ))
-        }
-        <h2 class="text-primary">Certificates</h2>
-        {certificates.map(certificate => <span>{certificate}</span>)}
-        <h2 class="text-primary">Achievements</h2>
-        {
-          achievements.map(achievement => (
-            <LineSpans start={achievement.title} end={achievement.date} />
-          ))
-        }
-        <h2 class="text-primary">Interests</h2>
-        <div class="flex flex-wrap gap-3">
-          {
-            hobbies.map(hobby => (
-              <span class="rounded px-2 leading-relaxed ring-2 ring-primary/50">
-                {hobby}
-              </span>
-            ))
-          }
-        </div>
-        <div class="h-32 lg:hidden"></div>
-      </div>
-    </div>
-  </div>
+<Layout title='Curriculum' description='All the good bits.'>
+	<div class='prose-xl prose-invert mx-auto my-20 px-8 lg:px-0'>
+		<h1>
+			<a class='hover:underline decoration-primary' href='/'>{name}</a>
+		</h1>
+		<h2 class='text-primary'>
+			{about}
+		</h2>
+		<CurriculumHeader />
+		<div class='lg:grid lg:grid-cols-2 lg:gap-10'>
+			<div>
+				<h2 class='text-primary'>Career</h2>
+				{
+					career.map(job => (
+						<div>
+							<h3>{job.title}</h3>
+							<span>{job.description}</span>
+							<LineSpans start={job.start} end={job.end} />
+						</div>
+					))
+				}
+				<h2 class='text-primary'>Education</h2>
+				{
+					education.map(step => (
+						<div>
+							<h3>{step.title}</h3>
+							<span>{step.description}</span>
+							<LineSpans start={step.start} end={step.end} />
+						</div>
+					))
+				}
+				<h2 class='text-primary'>Internships</h2>
+				{
+					internships.map(internship => (
+						<div>
+							<span>{internship.title}</span>
+							<LineSpans start={internship.start} end={internship.end} />
+							<ul class='list-disc'>
+								{internship.tasks.map(task => (
+									<li>{task}</li>
+								))}
+							</ul>
+						</div>
+					))
+				}
+			</div>
+			<div>
+				<h2 class='text-primary'>Skills</h2>
+				<div class='flex flex-wrap gap-3'>
+					{
+						skills.map(skill => (
+							<span class='rounded bg-primary px-2 leading-relaxed text-background'>
+								{skill}
+							</span>
+						))
+					}
+				</div>
+				<h2 class='text-primary'>Languages</h2>
+				{
+					languages.map(language => (
+						<LineSpans start={language.title} end={language.level} />
+					))
+				}
+				<h2 class='text-primary'>Certificates</h2>
+				{certificates.map(certificate => <span>{certificate}</span>)}
+				<h2 class='text-primary'>Achievements</h2>
+				{
+					achievements.map(achievement => (
+						<LineSpans start={achievement.title} end={achievement.date} />
+					))
+				}
+				<h2 class='text-primary'>Interests</h2>
+				<div class='flex flex-wrap gap-3'>
+					{
+						hobbies.map(hobby => (
+							<span class='rounded px-2 leading-relaxed ring-2 ring-primary/50'>
+								{hobby}
+							</span>
+						))
+					}
+				</div>
+			</div>
+		</div>
+	</div>
 </Layout>

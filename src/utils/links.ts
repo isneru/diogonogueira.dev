@@ -1,15 +1,11 @@
 export type Link = {
-  name: string
-  pathname: string
+	name: string
+	pathname: string
 }
 
 export const links: Link[] = [
-  {
-    name: "contact",
-    pathname: "/contact"
-  },
-  {
-    name: "curriculum",
-    pathname: "/curriculum"
-  }
+	{
+		name: 'curriculum',
+		pathname: '/curriculum'
+	}
 ]

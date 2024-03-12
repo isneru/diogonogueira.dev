@@ -1,28 +1,28 @@
 ---
-import LinkOrSpan from "./LinkOrSpan.astro"
-import Email from "./icons/Email.astro"
-import Github from "./icons/Github.astro"
-import LinkedIn from "./icons/LinkedIn.astro"
-import Location from "./icons/Location.astro"
-import Phone from "./icons/Phone.astro"
-import Twitter from "./icons/Twitter.astro"
+import LinkOrSpan from './LinkOrSpan.astro'
+import Email from './icons/Email.astro'
+import Github from './icons/Github.astro'
+import LinkedIn from './icons/LinkedIn.astro'
+import Location from './icons/Location.astro'
+import Phone from './icons/Phone.astro'
+import Twitter from './icons/Twitter.astro'
 
-import { info } from "../utils/me"
+import { info } from '../utils/me'
 
 const icons = [Email, Phone, Location, LinkedIn, Github, Twitter]
 
 const newInfo = info.map((item, id) => ({
-  ...item,
-  icon: icons[id]
+	...item,
+	icon: icons[id]
 }))
 ---
 
-<div class="grid gap-3 text-center md:grid-cols-2 md:grid-rows-3">
-  {
-    newInfo.map(({ icon: Icon, text, href }) => (
-      <LinkOrSpan href={href}>
-        {<Icon />} <span>{text}</span>
-      </LinkOrSpan>
-    ))
-  }
+<div class='grid gap-3 text-center md:grid-cols-2 md:grid-rows-3'>
+	{
+		newInfo.map(({ icon: Icon, text, href }) => (
+			<LinkOrSpan href={href}>
+				{<Icon />} <span>{text}</span>
+			</LinkOrSpan>
+		))
+	}
 </div>

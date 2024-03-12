@@ -1,36 +1,36 @@
 ---
-import Navbar from "./Navbar.astro"
-import OG from "./OG.astro"
+import Navbar from './Navbar.astro'
+import OG from './OG.astro'
 
 interface Props {
-  title: string
-  description: string
+	title: string
+	description: string
 }
 
 const { title, description } = Astro.props
 const { pathname } = Astro.url
 ---
 
-<html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <link rel="icon" type="image/png" href="/favicon.png" />
-    <link
-      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap"
-      rel="stylesheet"
-    />
-    <meta name="viewport" content="width=device-width" />
-    <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={description} />
-    <title>{title}</title>
-    <OG pathname={pathname} />
-  </head>
-  <body>
-    {pathname !== "/curriculum" && <Navbar />}
-    <main>
-      <slot />
-    </main>
-    <style lang="postcss" is:global>
+<html lang='en'>
+	<head>
+		<meta charset='utf-8' />
+		<link rel='icon' type='image/png' href='/favicon.png' />
+		<link
+			href='https://fonts.googleapis.com/css2?family=Outfit:wght@100;200;300;400;500;600;700;800;900&display=swap'
+			rel='stylesheet'
+		/>
+		<meta name='viewport' content='width=device-width' />
+		<meta name='generator' content={Astro.generator} />
+		<meta name='description' content={description} />
+		<title>{title}</title>
+		<OG pathname={pathname} />
+	</head>
+	<body>
+		<Navbar />
+		<main>
+			<slot />
+		</main>
+		<style lang="postcss" is:global>
       body {
         @apply bg-background text-text scrollbar-thin scrollbar-track-transparent scrollbar-thumb-primary lg:px-40;
       }
@@ -43,5 +43,5 @@ const { pathname } = Astro.url
         @apply scrollbar-thin scrollbar-track-transparent scrollbar-thumb-primary scrollbar-thumb-rounded-full hover:scrollbar-thumb-primary;
       }
 </style>
-  </body>
+	</body>
 </html>

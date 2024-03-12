@@ -1,59 +1,59 @@
 ---
 type VariantInfo = {
-  website: string
-  title: string
-  description: string
-  image: string
-  keywords: string
+	website: string
+	title: string
+	description: string
+	image: string
+	keywords: string
 }
 
 const variants: Record<string, VariantInfo> = {
-  "/": {
-    website: "https://diogonogueira.dev",
-    title: "Diogo Nogueira",
-    description: "Developer, student and @WeBuy employee.",
-    image: "https://diogonogueira.dev/og/index.png",
-    keywords:
-      "diogo, nogueira, diogonogueiradev, diogo nogueira dev, dev, neru, nerudev,neru dev, home"
-  },
-  "/contact": {
-    website: "https://diogonogueira.dev/contact",
-    title: "Diogo Nogueira | Contact",
-    description: "Get in touch with me.",
-    image: "https://diogonogueira.dev/og/contact.png",
-    keywords:
-      "diogo, nogueira, diogonogueiradev, diogo nogueira dev, dev, neru, nerudev,neru dev, contact, contacto"
-  },
-  "/curriculum": {
-    website: "https://diogonogueira.dev/curriculum",
-    title: "Diogo Nogueira | Curriculum",
-    description: "All the good bits.",
-    image: "https://diogonogueira.dev/og/curriculum.png",
-    keywords:
-      "diogo, nogueira, diogonogueiradev, diogo nogueira dev, dev, neru, nerudev,neru dev, curriculum, curriculo"
-  }
+	'/': {
+		website: 'https://diogonogueira.dev',
+		title: 'Diogo Nogueira',
+		description: 'Developer, student and @WeBuy employee.',
+		image: 'https://diogonogueira.dev/og/index.png',
+		keywords:
+			'diogo, nogueira, diogonogueiradev, diogo nogueira dev, dev, neru, nerudev,neru dev, home'
+	},
+	'/contact': {
+		website: 'https://diogonogueira.dev/contact',
+		title: 'Diogo Nogueira | Contact',
+		description: 'Get in touch with me.',
+		image: 'https://diogonogueira.dev/og/contact.png',
+		keywords:
+			'diogo, nogueira, diogonogueiradev, diogo nogueira dev, dev, neru, nerudev,neru dev, contact, contacto'
+	},
+	'/curriculum': {
+		website: 'https://diogonogueira.dev/curriculum',
+		title: 'Diogo Nogueira | Curriculum',
+		description: 'All the good bits.',
+		image: 'https://diogonogueira.dev/og/curriculum.png',
+		keywords:
+			'diogo, nogueira, diogonogueiradev, diogo nogueira dev, dev, neru, nerudev,neru dev, curriculum, curriculo'
+	}
 }
 
 interface Props {
-  pathname: string
+	pathname: string
 }
 
 const { pathname } = Astro.props
 ---
 
-<meta property="og:url" content={variants[pathname].website} />
-<meta property="og:type" content="website" />
-<meta property="og:title" content={variants[pathname].title} />
-<meta property="og:description" content={variants[pathname].description} />
-<meta property="og:image" content={variants[pathname].image} />
+<meta property='og:url' content={variants[pathname].website} />
+<meta property='og:type' content='website' />
+<meta property='og:title' content={variants[pathname].title} />
+<meta property='og:description' content={variants[pathname].description} />
+<meta property='og:image' content={variants[pathname].image} />
 
-<meta name="robots" content="nofollow" />
-<meta name="keywords" content={variants[pathname].keywords} />
-<meta name="description" content={variants[pathname].description} />
+<meta name='robots' content='nofollow' />
+<meta name='keywords' content={variants[pathname].keywords} />
+<meta name='description' content={variants[pathname].description} />
 
-<meta name="twitter:card" content="summary_large_image" />
-<meta property="twitter:domain" content="diogonogueira.dev" />
-<meta property="twitter:url" content={variants[pathname].website} />
-<meta name="twitter:title" content={variants[pathname].title} />
-<meta name="twitter:description" content={variants[pathname].description} />
-<meta name="twitter:image" content={variants[pathname].image} />
+<meta name='twitter:card' content='summary_large_image' />
+<meta property='twitter:domain' content='diogonogueira.dev' />
+<meta property='twitter:url' content={variants[pathname].website} />
+<meta name='twitter:title' content={variants[pathname].title} />
+<meta name='twitter:description' content={variants[pathname].description} />
+<meta name='twitter:image' content={variants[pathname].image} />

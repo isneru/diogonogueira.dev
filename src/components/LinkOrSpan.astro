@@ -1,25 +1,25 @@
 ---
 interface Props {
-  href?: string
+	href?: string
 }
 
 const { href } = Astro.props
 ---
 
 <>
-  {
-    href ? (
-      <a
-        href={href}
-        rel="noreferrer"
-        target="_blank"
-        class="flex w-fit items-center gap-2 decoration-primary hover:underline">
-        <slot />
-      </a>
-    ) : (
-      <span class="flex items-center gap-2">
-        <slot />
-      </span>
-    )
-  }
+	{
+		href ? (
+			<a
+				href={href}
+				rel='noreferrer'
+				target='_blank'
+				class='flex w-fit items-center gap-2 decoration-primary hover:underline'>
+				<slot />
+			</a>
+		) : (
+			<span class='flex items-center gap-2'>
+				<slot />
+			</span>
+		)
+	}
 </>
