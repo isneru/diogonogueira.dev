@@ -1,10 +1,8 @@
 import { variants } from '@utils/og'
+import { usePathname } from 'next/navigation'
 
-type Props = {
-	pathname: string
-}
-
-export const OG = ({ pathname }: Props) => {
+export const OG = () => {
+	const pathname = usePathname()
 	return (
 		<>
 			<meta property='og:url' content={variants[pathname ?? '/'].website} />

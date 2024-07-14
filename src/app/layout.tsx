@@ -18,7 +18,7 @@ export default function RootLayout({ children }: Props) {
 	return (
 		<html lang='en'>
 			<link rel='icon' href='/favicon.png' />
-			<OG pathname={pathname} />
+			<OG />
 			<body className={cn(outfit.className)}>
 				<Navbar pathname={pathname} />
 				{children}
