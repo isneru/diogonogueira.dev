@@ -2,12 +2,10 @@ import { links } from '@utils/links'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { motion } from 'framer-motion'
+import { usePathname } from 'next/navigation'
 
-type Props = {
-	pathname: string
-}
-
-export const Navbar = ({ pathname }: Props) => {
+export const Navbar = () => {
+	const pathname = usePathname()
 	return (
 		<>
 			<nav className='fixed top-0 left-0 z-50 flex h-16 w-full items-center justify-between bg-background/50 px-20 shadow-[0_1px_4px_0_#151517] backdrop-blur-[3px] select-none print:hidden'>
