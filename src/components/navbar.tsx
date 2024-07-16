@@ -1,11 +1,12 @@
 import { links } from '@utils/links'
 import clsx from 'clsx'
 import Link from 'next/link'
-import { motion } from 'framer-motion'
+import { AnimatePresence, motion } from 'framer-motion'
 import { usePathname } from 'next/navigation'
 
 export const Navbar = () => {
 	const pathname = usePathname()
+
 	return (
 		<>
 			<nav className='fixed top-0 left-0 z-50 flex h-16 w-full items-center justify-between bg-background/50 px-20 shadow-[0_1px_4px_0_#151517] backdrop-blur-[3px] select-none print:hidden'>
@@ -20,13 +21,16 @@ export const Navbar = () => {
 								'text-primary-500': pathname === '/'
 							}
 						)}>
-						{pathname === '/' && (
-							<motion.span
-								initial={{ opacity: 0 }}
-								animate={{ opacity: 1 }}
-								className='bg-accent absolute -left-4 top-2 size-2 rounded-full'
-							/>
-						)}
+						<AnimatePresence>
+							{pathname === '/' && (
+								<motion.span
+									initial={{ opacity: 0 }}
+									animate={{ opacity: 1 }}
+									exit={{ opacity: 0 }}
+									className='bg-accent absolute -left-4 top-2 size-2 rounded-full'
+								/>
+							)}
+						</AnimatePresence>
 						diogo
 					</Link>
 				</motion.div>
@@ -41,13 +45,16 @@ export const Navbar = () => {
 							className={clsx('text-lg hover:text-primary-500 relative', {
 								'text-primary-500': pathname === link.pathname
 							})}>
-							{pathname === link.pathname && (
-								<motion.span
-									initial={{ opacity: 0 }}
-									animate={{ opacity: 1 }}
-									className='bg-accent absolute -left-4 top-2 size-2 rounded-full'
-								/>
-							)}
+							<AnimatePresence>
+								{pathname === link.pathname && (
+									<motion.span
+										initial={{ opacity: 0 }}
+										animate={{ opacity: 1 }}
+										exit={{ opacity: 0 }}
+										className='bg-accent absolute -left-4 top-2 size-2 rounded-full'
+									/>
+								)}
+							</AnimatePresence>
 							{link.name}
 						</Link>
 					))}
