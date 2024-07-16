@@ -3,20 +3,20 @@
 import { Card } from '@components'
 import { projects } from '@utils/projects'
 import { motion } from 'framer-motion'
-import React from 'react'
+import React, { useEffect } from 'react'
 
 const container = {
 	hidden: { opacity: 0 },
 	show: {
 		opacity: 1,
 		transition: {
-			staggerChildren: 0.2,
-			delayChildren: 0.6
+			staggerChildren: 0.05,
+			delayChildren: 0.5
 		}
 	}
 }
 
-const Fragment = motion(React.Fragment)
+const MotionReactFragment = motion(React.Fragment)
 
 export default function Home() {
 	return (
@@ -58,11 +58,14 @@ export default function Home() {
 						className='mb-8 text-5xl font-bold w-full text-right col-span-1 lg:col-span-2 xl:col-span-3'>
 						Projects
 					</motion.h3>
-					<Fragment variants={container} initial='hidden' animate='show'>
+					<MotionReactFragment
+						variants={container}
+						initial='hidden'
+						animate='show'>
 						{projects.map(project => (
 							<Card key={project.name} project={project} />
 						))}
-					</Fragment>
+					</MotionReactFragment>
 				</div>
 			</div>
 		</>
