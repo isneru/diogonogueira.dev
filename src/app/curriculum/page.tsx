@@ -5,7 +5,6 @@ import {
 	education,
 	internships,
 	skills,
-	hobbies,
 	name,
 	about,
 	achievements,
@@ -38,34 +37,6 @@ export default function Curriculum() {
 							<LineSpans start={job.start} end={job.end} />
 						</div>
 					))}
-					<h2 className='text-text relative'>
-						<span className='bg-accent absolute -left-4 top-3 size-2 rounded-full' />
-						Education
-					</h2>
-					{education.map(step => (
-						<div key={step.title}>
-							<h3>{step.title}</h3>
-							<span>{step.description}</span>
-							<LineSpans start={step.start} end={step.end} />
-						</div>
-					))}
-					<h2 className='text-text relative'>
-						<span className='bg-accent absolute -left-4 top-3 size-2 rounded-full' />
-						Internships
-					</h2>
-					{internships.map(internship => (
-						<div key={internship.title}>
-							<span>{internship.title}</span>
-							<LineSpans start={internship.start} end={internship.end} />
-							<ul className='list-disc'>
-								{internship.tasks.map(task => (
-									<li key={task}>{task}</li>
-								))}
-							</ul>
-						</div>
-					))}
-				</div>
-				<div>
 					<h2 className='text-text relative'>
 						<span className='bg-accent absolute -left-4 top-3 size-2 rounded-full' />
 						Skills
@@ -108,7 +79,7 @@ export default function Curriculum() {
 							end={achievement.date}
 						/>
 					))}
-					<h2 className='text-text relative'>
+					{/* 					<h2 className='text-text relative'>
 						<span className='bg-accent absolute -left-4 top-3 size-2 rounded-full' />
 						Interests
 					</h2>
@@ -120,7 +91,35 @@ export default function Curriculum() {
 								{hobby}
 							</span>
 						))}
-					</div>
+					</div> */}
+				</div>
+				<div>
+					<h2 className='text-text relative'>
+						<span className='bg-accent absolute -left-4 top-3 size-2 rounded-full' />
+						Education
+					</h2>
+					{education.map(step => (
+						<div key={step.title}>
+							<h3>{step.title}</h3>
+							<span>{step.description}</span>
+							<LineSpans start={step.start} end={step.end} />
+						</div>
+					))}
+					<h2 className='text-text relative'>
+						<span className='bg-accent absolute -left-4 top-3 size-2 rounded-full' />
+						Internships
+					</h2>
+					{internships.map(internship => (
+						<div key={internship.title}>
+							<span>{internship.title}</span>
+							<LineSpans start={internship.start} end={internship.end} />
+							<ul className='list-disc'>
+								{internship.tasks.map(task => (
+									<li key={task}>{task}</li>
+								))}
+							</ul>
+						</div>
+					))}
 				</div>
 			</div>
 		</div>
