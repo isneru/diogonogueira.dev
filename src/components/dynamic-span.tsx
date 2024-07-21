@@ -11,7 +11,7 @@ export const DynamicSpan = ({ href, children }: Props) => {
 					href={href}
 					rel='noreferrer'
 					target='_blank'
-					className='flex w-fit items-center gap-2 decoration-primary-500 hover:underline'>
+					className='flex w-fit items-center gap-2 decoration-accent hover:underline'>
 					{children}
 				</a>
 			) : (

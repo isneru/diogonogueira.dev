@@ -26,8 +26,10 @@ export default function Curriculum() {
 			<CurriculumHeader />
 			<div className='lg:grid lg:grid-cols-2 lg:gap-10'>
 				<div>
-					<h2 className='text-text relative'>
-						<span className='bg-accent absolute -left-4 top-3 size-2 rounded-full' />
+					<h2 id='Career' className='text-text relative'>
+						<span className='absolute -left-4 top-2 rounded-full text-accent text-base font-light'>
+							#
+						</span>
 						Career
 					</h2>
 					{career.map(job => (
@@ -37,8 +39,10 @@ export default function Curriculum() {
 							<LineSpans start={job.start} end={job.end} />
 						</div>
 					))}
-					<h2 className='text-text relative'>
-						<span className='bg-accent absolute -left-4 top-3 size-2 rounded-full' />
+					<h2 id='Skills' className='text-text relative'>
+						<span className='absolute -left-4 top-2 rounded-full text-accent text-base font-light'>
+							#
+						</span>
 						Skills
 					</h2>
 					<div className='flex flex-wrap gap-3'>
@@ -50,8 +54,10 @@ export default function Curriculum() {
 							</span>
 						))}
 					</div>
-					<h2 className='text-text relative'>
-						<span className='bg-accent absolute -left-4 top-3 size-2 rounded-full' />
+					<h2 id='Languages' className='text-text relative'>
+						<span className='absolute -left-4 top-2 rounded-full text-accent text-base font-light'>
+							#
+						</span>
 						Languages
 					</h2>
 					{languages.map(language => (
@@ -61,15 +67,19 @@ export default function Curriculum() {
 							end={language.level}
 						/>
 					))}
-					<h2 className='text-text relative'>
-						<span className='bg-accent absolute -left-4 top-3 size-2 rounded-full' />
+					<h2 id='Certificates' className='text-text relative'>
+						<span className='absolute -left-4 top-2 rounded-full text-accent text-base font-light'>
+							#
+						</span>
 						Certificates
 					</h2>
 					{certificates.map(certificate => (
 						<span key={certificate}>{certificate}</span>
 					))}
-					<h2 className='text-text relative'>
-						<span className='bg-accent absolute -left-4 top-3 size-2 rounded-full' />
+					<h2 id='Achievements' className='text-text relative'>
+						<span className='absolute -left-4 top-2 rounded-full text-accent text-base font-light'>
+							#
+						</span>
 						Achievements
 					</h2>
 					{achievements.map(achievement => (
@@ -80,7 +90,7 @@ export default function Curriculum() {
 						/>
 					))}
 					{/* 					<h2 className='text-text relative'>
-						<span className='bg-accent absolute -left-4 top-3 size-2 rounded-full' />
+						<span className='absolute -left-4 top-2 rounded-full text-accent text-base font-light'>#</span>
 						Interests
 					</h2>
 					<div className='flex flex-wrap gap-4'>
@@ -94,8 +104,10 @@ export default function Curriculum() {
 					</div> */}
 				</div>
 				<div>
-					<h2 className='text-text relative'>
-						<span className='bg-accent absolute -left-4 top-3 size-2 rounded-full' />
+					<h2 id='Education' className='text-text relative'>
+						<span className='absolute -left-4 top-2 rounded-full text-accent text-base font-light'>
+							#
+						</span>
 						Education
 					</h2>
 					{education.map(step => (
@@ -105,8 +117,10 @@ export default function Curriculum() {
 							<LineSpans start={step.start} end={step.end} />
 						</div>
 					))}
-					<h2 className='text-text relative'>
-						<span className='bg-accent absolute -left-4 top-3 size-2 rounded-full' />
+					<h2 id='Internships' className='text-text relative'>
+						<span className='absolute -left-4 top-2 rounded-full text-accent text-base font-light'>
+							#
+						</span>
 						Internships
 					</h2>
 					{internships.map(internship => (
