@@ -2,14 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-	@apply bg-background text-text scrollbar-thin scrollbar-track-transparent scrollbar-thumb-accent lg:px-40;
+@layer base {
+	body {
+		@apply bg-background text-text scrollbar-thin scrollbar-track-transparent scrollbar-thumb-accent lg:px-40;
+	}
 }
 
-::selection {
-	@apply bg-accent text-text;
-}
+@layer utilities {
+	::selection {
+		@apply bg-accent text-text;
+	}
 
-.scroll {
-	@apply scrollbar-thin scrollbar-track-transparent scrollbar-thumb-accent scrollbar-thumb-rounded-full;
+	.scroll {
+		@apply scrollbar-thin scrollbar-track-transparent scrollbar-thumb-accent scrollbar-thumb-rounded-full;
+	}
 }
