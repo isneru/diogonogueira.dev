@@ -27,7 +27,7 @@ export default function Curriculum() {
 			<CurriculumHeader />
 			<div className='lg:grid lg:grid-cols-2 lg:gap-10'>
 				<div>
-					<h2 className='text-primary-300 relative'>
+					<h2 className='text-text relative'>
 						<span className='bg-accent absolute -left-4 top-3 size-2 rounded-full' />
 						Career
 					</h2>
@@ -38,7 +38,7 @@ export default function Curriculum() {
 							<LineSpans start={job.start} end={job.end} />
 						</div>
 					))}
-					<h2 className='text-primary-300 relative'>
+					<h2 className='text-text relative'>
 						<span className='bg-accent absolute -left-4 top-3 size-2 rounded-full' />
 						Education
 					</h2>
@@ -49,7 +49,7 @@ export default function Curriculum() {
 							<LineSpans start={step.start} end={step.end} />
 						</div>
 					))}
-					<h2 className='text-primary-300 relative'>
+					<h2 className='text-text relative'>
 						<span className='bg-accent absolute -left-4 top-3 size-2 rounded-full' />
 						Internships
 					</h2>
@@ -66,7 +66,7 @@ export default function Curriculum() {
 					))}
 				</div>
 				<div>
-					<h2 className='text-primary-300 relative'>
+					<h2 className='text-text relative'>
 						<span className='bg-accent absolute -left-4 top-3 size-2 rounded-full' />
 						Skills
 					</h2>
@@ -74,12 +74,12 @@ export default function Curriculum() {
 						{skills.map(skill => (
 							<span
 								key={skill}
-								className='rounded-full bg-primary-500 px-3 leading-relaxed text-background'>
+								className='rounded-full bg-primary-500 px-4 leading-relaxed text-background'>
 								{skill}
 							</span>
 						))}
 					</div>
-					<h2 className='text-primary-300 relative'>
+					<h2 className='text-text relative'>
 						<span className='bg-accent absolute -left-4 top-3 size-2 rounded-full' />
 						Languages
 					</h2>
@@ -90,14 +90,14 @@ export default function Curriculum() {
 							end={language.level}
 						/>
 					))}
-					<h2 className='text-primary-300 relative'>
+					<h2 className='text-text relative'>
 						<span className='bg-accent absolute -left-4 top-3 size-2 rounded-full' />
 						Certificates
 					</h2>
 					{certificates.map(certificate => (
 						<span key={certificate}>{certificate}</span>
 					))}
-					<h2 className='text-primary-300 relative'>
+					<h2 className='text-text relative'>
 						<span className='bg-accent absolute -left-4 top-3 size-2 rounded-full' />
 						Achievements
 					</h2>
@@ -108,7 +108,7 @@ export default function Curriculum() {
 							end={achievement.date}
 						/>
 					))}
-					<h2 className='text-primary-300 relative'>
+					<h2 className='text-text relative'>
 						<span className='bg-accent absolute -left-4 top-3 size-2 rounded-full' />
 						Interests
 					</h2>
