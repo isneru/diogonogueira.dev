@@ -22,9 +22,9 @@ export const Card = ({ project }: Props) => {
 				alt={project.img.alt}
 			/>
 			<div className='flex h-full flex-col p-5'>
-				<h5 className='mb-2 text-2xl font-bold tracking-tight'>
+				<span className='mb-2 text-2xl font-bold tracking-tight'>
 					{project.name}
-				</h5>
+				</span>
 				<p className='mb-3 font-normal text-text'>{project.description}</p>
 				<div className='mt-auto flex w-full items-center gap-3'>
 					{project.links.repo && (
