@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /public/
+
+Sitemap: https://www.diogonogueira.dev/sitemap.xml
