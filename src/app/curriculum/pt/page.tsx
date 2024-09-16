@@ -4,7 +4,7 @@ import { me } from '@utils/me'
 import { CurriculumHeader, LineSpans } from '@components'
 import Link from 'next/link'
 
-export default function Curriculum() {
+export default function Curriculo() {
 	return (
 		<div className='prose-xl prose-invert mx-auto my-20 px-8 lg:px-0'>
 			<h1>
@@ -12,7 +12,7 @@ export default function Curriculum() {
 					{me.name}
 				</Link>
 			</h1>
-			<h2>{me.en.about}</h2>
+			<h2>{me.pt.about}</h2>
 			<CurriculumHeader />
 			<div className='lg:grid lg:grid-cols-2 lg:gap-10'>
 				<div>
@@ -20,9 +20,9 @@ export default function Curriculum() {
 						<span className='absolute -left-4 top-2 rounded-full text-accent text-base font-light'>
 							#
 						</span>
-						Career
+						Carreira
 					</h2>
-					{me.en.career.map(job => (
+					{me.pt.career.map(job => (
 						<div key={job.title}>
 							<h3>{job.title}</h3>
 							<span>{job.description}</span>
@@ -33,9 +33,9 @@ export default function Curriculum() {
 						<span className='absolute -left-4 top-2 rounded-full text-accent text-base font-light'>
 							#
 						</span>
-						Education
+						Educação
 					</h2>
-					{me.en.education.map(step => (
+					{me.pt.education.map(step => (
 						<div key={step.title}>
 							<h3>{step.title}</h3>
 							<span>{step.description}</span>
@@ -46,9 +46,9 @@ export default function Curriculum() {
 						<span className='absolute -left-4 top-2 rounded-full text-accent text-base font-light'>
 							#
 						</span>
-						Internships
+						Estágios
 					</h2>
-					{me.en.internships.map(internship => (
+					{me.pt.internships.map(internship => (
 						<div key={internship.title}>
 							<span>{internship.title}</span>
 							<LineSpans start={internship.start} end={internship.end} />
@@ -80,9 +80,9 @@ export default function Curriculum() {
 						<span className='absolute -left-4 top-2 rounded-full text-accent text-base font-light'>
 							#
 						</span>
-						Languages
+						Línguas
 					</h2>
-					{me.en.languages.map(language => (
+					{me.pt.languages.map(language => (
 						<LineSpans
 							key={language.title}
 							start={language.title}
@@ -93,7 +93,7 @@ export default function Curriculum() {
 						<span className='absolute -left-4 top-2 rounded-full text-accent text-base font-light'>
 							#
 						</span>
-						Certificates
+						Certificados
 					</h2>
 					{me.certificates.map(certificate => (
 						<span key={certificate}>{certificate}</span>
@@ -102,9 +102,9 @@ export default function Curriculum() {
 						<span className='absolute -left-4 top-2 rounded-full text-accent text-base font-light'>
 							#
 						</span>
-						Achievements
+						Conquistas
 					</h2>
-					{me.en.achievements.map(achievement => (
+					{me.pt.achievements.map(achievement => (
 						<LineSpans
 							key={achievement.title}
 							start={achievement.title}
