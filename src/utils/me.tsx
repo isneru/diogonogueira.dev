@@ -50,7 +50,7 @@ const careerPt = [
 const education = [
 	{
 		title: 'College - Instituto Superior de Engenharia do Porto',
-		description: 'Telecommunications and IT Engineering',
+		description: 'Telecommunications Engineering and IT',
 		start: '09/2024',
 		end: 'Present'
 	},
@@ -144,31 +144,22 @@ const internshipsPt = [
 	}
 ]
 
-const skills = [
-	'HTML',
-	'CSS',
-	'JavaScript',
-	'Node.js',
-	'Express.js',
-	'React',
-	'TypeScript',
-	'Next.js',
-	'MongoDB',
-	'SQL',
-	'Prisma',
-	'TailwindCSS',
-	'Git',
-	'GitHub',
-	'Svelte',
-	'SvelteKit',
-	'Astro',
-	'C',
-	'PHP',
-	'Java',
-	'VSCode',
-	'Figma',
-	'Adobe Photoshop'
-]
+const skills = {
+	frontend: [
+		'HTML',
+		'CSS',
+		'JavaScript',
+		'TypeScript',
+		'React',
+		'Next.js',
+		'SvelteKit',
+		'Astro',
+		'TailwindCSS'
+	],
+	backend: ['Node.js', 'Express.js', 'C', 'PHP', 'Java'],
+	databases: ['MongoDB', 'SQL', 'Prisma'],
+	tools: ['Git', 'GitHub', 'VSCode', 'Figma', 'Adobe Photoshop']
+}
 
 const languages = [
 	{
@@ -177,7 +168,7 @@ const languages = [
 	},
 	{
 		title: 'English',
-		level: 'Professional Working Proficiency'
+		level: 'C1'
 	}
 ]
 const languagesPt = [
@@ -187,7 +178,7 @@ const languagesPt = [
 	},
 	{
 		title: 'Inglês',
-		level: 'Proficiência de trabalho profissional'
+		level: 'C1'
 	}
 ]
 
