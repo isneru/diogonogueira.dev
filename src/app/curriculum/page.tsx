@@ -68,7 +68,7 @@ export default function Curriculum() {
 						Skills
 					</h2>
 					<div className='flex flex-wrap gap-3'>
-						{me.skills.map(skill => (
+						{Object.keys(me.skills).map(skill => (
 							<span
 								key={skill}
 								className='rounded-full bg-primary-500 px-4 leading-relaxed text-background'>
