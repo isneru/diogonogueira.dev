@@ -68,13 +68,15 @@ export default function Curriculo() {
 						Skills
 					</h2>
 					<div className='flex flex-wrap gap-3'>
-						{me.skills.map(skill => (
-							<span
-								key={skill}
-								className='rounded-full bg-primary-500 px-4 leading-relaxed text-background'>
-								{skill}
-							</span>
-						))}
+						{Object.keys(me.skills).map(section =>
+							me.skills[section as keyof typeof me.skills].map(skill => (
+								<span
+									key={skill}
+									className='rounded-full bg-primary-500 px-4 leading-relaxed text-background'>
+									{skill}
+								</span>
+							))
+						)}
 					</div>
 					<h2 id='Languages' className='text-text relative'>
 						<span className='absolute -left-4 top-2 rounded-full text-accent text-base font-light'>
