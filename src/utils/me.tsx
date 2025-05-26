@@ -32,18 +32,18 @@ const info = [
 
 const career = [
 	{
-		title: 'Current Position',
+		title: 'Last Position',
 		description: 'Employee at CeX - Computer Entertainment Exchange (PT)',
 		start: '06/2023',
-		end: 'Present'
+		end: '06/2025'
 	}
 ]
 const careerPt = [
 	{
-		title: 'Cargo Atual',
+		title: 'Último Cargo',
 		description: 'Funcionário na CeX - Computer Entertainment Exchange (PT)',
 		start: '06/2023',
-		end: 'Presente'
+		end: '06/2025'
 	}
 ]
 
@@ -91,7 +91,7 @@ const educationPt = [
 
 const internships = [
 	{
-		title: 'Computer repair & service, Rethymno, Greece',
+		title: 'Computer Repair and Service, Rethymno, Greece',
 		start: '01/2022',
 		end: '05/2022',
 		tasks: [
@@ -158,7 +158,7 @@ const skills = {
 	],
 	backend: ['Node.js', 'Express.js', 'C', 'PHP', 'Java'],
 	databases: ['MongoDB', 'SQL', 'Prisma'],
-	tools: ['Git', 'GitHub', 'VSCode', 'Figma', 'Adobe Photoshop']
+	tools: ['Git', 'GitHub', 'VSCode', 'Figma']
 }
 
 const languages = [
