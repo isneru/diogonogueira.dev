@@ -12,18 +12,18 @@ type Props = Readonly<{
 
 export const metadata: Metadata = {
 	title: 'Diogo Nogueira',
-	description: 'Developer, student and @WeBuy employee.',
+	description: 'Developer and Telecommunications Engineering student.',
 	icons: '/favicon.png',
 	openGraph: {
 		type: 'website',
-		url: 'https://diogonogueira.dev',
-		images: 'https://diogonogueira.dev/og/index.png'
+		url: 'https://diogonogueira-dev.vercel.app/',
+		images: 'https://diogonogueira-dev.vercel.app/og/index.png'
 	},
 	twitter: {
 		card: 'summary_large_image',
 		title: 'Diogo Nogueira',
-		description: 'Developer, student and @WeBuy employee.',
-		images: 'https://diogonogueira.dev/og/index.png'
+		description: 'Developer and Telecommunications Engineering student.',
+		images: 'https://diogonogueira-dev.vercel.app/og/index.png'
 	},
 	keywords: [
 		'diogo',
