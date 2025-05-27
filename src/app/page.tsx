@@ -83,16 +83,16 @@ export default function Home() {
 							animate={{ opacity: 1, y: 0 }}
 							className='mb-6 flex flex-col text-7xl font-bold text-center'>
 							<span>
-								I'm&nbsp;<span className='text-primary-500'>Diogo </span>
+								I'm&nbsp;<span className='text-primary-2'>Diogo </span>
 							</span>
 							<span>
-								Nogueira<span className='text-accent'>,</span>
+								Nogueira<span className='text-primary-1'>,</span>
 							</span>
 						</motion.strong>
 						<motion.h1
 							initial={{ opacity: 0, y: 10 }}
 							animate={{ opacity: 1, y: 0, transition: { delay: 0.2 } }}
-							className='flex flex-col text-xl leading-7 text-primary-500 text-center'>
+							className='flex flex-col text-xl leading-7 text-primary-2 text-center'>
 							<span>
 								a
 								<strong className='font-bold text-text'>

@@ -1,56 +1,60 @@
 'use client'
 
-import { me } from '@utils/me'
+import { me as info } from '@utils/me'
 import { CurriculumHeader, LineSpans } from '@components'
 import Link from 'next/link'
 
-export default function Curriculo() {
+export default function Curriculum() {
+	const me = info('pt')
+
 	return (
 		<div className='prose-xl prose-invert mx-auto my-20 px-8 lg:px-0'>
 			<h1>
-				<Link className='hover:underline decoration-accent' href='/'>
+				<Link
+					className='hover:underline decoration-primary-1 font-bold'
+					href='/'>
 					{me.name}
 				</Link>
 			</h1>
-			<h2>{me.pt.about}</h2>
+			<h2>{me.about}</h2>
 			<CurriculumHeader />
 			<div className='lg:grid lg:grid-cols-2 lg:gap-10'>
 				<div>
-					<h2 id='Career' className='text-text relative'>
-						<span className='absolute -left-4 top-2 rounded-full text-accent text-base font-light'>
+					<h2 id='Career' className='text-text relative font-bold'>
+						<span className='absolute -left-5 top-2 rounded-full text-primary-1 text-xl'>
 							#
 						</span>
 						Carreira
 					</h2>
-					{me.pt.career.map(job => (
+					{me.career.map(job => (
 						<div key={job.title}>
-							<h3>{job.title}</h3>
+							<h3 className='font-medium'>{job.title}</h3>
 							<span>{job.description}</span>
 							<LineSpans start={job.start} end={job.end} />
 						</div>
 					))}
-					<h2 id='Education' className='text-text relative'>
-						<span className='absolute -left-4 top-2 rounded-full text-accent text-base font-light'>
+					<h2 id='Education' className='text-text relative font-bold'>
+						<span className='absolute -left-5 top-2 rounded-full text-primary-1 text-xl'>
 							#
 						</span>
 						Educação
 					</h2>
-					{me.pt.education.map(step => (
+					{me.education.map(step => (
 						<div key={step.title}>
-							<h3>{step.title}</h3>
+							<h3 className='font-medium'>{step.title}</h3>
 							<span>{step.description}</span>
 							<LineSpans start={step.start} end={step.end} />
 						</div>
 					))}
-					<h2 id='Internships' className='text-text relative'>
-						<span className='absolute -left-4 top-2 rounded-full text-accent text-base font-light'>
+					<h2 id='Internships' className='text-text relative font-bold'>
+						<span className='absolute -left-5 top-2 rounded-full text-primary-1 text-xl'>
 							#
 						</span>
 						Estágios
 					</h2>
-					{me.pt.internships.map(internship => (
+					{me.internships.map(internship => (
 						<div key={internship.title}>
-							<span>{internship.title}</span>
+							<h3 className='font-medium'>{internship.title}</h3>
 							<LineSpans start={internship.start} end={internship.end} />
 							<ul className='list-disc'>
 								{internship.tasks.map(task => (
@@ -61,38 +65,39 @@ export default function Curriculo() {
 					))}
 				</div>
 				<div>
-					<h2 id='Skills' className='text-text relative'>
-						<span className='absolute -left-4 top-2 rounded-full text-accent text-base font-light'>
+					<h2 id='Skills' className='text-text relative font-bold'>
+						<span className='absolute -left-5 top-2 rounded-full text-primary-1 text-xl'>
 							#
 						</span>
 						Skills
 					</h2>
-					<div className='flex flex-wrap gap-3'>
-						{Object.keys(me.skills).map(section =>
-							me.skills[section as keyof typeof me.skills].map(skill => (
-								<span
-									key={skill}
-									className='rounded-full bg-primary-500 px-4 leading-relaxed text-background'>
-									{skill}
-								</span>
-							))
-						)}
-					</div>
-					<h2 id='Languages' className='text-text relative'>
-						<span className='absolute -left-4 top-2 rounded-full text-accent text-base font-light'>
+					{Object.keys(me.skills).map(section => (
+						<div key={section} className='pt-2'>
+							<span className='font-semibold decoration-wavy underline decoration-primary-1'>
+								{section}
+							</span>
+							{': '}
+							<span>
+								{me.skills[section as keyof typeof me.skills].join(', ')}
+							</span>
+						</div>
+					))}
+
+					<h2 id='Languages' className='text-text relative font-bold'>
+						<span className='absolute -left-5 top-2 rounded-full text-primary-1 text-xl'>
 							#
 						</span>
 						Línguas
 					</h2>
-					{me.pt.languages.map(language => (
+					{me.langs.map(language => (
 						<LineSpans
 							key={language.title}
 							start={language.title}
 							end={language.level}
 						/>
 					))}
-					<h2 id='Certificates' className='text-text relative'>
-						<span className='absolute -left-4 top-2 rounded-full text-accent text-base font-light'>
+					<h2 id='Certificates' className='text-text relative font-bold'>
+						<span className='absolute -left-5 top-2 rounded-full text-primary-1 text-xl'>
 							#
 						</span>
 						Certificados
@@ -100,13 +105,13 @@ export default function Curriculo() {
 					{me.certificates.map(certificate => (
 						<span key={certificate}>{certificate}</span>
 					))}
-					<h2 id='Achievements' className='text-text relative'>
-						<span className='absolute -left-4 top-2 rounded-full text-accent text-base font-light'>
+					<h2 id='Achievements' className='text-text relative font-bold'>
+						<span className='absolute -left-5 top-2 rounded-full text-primary-1 text-xl'>
 							#
 						</span>
 						Conquistas
 					</h2>
-					{me.pt.achievements.map(achievement => (
+					{me.achievements.map(achievement => (
 						<LineSpans
 							key={achievement.title}
 							start={achievement.title}

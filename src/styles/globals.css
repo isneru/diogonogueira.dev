@@ -4,16 +4,16 @@
 
 @layer base {
 	body {
-		@apply bg-background text-text scrollbar-thin scrollbar-track-transparent scrollbar-thumb-accent lg:px-40;
+		@apply bg-background text-text scrollbar-thin scrollbar-track-transparent scrollbar-thumb-primary-1 lg:px-40;
 	}
 }
 
 @layer utilities {
 	::selection {
-		@apply bg-accent text-text;
+		@apply bg-primary-1 text-text;
 	}
 
 	.scroll {
-		@apply scrollbar-thin scrollbar-track-transparent scrollbar-thumb-accent scrollbar-thumb-rounded-full;
+		@apply scrollbar-thin scrollbar-track-transparent scrollbar-thumb-primary-1 scrollbar-thumb-rounded-full;
 	}
 }

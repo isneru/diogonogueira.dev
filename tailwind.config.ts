@@ -10,13 +10,12 @@ export default {
 		extend: {
 			colors: {
 				primary: {
-					300: '#b8b8b8',
-					500: '#686868',
-					800: '#202020'
+					1: '#D77A61',
+					2: '#D8B4A0',
+					3: '#DBD3D8'
 				},
-				accent: '#d71921',
-				background: '#141414',
-				text: '#F5F5F5'
+				background: '#EFF1F3',
+				text: '#223843'
 			},
 			screens: {
 				print: { raw: 'print' }

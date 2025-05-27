@@ -9,16 +9,16 @@ export const Navbar = () => {
 
 	return (
 		<>
-			<nav className='fixed top-0 left-0 z-50 flex h-16 w-full items-center justify-between bg-background/50 px-20 shadow-[0_1px_4px_0_#151517] backdrop-blur-[3px] select-none print:hidden'>
+			<nav className='fixed top-0 left-0 z-50 flex h-16 w-full items-center justify-between bg-background/50 px-20 shadow-[0_1px_4px_0_#ffffff20] backdrop-blur-[3px] select-none print:hidden'>
 				<motion.div
 					initial={{ opacity: 0, x: -100 }}
 					animate={{ opacity: 1, x: 0 }}>
 					<Link
 						href='/'
 						className={clsx(
-							'flex items-center justify-center gap-2 text-xl font-semibold hover:text-primary-500 relative',
+							'flex items-center justify-center gap-2 text-xl font-semibold hover:text-primary-2 relative',
 							{
-								'text-primary-500': pathname === '/'
+								'text-primary-2': pathname === '/'
 							}
 						)}>
 						<AnimatePresence>
@@ -27,7 +27,7 @@ export const Navbar = () => {
 									initial={{ opacity: 0 }}
 									animate={{ opacity: 1 }}
 									exit={{ opacity: 0 }}
-									className='bg-accent absolute -left-4 top-2 size-2 rounded-full'
+									className='bg-primary-1 absolute -left-4 top-2 size-2 rounded-full'
 								/>
 							)}
 						</AnimatePresence>
@@ -42,16 +42,19 @@ export const Navbar = () => {
 						<Link
 							key={link.pathname}
 							href={link.pathname}
-							className={clsx('text-lg hover:text-primary-500 relative', {
-								'text-primary-500': pathname === link.pathname
-							})}>
+							className={clsx(
+								'text-lg hover:text-primary-2 font-semibold relative',
+								{
+									'text-primary-2': pathname.includes(link.pathname)
+								}
+							)}>
 							<AnimatePresence>
-								{pathname === link.pathname && (
+								{pathname.includes(link.pathname) && (
 									<motion.span
 										initial={{ opacity: 0 }}
 										animate={{ opacity: 1 }}
 										exit={{ opacity: 0 }}
-										className='bg-accent absolute -left-4 top-2 size-2 rounded-full'
+										className='bg-primary-1 absolute -left-4 top-2 size-2 rounded-full'
 									/>
 								)}
 							</AnimatePresence>

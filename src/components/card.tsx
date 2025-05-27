@@ -14,7 +14,7 @@ export const Card = ({ project }: Props) => {
 	return (
 		<motion.div
 			variants={listItem}
-			className='flex max-w-sm flex-col rounded-lg bg-primary-800 shadow'>
+			className='flex max-w-sm flex-col rounded-lg bg-primary-2 shadow'>
 			<img
 				className='h-full max-h-40 w-full rounded-t-lg object-cover'
 				draggable='false'
@@ -32,7 +32,7 @@ export const Card = ({ project }: Props) => {
 							href={project.links.repo}
 							rel='noreferrer'
 							target='_blank'
-							className='inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary-500 px-3 py-2 text-center text-sm font-medium text-background transition-colors focus:outline-none focus:ring-2 focus:ring-primary-500 hover:bg-primary-500/80'>
+							className='inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary-1 px-3 py-2 text-center text-sm font-medium text-background transition-colors focus:outline-none focus:ring-2 focus:ring-background hover:bg-text'>
 							Repository
 							<svg
 								aria-hidden='true'
@@ -57,7 +57,7 @@ export const Card = ({ project }: Props) => {
 							href={project.links.demo}
 							rel='noreferrer'
 							target='_blank'
-							className='inline-flex w-1/2 items-center justify-center gap-2 rounded-lg bg-neutral-200 px-3 py-2 text-center text-sm font-medium text-background transition-colors focus:outline-none focus:ring-2 focus:ring-neutral-200 hover:bg-accent'>
+							className='inline-flex w-1/2 items-center justify-center gap-2 rounded-lg bg-primary-1 px-3 py-2 text-center text-sm font-medium text-background transition-colors focus:outline-none focus:ring-2 focus:ring-background hover:bg-text'>
 							Demo
 							<svg
 								aria-hidden='true'
@@ -78,7 +78,7 @@ export const Card = ({ project }: Props) => {
 						</a>
 					)}
 					{!project.links.demo && !project.links.repo && (
-						<span className='inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary-500 px-3 py-2 text-center text-sm font-medium text-background'>
+						<span className='inline-flex w-full items-center justify-center gap-2 rounded-lg bg-primary-1 px-3 py-2 text-center text-sm font-medium text-text'>
 							Private Project
 							<svg
 								aria-hidden='true'

@@ -4,7 +4,10 @@ import { Navbar } from '@components'
 import { Metadata } from 'next'
 import '@styles/globals.css'
 
-const outfit = Outfit({ subsets: ['latin'] })
+const outfit = Outfit({
+	subsets: ['latin'],
+	weight: ['300', '400', '500', '600', '700', '800', '900']
+})
 
 type Props = Readonly<{
 	children: React.ReactNode
