@@ -13,6 +13,18 @@ export type Project = {
 
 export const projects: Project[] = [
 	{
+		name: 'New Tab',
+		description: 'Simple HTML page for New Tab Override extension on browsers',
+		img: {
+			path: '/project-images/newtab.png',
+			alt: 'New Tab Override preview'
+		},
+		links: {
+			repo: 'https://github.com/isneru/newtab',
+			demo: 'https://newtab-nine.vercel.app'
+		}
+	},
+	{
 		name: 'Cex Test Agenda',
 		description: 'A tests order management project.',
 		img: {
