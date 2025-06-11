@@ -3,9 +3,14 @@
 import { me as info } from '@utils/me'
 import { CurriculumHeader, LineSpans } from '@components'
 import Link from 'next/link'
+import { redirect, useParams } from 'next/navigation'
 
 export default function Curriculum() {
-	const me = info('en')
+	const { lang } = useParams()
+	if (lang !== 'en' && lang !== 'pt') {
+		redirect('/curriculum/en')
+	}
+	const me = info(lang)
 
 	return (
 		<div className='prose-xl prose-invert mx-auto my-20 px-8 lg:px-0'>
@@ -24,7 +29,7 @@ export default function Curriculum() {
 						<span className='absolute -left-5 top-2 rounded-full text-primary-1 text-xl'>
 							#
 						</span>
-						Career
+						{me.sections[0]}
 					</h2>
 					{me.career.map(job => (
 						<div key={job.title}>
@@ -37,7 +42,7 @@ export default function Curriculum() {
 						<span className='absolute -left-5 top-2 rounded-full text-primary-1 text-xl'>
 							#
 						</span>
-						Education
+						{me.sections[1]}
 					</h2>
 					{me.education.map(step => (
 						<div key={step.title}>
@@ -50,7 +55,7 @@ export default function Curriculum() {
 						<span className='absolute -left-5 top-2 rounded-full text-primary-1 text-xl'>
 							#
 						</span>
-						Internships
+						{me.sections[2]}
 					</h2>
 					{me.internships.map(internship => (
 						<div key={internship.title}>
@@ -58,7 +63,9 @@ export default function Curriculum() {
 							<LineSpans start={internship.start} end={internship.end} />
 							<ul className='list-disc'>
 								{internship.tasks.map(task => (
-									<li key={task}>{task}</li>
+									<li className='px-0 my-3 leading-snug' key={task}>
+										{task}
+									</li>
 								))}
 							</ul>
 						</div>
@@ -69,7 +76,7 @@ export default function Curriculum() {
 						<span className='absolute -left-5 top-2 rounded-full text-primary-1 text-xl'>
 							#
 						</span>
-						Skills
+						{me.sections[3]}
 					</h2>
 					{Object.keys(me.skills).map(section => (
 						<div key={section} className='pt-2'>
@@ -87,7 +94,7 @@ export default function Curriculum() {
 						<span className='absolute -left-5 top-2 rounded-full text-primary-1 text-xl'>
 							#
 						</span>
-						Languages
+						{me.sections[4]}
 					</h2>
 					{me.langs.map(language => (
 						<LineSpans
@@ -100,7 +107,7 @@ export default function Curriculum() {
 						<span className='absolute -left-5 top-2 rounded-full text-primary-1 text-xl'>
 							#
 						</span>
-						Certificates
+						{me.sections[5]}
 					</h2>
 					{me.certificates.map(certificate => (
 						<span key={certificate}>{certificate}</span>
@@ -109,7 +116,7 @@ export default function Curriculum() {
 						<span className='absolute -left-5 top-2 rounded-full text-primary-1 text-xl'>
 							#
 						</span>
-						Achievements
+						{me.sections[6]}
 					</h2>
 					{me.achievements.map(achievement => (
 						<LineSpans

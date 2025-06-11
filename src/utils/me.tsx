@@ -226,6 +226,27 @@ const hobbies = {
 	pt: ['Condução', 'Jogos', 'Café', 'Corrida']
 }
 
+const sections = {
+	en: [
+		'Career',
+		'Education',
+		'Internships',
+		'Skills',
+		'Languages',
+		'Certificates',
+		'Achievements'
+	],
+	pt: [
+		'Carreira',
+		'Educação',
+		'Estágios',
+		'Skills',
+		'Línguas',
+		'Certificados',
+		'Conquistas'
+	]
+}
+
 export const me = (lang: 'pt' | 'en') => ({
 	about: about[lang],
 	career: career[lang],
@@ -237,5 +258,6 @@ export const me = (lang: 'pt' | 'en') => ({
 	info,
 	name,
 	skills,
-	certificates
+	certificates,
+	sections: sections[lang]
 })
