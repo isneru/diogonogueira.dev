@@ -3,14 +3,9 @@
 import { me as info } from '@utils/me'
 import { CurriculumHeader, LineSpans } from '@components'
 import Link from 'next/link'
-import { redirect, useParams } from 'next/navigation'
 
 export default function Curriculum() {
-	const { lang } = useParams()
-	if (lang !== 'en' && lang !== 'pt') {
-		redirect('/curriculum/en')
-	}
-	const me = info(lang)
+	const me = info('pt')
 
 	return (
 		<div className='prose-xl prose-invert mx-auto my-20 px-8 lg:px-0'>
