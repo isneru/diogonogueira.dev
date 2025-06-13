@@ -1,4 +1,3 @@
-import { links } from '@utils/links'
 import clsx from 'clsx'
 import Link from 'next/link'
 import { AnimatePresence, motion } from 'framer-motion'
@@ -38,29 +37,30 @@ export const Navbar = () => {
 					initial={{ opacity: 0, x: 100 }}
 					animate={{ opacity: 1, x: 0 }}
 					className='flex items-center gap-4'>
-					{links.map(link => (
-						<Link
-							key={link.pathname}
-							href={link.pathname}
-							className={clsx(
-								'text-lg hover:text-primary-2 font-semibold relative',
-								{
-									'text-primary-2': pathname.includes(link.pathname)
-								}
-							)}>
-							<AnimatePresence>
-								{pathname.includes(link.pathname) && (
-									<motion.span
-										initial={{ opacity: 0 }}
-										animate={{ opacity: 1 }}
-										exit={{ opacity: 0 }}
-										className='bg-primary-1 absolute -left-4 top-2 size-2 rounded-full'
-									/>
-								)}
-							</AnimatePresence>
-							{link.name}
-						</Link>
-					))}
+					<Link
+						href={
+							pathname === '/'
+								? '/curriculum'
+								: `/curriculum/${pathname.includes('pt') ? 'en' : 'pt'}`
+						}
+						className={clsx(
+							'text-lg hover:text-primary-2 font-semibold relative',
+							{
+								'text-primary-2': pathname.includes('/curriculum')
+							}
+						)}>
+						<AnimatePresence>
+							{pathname.includes('/curriculum') && (
+								<motion.span
+									initial={{ opacity: 0 }}
+									animate={{ opacity: 1 }}
+									exit={{ opacity: 0 }}
+									className='bg-primary-1 absolute -left-4 top-2 size-2 rounded-full'
+								/>
+							)}
+						</AnimatePresence>
+						{`curriculum (${pathname.includes('en') ? 'pt' : 'en'})`}
+					</Link>
 				</motion.div>
 			</nav>
 		</>
