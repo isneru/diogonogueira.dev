@@ -1,0 +1,16 @@
+import { Component } from 'solid-js'
+
+type Props = {
+	start: string
+	end: string
+}
+
+export const LineSpans: Component<Props> = ({ start, end }) => {
+	return (
+		<span class='relative flex w-full items-center justify-between'>
+			<span class="absolute inset-x-0 top-1/2 -z-10 h-[3px] -translate-y-1/2 bg-[url('/pattern.svg')]" />
+			<span class='bg-background pr-2'>{start}</span>
+			<span class='bg-background pl-2'>{end}</span>
+		</span>
+	)
+}

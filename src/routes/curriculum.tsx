@@ -1,0 +1,155 @@
+import { A } from '@solidjs/router'
+import { Component } from 'solid-js'
+import { me as info } from '../utils/me'
+import { CurriculumHeader } from '../components/curriculum-header'
+import { LineSpans } from '../components/line-spans'
+import { Meta, MetaProvider, Title } from '@solidjs/meta'
+
+interface Props {
+	lang: 'en' | 'pt'
+}
+
+export const Curriculum: Component<Props> = ({ lang }) => {
+	const me = info(lang)
+
+	return (
+		<>
+			<MetaProvider>
+				<Title>Diogo Nogueira | Curriculum</Title>
+				<Meta
+					name='description'
+					content='Developer and Telecommunications Engineering student.'
+				/>
+
+				<Meta property='og:type' content='website' />
+				<Meta
+					property='og:url'
+					content='https://diogonogueira-dev.vercel.app/'
+				/>
+				<Meta
+					property='og:image'
+					content='https://diogonogueira-dev.vercel.app/og/curriculum.png'
+				/>
+
+				<Meta name='twitter:card' content='summary_large_image' />
+				<Meta name='twitter:title' content='Diogo Nogueira | Curriculum' />
+				<Meta
+					name='twitter:description'
+					content='Developer and Telecommunications Engineering student.'
+				/>
+				<Meta
+					name='twitter:image'
+					content='https://diogonogueira-dev.vercel.app/og/curriculum.png'
+				/>
+
+				<Meta
+					name='keywords'
+					content='diogo, nogueira, diogonogueiradev, diogo nogueira dev, dev, neru, nerudev, neru dev, home'
+				/>
+			</MetaProvider>
+			<div class='prose-xl prose-invert mx-auto my-20 px-8 lg:px-0'>
+				<h1>
+					<A class='hover:underline decoration-primary-1 font-bold' href='/'>
+						{me.name}
+					</A>
+				</h1>
+				<h2>{me.about}</h2>
+				<CurriculumHeader />
+				<div class='lg:grid lg:grid-cols-2 lg:gap-10'>
+					<div>
+						<h2 id='Career' class='text-text relative font-bold'>
+							<span class='absolute -left-5 top-2 rounded-full text-primary-1 text-xl'>
+								#
+							</span>
+							{me.sections[0]}
+						</h2>
+						{me.career.map(job => (
+							<div>
+								<h3 class='font-medium'>{job.title}</h3>
+								<span>{job.description}</span>
+								<LineSpans start={job.start} end={job.end} />
+							</div>
+						))}
+						<h2 id='Education' class='text-text relative font-bold'>
+							<span class='absolute -left-5 top-2 rounded-full text-primary-1 text-xl'>
+								#
+							</span>
+							{me.sections[1]}
+						</h2>
+						{me.education.map(step => (
+							<div>
+								<h3 class='font-medium'>{step.title}</h3>
+								<span>{step.description}</span>
+								<LineSpans start={step.start} end={step.end} />
+							</div>
+						))}
+						<h2 id='Internships' class='text-text relative font-bold'>
+							<span class='absolute -left-5 top-2 rounded-full text-primary-1 text-xl'>
+								#
+							</span>
+							{me.sections[2]}
+						</h2>
+						{me.internships.map(internship => (
+							<div>
+								<h3 class='font-medium'>{internship.title}</h3>
+								<LineSpans start={internship.start} end={internship.end} />
+								<ul class='list-disc'>
+									{internship.tasks.map(task => (
+										<li class='px-0 my-3 leading-snug'>{task}</li>
+									))}
+								</ul>
+							</div>
+						))}
+					</div>
+					<div>
+						<h2 id='Skills' class='text-text relative font-bold'>
+							<span class='absolute -left-5 top-2 rounded-full text-primary-1 text-xl'>
+								#
+							</span>
+							{me.sections[3]}
+						</h2>
+						{Object.keys(me.skills).map(section => (
+							<div class='pt-2'>
+								<span class='font-semibold decoration-wavy underline decoration-primary-1'>
+									{section}
+								</span>
+								{': '}
+								<span>
+									{me.skills[section as keyof typeof me.skills].join(', ')}
+								</span>
+							</div>
+						))}
+
+						<h2 id='Languages' class='text-text relative font-bold'>
+							<span class='absolute -left-5 top-2 rounded-full text-primary-1 text-xl'>
+								#
+							</span>
+							{me.sections[4]}
+						</h2>
+						{me.langs.map(language => (
+							<LineSpans start={language.title} end={language.level} />
+						))}
+						<h2 id='Certificates' class='text-text relative font-bold'>
+							<span class='absolute -left-5 top-2 rounded-full text-primary-1 text-xl'>
+								#
+							</span>
+							{me.sections[5]}
+						</h2>
+						{me.certificates.map(certificate => (
+							<span>{certificate}</span>
+						))}
+						<h2 id='Achievements' class='text-text relative font-bold'>
+							<span class='absolute -left-5 top-2 rounded-full text-primary-1 text-xl'>
+								#
+							</span>
+							{me.sections[6]}
+						</h2>
+						{me.achievements.map(achievement => (
+							<LineSpans start={achievement.title} end={achievement.date} />
+						))}
+					</div>
+				</div>
+			</div>
+		</>
+	)
+}
