@@ -1,0 +1,25 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
+
+@theme {
+	--font-display: 'Outfit', 'sans-serif';
+	--color-primary-1: #d77a61;
+	--color-primary-2: #d8b4a0;
+	--color-primary-3: #dbd3d8;
+	--color-background: #eff1f3;
+	--color-text: #223843;
+	--breakpoint-print: 'print';
+}
+
+@layer base {
+	body {
+		@apply bg-background text-text lg:px-40 font-display antialiased;
+	}
+}
+
+@layer utilities {
+	::selection {
+		@apply bg-primary-1 text-text;
+	}
+}
