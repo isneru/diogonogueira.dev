@@ -60,7 +60,7 @@ const timeAgo = (input: string | number | Date) => {
 			<p v-if="!entries?.length">no entries yet, be the first to say hi!</p>
 			<div
 				v-else
-				v-for="entry in [entries, entries, entries, entries].flat()"
+				v-for="entry in entries"
 				:key="entry.id"
 				class="w-full rounded-lg bg-primary-3/40 backdrop-blur-sm border border-primary-1/20 shadow-md shadow-primary-1/10 p-3">
 				<p class="mb-1 font-medium text-lg">{{ entry.name }}</p>
