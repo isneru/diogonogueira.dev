@@ -2,7 +2,7 @@
 useSeoMeta({
 	title: 'Diogo Nogueira',
 	ogTitle: 'Diogo Nogueira',
-	ogSiteName: 'Diogo Nogueira',
+	twitterTitle: 'Diogo Nogueira',
 	description: 'Developer and Telecommunications Engineering student.',
 	ogDescription: 'Developer and Telecommunications Engineering student.',
 	twitterDescription: 'Developer and Telecommunications Engineering student.',
@@ -110,7 +110,7 @@ const floatingTools = {
 		<motion.p
 			:initial="{ opacity: 0, y: -40 }"
 			:animate="{ opacity: 1, y: 0, transition: { delay: 0.3 } }"
-			class="mb-8 text-4xl lg:text-5xl font-bold text-right col-span-1 lg:col-span-2 xl:col-span-3">
+			class="mb-8 text-4xl lg:text-5xl font-bold text-center col-span-1 lg:col-span-2 xl:col-span-3">
 			some of my projects...
 		</motion.p>
 		<div class="grid grid-cols-1 gap-x-8 gap-y-6 lg:grid-cols-2 xl:grid-cols-3">

@@ -1,18 +1,18 @@
 <script lang="ts" setup>
 useSeoMeta({
-	title: 'Diogo Nogueira | Guestbook',
-	ogTitle: 'Diogo Nogueira | Guestbook',
-	ogSiteName: 'Diogo Nogueira | Guestbook',
-	twitterTitle: 'Diogo Nogueira | Guestbook',
-	description: 'Leave a message!',
-	ogDescription: 'Leave a message!',
-	twitterDescription: 'Leave a message!',
+	title: `Diogo Nogueira's Guestbook`,
+	ogTitle: `Diogo Nogueira's Guestbook`,
+	twitterTitle: `Diogo Nogueira's Guestbook`,
+	description: 'All messages written are here.',
+	ogDescription: 'All messages written are here.',
+	twitterDescription: 'All messages written are here.',
 	ogUrl: 'https://diogo.wtf/guestbook',
 	ogType: 'website',
 	ogImage: 'https://diogo.wtf/og/index.png',
 	twitterImage: 'https://diogo.wtf/og/index.png',
-	ogLocale: 'pt_PT',
-	keywords: 'diogo, nogueira, dev, neru, portfolio, curriculo, desenvolvedor'
+	ogLocale: 'en_US',
+	keywords:
+		'diogo, nogueira, dev, neru, portfolio, curriculo, developer, guestbook'
 })
 
 const {
@@ -45,48 +45,32 @@ const timeAgo = (input: string | number | Date) => {
 </script>
 
 <template>
-	<!-- <Header show-back-link size="medium" title="guestbook">
-		<template #subtitle>
-			<p class="italic">messages from lovely people 💌</p>
-		</template>
-	</Header>
-
-	<section class="mb-8">
+	<div class="max-w-2xl mx-auto my-20 px-8 lg:px-0">
 		<NuxtLink
 			to="/guestbook/sign"
-			class="border-lithium-white/10 inline-block border px-4 py-2 text-sm font-medium">
-			sign the guestbook →
+			class="bg-text hover:bg-primary-1 text-background inline-block border px-4 py-2 rounded-lg font-medium transition-colors my-10">
+			sign the guestbook
 		</NuxtLink>
-	</section>
 
-	<section class="mb-16 space-y-6 text-sm leading-relaxed md:text-base">
-		<p v-if="status !== 'success' && !error" class="text-lithium-white/60">
-			loading...
+		<p v-if="status !== 'success' && !error">loading...</p>
+		<p v-else-if="error" class="text-primary-1">
+			{{ 'something went wrong. try again later :(' }}
 		</p>
-
-		<p v-else-if="error" class="text-cherry-soda">
-			something went wrong. try again later :(
-		</p>
-
-		<div v-else>
-			<p v-if="!entries?.length" class="text-lithium-white/60">
-				no entries yet, be the first to say hi!
-			</p>
-
-			<div v-else class="space-y-4">
-				<div
-					v-for="entry in entries"
-					:key="entry.id"
-					class="border-lithium-white/10 bg-velvet-black rounded-lg border-2 p-4">
-					<p class="text-lithium-white mb-1 font-medium">{{ entry.name }}</p>
-					<p class="text-lithium-white/80 whitespace-pre-wrap">
-						{{ entry.message }}
-					</p>
-					<p class="text-lithium-white/50 mt-2 text-xs">
-						{{ timeAgo(entry.created_at) }}
-					</p>
-				</div>
+		<div v-else class="w-full space-y-4">
+			<p v-if="!entries?.length">no entries yet, be the first to say hi!</p>
+			<div
+				v-else
+				v-for="entry in [entries, entries, entries, entries].flat()"
+				:key="entry.id"
+				class="w-full rounded-lg bg-primary-3/40 backdrop-blur-sm border border-primary-1/20 shadow-md shadow-primary-1/10 p-3">
+				<p class="mb-1 font-medium text-lg">{{ entry.name }}</p>
+				<p class="whitespace-pre-wrap">
+					{{ entry.message }}
+				</p>
+				<p class="mt-2 text-xs">
+					{{ timeAgo(entry.created_at!) }}
+				</p>
 			</div>
 		</div>
-	</section> -->
+	</div>
 </template>

@@ -47,7 +47,7 @@ export default defineNuxtConfig({
 		}
 	},
 	turnstile: {
-		siteKey: '0x4AAAAAABlGl3GCGqZycMAD'
+		siteKey: '0x4AAAAAABlobQEy6KJ2kakO'
 	},
 	nitro: {
 		compatibilityDate: '2025-07-15',

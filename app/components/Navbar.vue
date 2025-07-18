@@ -19,14 +19,6 @@ const pathname = computed(() => route.path)
 					'text-primary-1': pathname === '/'
 				}"
 				to="/">
-				<AnimatePresence>
-					<motion.span
-						v-if="pathname === '/'"
-						:initial="{ opacity: 0 }"
-						:animate="{ opacity: 1 }"
-						:exit="{ opacity: 0 }"
-						class="bg-primary-2 absolute -left-4 top-2 size-2 rounded-full" />
-				</AnimatePresence>
 				diogo
 			</NuxtLink>
 		</motion.div>
@@ -35,19 +27,19 @@ const pathname = computed(() => route.path)
 			:animate="{ opacity: 1, x: 0 }"
 			class="flex items-center gap-4">
 			<NuxtLink
+				to="/guestbook"
+				:class="{
+					'text-lg hover:text-primary-1 font-semibold relative': true,
+					'text-primary-1': pathname.includes('/guestbook')
+				}">
+				guestbook
+			</NuxtLink>
+			<NuxtLink
 				:to="`/curriculum/${pathname.endsWith('en') ? 'pt' : 'en'}`"
 				:class="{
 					'text-lg hover:text-primary-1 font-semibold relative': true,
 					'text-primary-1': pathname.includes('/curriculum')
 				}">
-				<AnimatePresence>
-					<motion.span
-						v-if="pathname.includes('/curriculum')"
-						:initial="{ opacity: 0 }"
-						:animate="{ opacity: 1 }"
-						:exit="{ opacity: 0 }"
-						class="bg-primary-2 absolute -left-4 top-2 size-2 rounded-full" />
-				</AnimatePresence>
 				{{ `curriculum (${pathname.includes('en') ? 'pt' : 'en'})` }}
 			</NuxtLink>
 		</motion.div>

@@ -1,9 +1,8 @@
 <script lang="ts" setup>
 useSeoMeta({
-	title: 'Diogo Nogueira | Curriculum',
-	ogTitle: 'Diogo Nogueira | Curriculum',
-	ogSiteName: 'Diogo Nogueira | Curriculum',
-	twitterTitle: 'Diogo Nogueira | Curriculum',
+	title: `Diogo Nogueira's Curriculum`,
+	ogTitle: `Diogo Nogueira's Curriculum`,
+	twitterTitle: `Diogo Nogueira's Curriculum`,
 	description: 'All the good bits.',
 	ogDescription: 'All the good bits.',
 	twitterDescription: 'All the good bits.',
