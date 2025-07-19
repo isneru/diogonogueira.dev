@@ -45,12 +45,29 @@ const timeAgo = (input: string | number | Date) => {
 </script>
 
 <template>
-	<div class="mt-10 flex flex-col items-center gap-10 w-full">
+	<div class="mt-10 flex flex-col items-center gap-10 w-full mx-auto max-w-2xl">
+		<div class="flex justify-between items-center gap-4 w-full">
+			<p class="font-bold text-3xl relative">
+				messages sent by my
+				<span class="underline decoration-primary-1 decoration-wavy italic"
+					>"fans"</span
+				>
+				<span
+					class="absolute -left-5 top-1 rounded-full text-primary-1 text-2xl">
+					#
+				</span>
+			</p>
+			<NuxtLink
+				to="/guestbook/sign"
+				class="bg-text hover:bg-primary-1 text-background inline-block border px-4 py-2 rounded-lg font-medium transition-colors animate-ripple ml-auto">
+				sign yours
+			</NuxtLink>
+		</div>
 		<p v-if="status !== 'success' && !error">loading...</p>
 		<p v-else-if="error" class="text-primary-1">
 			{{ 'something went wrong. try again later :(' }}
 		</p>
-		<div v-else class="w-full max-w-2xl space-y-4">
+		<div v-else class="w-full space-y-4">
 			<p v-if="!entries?.length">no entries yet, be the first to say hi!</p>
 			<div
 				v-else
@@ -70,9 +87,4 @@ const timeAgo = (input: string | number | Date) => {
 			</div>
 		</div>
 	</div>
-	<NuxtLink
-		to="/guestbook/sign"
-		class="bg-text hover:bg-primary-1 text-background inline-block border px-4 py-2 rounded-lg font-medium transition-colors fixed bottom-10 right-10 animate-ripple">
-		sign the guestbook
-	</NuxtLink>
 </template>
