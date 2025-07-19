@@ -1,5 +1,5 @@
 <script lang="ts" setup>
-import { me } from '@@/utils/me'
+import { me } from '@@/utils'
 </script>
 
 <template>

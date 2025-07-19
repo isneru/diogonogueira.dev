@@ -1,21 +1,8 @@
 <script lang="ts" setup>
-useSeoMeta({
-	title: `Diogo Nogueira's Guestbook`,
-	ogTitle: `Diogo Nogueira's Guestbook`,
-	twitterTitle: `Diogo Nogueira's Guestbook`,
-	description: 'Leave a message!',
-	ogDescription: 'Leave a message!',
-	twitterDescription: 'Leave a message!',
-	ogUrl: 'https://diogo.wtf/guestbook/sign',
-	ogType: 'website',
-	ogImage: 'https://diogo.wtf/og/index.png',
-	twitterImage: 'https://diogo.wtf/og/index.png',
-	ogLocale: 'en_US',
-	keywords:
-		'diogo, nogueira, dev, neru, portfolio, curriculo, developer, guestbook'
-})
-
 import { ref } from 'vue'
+import { getSeoMeta } from '@@/utils'
+
+useSeoMeta(getSeoMeta())
 
 const name = ref('')
 const message = ref('')
@@ -111,7 +98,21 @@ const submit = async () => {
 						placeholder="say something nice :)"
 						class="resize-none bg-background w-[calc(100%-1.5rem)] flex ml-auto rounded-md border-1 border-primary-2 px-3 py-2 transition placeholder:text-text focus:ring-2 focus:ring-primary-1/20 focus:outline-none"></textarea>
 				</div>
-				<NuxtTurnstile v-model="token" />
+				<div class="h-[66px] relative grid place-items-center">
+					<NuxtTurnstile :options="{ language: 'en' }" v-model="token" />
+					<Icon
+						name="tabler:border-corner-square"
+						class="absolute -top-2 -left-2 transform text-primary-1 size-6!" />
+					<Icon
+						name="tabler:border-corner-square"
+						class="absolute -top-2 -right-2 transform text-primary-1 size-6! rotate-90" />
+					<Icon
+						name="tabler:border-corner-square"
+						class="absolute -bottom-2 -left-2 transform text-primary-1 size-6! -rotate-90" />
+					<Icon
+						name="tabler:border-corner-square"
+						class="absolute -bottom-2 -right-2 transform text-primary-1 size-6! rotate-180" />
+				</div>
 				<div class="relative w-full">
 					<button
 						type="submit"

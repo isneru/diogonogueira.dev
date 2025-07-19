@@ -1,6 +1,6 @@
 <script lang="ts" setup>
 import { motion } from 'motion-v'
-import { type Project } from '@@/utils/projects'
+import { type Project } from '@@/utils'
 
 type Props = {
 	project: Project

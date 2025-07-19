@@ -1,21 +1,9 @@
 <script lang="ts" setup>
-useSeoMeta({
-	title: 'Diogo Nogueira',
-	ogTitle: 'Diogo Nogueira',
-	twitterTitle: 'Diogo Nogueira',
-	description: 'Developer and Telecommunications Engineering student.',
-	ogDescription: 'Developer and Telecommunications Engineering student.',
-	twitterDescription: 'Developer and Telecommunications Engineering student.',
-	ogUrl: 'https://diogo.wtf',
-	ogType: 'website',
-	ogImage: 'https://diogo.wtf/og/index.png',
-	twitterImage: 'https://diogo.wtf/og/index.png',
-	ogLocale: 'en_US',
-	keywords: 'diogo, nogueira, dev, neru, home, portfolio, curriculum, developer'
-})
-
+import { getSeoMeta } from '@@/utils'
 import { motion } from 'motion-v'
-import { projects } from '@@/utils/projects'
+import { projects } from '@@/utils'
+
+useSeoMeta(getSeoMeta())
 
 const floatingTools = {
 	left: [

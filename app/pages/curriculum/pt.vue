@@ -1,20 +1,7 @@
 <script lang="ts" setup>
-useSeoMeta({
-	title: `Diogo Nogueira's Curriculum`,
-	ogTitle: `Diogo Nogueira's Curriculum`,
-	twitterTitle: `Diogo Nogueira's Curriculum`,
-	description: 'All the good bits.',
-	ogDescription: 'All the good bits.',
-	twitterDescription: 'All the good bits.',
-	ogUrl: 'https://diogo.wtf/curriculum/pt',
-	ogType: 'website',
-	ogImage: 'https://diogo.wtf/og/curriculum.png',
-	twitterImage: 'https://diogo.wtf/og/curriculum.png',
-	ogLocale: 'pt_PT',
-	keywords: 'diogo, nogueira, dev, neru, portfolio, curriculo, desenvolvedor'
-})
+import { getSeoMeta, me as info } from '@@/utils'
 
-import { me as info } from '@@/utils/me'
+useSeoMeta(getSeoMeta())
 
 const me = info('pt')
 </script>
@@ -22,9 +9,9 @@ const me = info('pt')
 <template>
 	<div class="prose-xl prose-invert mx-auto px-8 lg:px-0">
 		<h1>
-			<A class="hover:underline decoration-primary-1 font-bold" href="/">
+			<NuxtLink class="hover:underline decoration-primary-1 font-bold" href="/">
 				{{ me.name }}
-			</A>
+			</NuxtLink>
 		</h1>
 		<h2>{{ me.about }}</h2>
 		<CurriculumHeader />
