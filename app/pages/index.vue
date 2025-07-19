@@ -37,7 +37,7 @@ const floatingTools = {
 </script>
 
 <template>
-	<div class="flex h-[75vh] w-full items-center justify-center">
+	<div class="flex h-[55vh] w-full items-center justify-center">
 		<div class="grid gap-x-16 grid-cols-5">
 			<motion.div
 				:initial="{ opacity: 0, x: 40 }"
@@ -106,7 +106,7 @@ const floatingTools = {
 			</motion.div>
 		</div>
 	</div>
-	<div class="flex flex-col items-center pb-10">
+	<div class="flex flex-col items-center py-10">
 		<motion.p
 			:initial="{ opacity: 0, y: -40 }"
 			:animate="{ opacity: 1, y: 0, transition: { delay: 0.3 } }"

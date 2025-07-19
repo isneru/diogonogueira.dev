@@ -45,32 +45,34 @@ const timeAgo = (input: string | number | Date) => {
 </script>
 
 <template>
-	<div class="max-w-2xl mx-auto my-20 px-8 lg:px-0">
-		<NuxtLink
-			to="/guestbook/sign"
-			class="bg-text hover:bg-primary-1 text-background inline-block border px-4 py-2 rounded-lg font-medium transition-colors my-10">
-			sign the guestbook
-		</NuxtLink>
-
+	<div class="mt-10 flex flex-col items-center gap-10 w-full">
 		<p v-if="status !== 'success' && !error">loading...</p>
 		<p v-else-if="error" class="text-primary-1">
 			{{ 'something went wrong. try again later :(' }}
 		</p>
-		<div v-else class="w-full space-y-4">
+		<div v-else class="w-full max-w-2xl space-y-4">
 			<p v-if="!entries?.length">no entries yet, be the first to say hi!</p>
 			<div
 				v-else
 				v-for="entry in entries"
 				:key="entry.id"
-				class="w-full rounded-lg bg-primary-3/40 backdrop-blur-sm border border-primary-1/20 shadow-md shadow-primary-1/10 p-3">
-				<p class="mb-1 font-medium text-lg">{{ entry.name }}</p>
-				<p class="whitespace-pre-wrap">
+				class="w-full rounded-lg bg-primary-3/40 backdrop-blur-sm border border-primary-1/20 shadow-md shadow-primary-1/10 py-3">
+				<p class="mb-1 font-bold text-primary-1 text-xl px-3">
+					{{ entry.name }}
+				</p>
+				<div class="h-px bg-primary-1/20 w-full my-2" />
+				<p class="whitespace-pre-wrap px-3">
 					{{ entry.message }}
 				</p>
-				<p class="mt-2 text-xs">
+				<p class="mt-2 text-xs px-3 text-right italic">
 					{{ timeAgo(entry.created_at!) }}
 				</p>
 			</div>
 		</div>
 	</div>
+	<NuxtLink
+		to="/guestbook/sign"
+		class="bg-text hover:bg-primary-1 text-background inline-block border px-4 py-2 rounded-lg font-medium transition-colors fixed bottom-10 right-10 animate-ripple">
+		sign the guestbook
+	</NuxtLink>
 </template>

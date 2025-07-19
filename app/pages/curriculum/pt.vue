@@ -20,7 +20,7 @@ const me = info('pt')
 </script>
 
 <template>
-	<div class="prose-xl prose-invert mx-auto my-20 px-8 lg:px-0">
+	<div class="prose-xl prose-invert mx-auto px-8 lg:px-0">
 		<h1>
 			<A class="hover:underline decoration-primary-1 font-bold" href="/">
 				{{ me.name }}

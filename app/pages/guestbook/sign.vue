@@ -54,43 +54,77 @@ const submit = async () => {
 </script>
 
 <template>
-	<div class="flex h-[75vh] w-full items-center justify-center">
-		<form
-			@submit.prevent="submit"
-			class="flex flex-col gap-6 justify-center items-center rounded-lg bg-primary-3/40 backdrop-blur-sm border border-primary-1/20 shadow-md shadow-primary-1/10 p-3 w-full max-w-lg">
-			<div class="space-y-2 w-full">
-				<label for="name" class="block"> name </label>
-				<input
-					id="name"
-					v-model="name"
-					placeholder="your name"
-					class="bg-background w-full rounded-md border-1 px-3 py-2 transition placeholder:text-text focus:ring-2 focus:ring-text focus:outline-none" />
-			</div>
-
-			<div class="space-y-2 w-full">
-				<label for="message" class="block"> message </label>
-				<textarea
-					id="message"
-					v-model="message"
-					rows="4"
-					placeholder="say something nice :)"
-					class="bg-background border-lithium-white/10 bg-velvet-black w-full rounded-md border-1 px-3 py-2 transition placeholder:text-text focus:ring-2 focus:ring-text focus:outline-none"></textarea>
-			</div>
-
-			<NuxtTurnstile v-model="token" />
-
-			<div class="relative w-full">
-				<button
-					type="submit"
-					:disabled="submitting"
-					class="bg-text hover:bg-primary-1 border-lithium-white/10 w-full rounded-md border-1 px-4 py-2 font-medium text-white transition focus:ring-2 focus:ring-text focus:outline-none hover:cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
-					variant="button">
-					{{ submitting ? 'sending...' : 'submit' }}
-				</button>
-				<span v-if="error" class="absolute text-primary-1 text-sm">
-					{{ error }}
+	<div class="flex flex-col xl:flex-row items-center gap-10 w-full h-[80vh]">
+		<div
+			class="flex flex-col items-center xl:items-start justify-center w-full gap-4">
+			<p class="font-bold text-3xl relative">
+				<span
+					class="absolute -left-5 top-1 rounded-full text-primary-1 text-xl">
+					#
 				</span>
-			</div>
-		</form>
+				What is this?
+			</p>
+			<p class="leading-relaxed text-base md:text-lg max-w-4/5">
+				Welcome to my digital guestbook! This is a cozy little corner of the
+				internet where you can drop a message, share your thoughts, or simply
+				say hello. Whether you're here to leave some kind words, give feedback,
+				or just want to let me know you stopped by—this is the place. I really
+				appreciate you taking the time to write something. It means a lot. So go
+				ahead, don’t be shy—type anything you like and hit submit! 😊
+			</p>
+		</div>
+		<div
+			id="divider"
+			class="w-4/5 h-px xl:w-px xl:h-4/5 bg-primary-1/20 flex mx-auto" />
+		<div class="flex w-full items-center justify-center">
+			<form
+				@submit.prevent="submit"
+				class="flex flex-col gap-6 justify-center items-center rounded-lg bg-primary-3/40 backdrop-blur-sm border border-primary-1/20 shadow-md shadow-primary-1/10 p-4 w-full max-w-lg">
+				<div class="w-full flex flex-col">
+					<label for="name" class="block font-semibold text-lg pl-2 relative">
+						<span class="absolute -left-2 text-primary-1 text-lg"> # </span>
+						<Icon
+							class="absolute top-full size-5! translate-y-1/2 -left-0.5 text-primary-1"
+							name="material-symbols:subdirectory-arrow-right-rounded" />
+						name
+					</label>
+					<input
+						id="name"
+						v-model="name"
+						placeholder="your name"
+						class="bg-background w-[calc(100%-1.5rem)] flex ml-auto rounded-md border-1 border-primary-2 px-3 py-2 transition placeholder:text-text focus:ring-2 focus:ring-primary-1/20 focus:outline-none" />
+				</div>
+				<div class="w-full flex flex-col">
+					<label
+						for="message"
+						class="block font-semibold text-lg pl-2 relative">
+						<span class="absolute -left-2 text-primary-1 text-lg"> # </span>
+						<Icon
+							class="absolute top-full size-5! translate-y-1/2 -left-0.5 text-primary-1"
+							name="material-symbols:subdirectory-arrow-right-rounded" />
+						message</label
+					>
+					<textarea
+						id="message"
+						v-model="message"
+						rows="4"
+						placeholder="say something nice :)"
+						class="resize-none bg-background w-[calc(100%-1.5rem)] flex ml-auto rounded-md border-1 border-primary-2 px-3 py-2 transition placeholder:text-text focus:ring-2 focus:ring-primary-1/20 focus:outline-none"></textarea>
+				</div>
+				<NuxtTurnstile v-model="token" />
+				<div class="relative w-full">
+					<button
+						type="submit"
+						:disabled="submitting"
+						class="bg-primary-1 text-background hover:bg-background hover:text-primary-1 w-full rounded-lg border-1 border-primary-1 px-4 py-2 font-medium transition focus:ring-2 focus:ring-primary-1 focus:outline-none hover:cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+						variant="button">
+						{{ submitting ? 'sending...' : 'submit' }}
+					</button>
+					<span v-if="error" class="absolute text-primary-1 text-sm">
+						{{ error }}
+					</span>
+				</div>
+			</form>
+		</div>
 	</div>
 </template>
