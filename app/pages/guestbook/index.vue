@@ -15,18 +15,18 @@ const {
 </script>
 
 <template>
-	<div class="mt-10 flex flex-col items-center gap-10 w-full mx-auto max-w-2xl">
-		<div class="flex justify-between items-center gap-4 w-full">
+	<div class="mx-auto mt-10 flex w-full max-w-2xl flex-col items-center gap-10">
+		<div class="flex w-full items-center justify-between gap-4">
 			<motion.p
 				:initial="{ opacity: 0, x: -20 }"
 				:animate="{ opacity: 1, x: 0, transition: { delay: 0.15 } }"
-				class="font-bold text-3xl relative">
+				class="relative text-3xl font-bold">
 				messages sent by my
-				<span class="underline decoration-primary-1 decoration-wavy italic"
+				<span class="decoration-burnt-sienna-1 italic underline decoration-wavy"
 					>"fans"</span
 				>
 				<span
-					class="absolute -left-5 top-1 rounded-full text-primary-1 text-2xl">
+					class="text-burnt-sienna-1 absolute top-1 -left-5 rounded-full text-2xl">
 					#
 				</span>
 			</motion.p>
@@ -34,12 +34,12 @@ const {
 				:initial="{ opacity: 0, x: 20 }"
 				:animate="{ opacity: 1, x: 0, transition: { delay: 0.15 } }"
 				to="/guestbook/sign"
-				class="bg-text hover:bg-primary-1 text-background inline-block border px-4 py-2 rounded-lg font-medium transition-colors animate-ripple ml-auto">
+				class="bg-gunmetal hover:bg-burnt-sienna-1 text-antiflash-white animate-ripple ml-auto inline-block rounded-lg border px-4 py-2 font-medium transition-colors">
 				sign yours
 			</MotionNuxtLink>
 		</div>
 		<p v-if="status !== 'success' && !error">loading...</p>
-		<p v-else-if="error" class="text-primary-1">
+		<p v-else-if="error" class="text-burnt-sienna-1">
 			{{ 'something went wrong. try again later :(' }}
 		</p>
 		<div v-else class="w-full space-y-4">
@@ -54,15 +54,15 @@ const {
 					y: 0,
 					transition: { delay: entries[entries.length - 1 - idx]!.id! * 0.1 }
 				}"
-				class="w-full rounded-lg bg-primary-3/40 backdrop-blur-sm border border-primary-1/20 shadow-md shadow-primary-1/10 py-3">
-				<p class="mb-1 font-bold text-primary-1 text-xl px-3">
+				class="bg-burnt-sienna-3/40 border-burnt-sienna-1/20 shadow-burnt-sienna-1/10 w-full rounded-lg border py-3 shadow-md backdrop-blur-sm">
+				<p class="text-burnt-sienna-1 mb-1 px-3 text-xl font-bold">
 					{{ entry.name }}
 				</p>
-				<div class="h-px bg-primary-1/20 w-full my-2" />
-				<p class="whitespace-pre-wrap px-3">
+				<div class="bg-burnt-sienna-1/20 my-2 h-px w-full" />
+				<p class="px-3 whitespace-pre-wrap">
 					{{ entry.message }}
 				</p>
-				<p class="mt-2 text-xs px-3 text-right italic">
+				<p class="mt-2 px-3 text-right text-xs italic">
 					{{ timeAgo(entry.created_at!) }}
 				</p>
 			</motion.div>

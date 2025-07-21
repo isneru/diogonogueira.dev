@@ -28,19 +28,19 @@ const info = [
 		Icon: PhCompass
 	},
 	{
-		text: 'linkedin.com/in/diogoclanogueira',
+		text: 'linkedin/diogoclanogueira',
 		Icon: PhLinkedinLogo,
 		href: 'https://linkedin.com/in/diogoclanogueira'
 	},
 	{
-		text: 'github.com/isneru',
+		text: 'github/isneru',
 		Icon: PhGithubLogo,
 		href: 'https://github.com/isneru'
 	},
 	{
-		text: 'Website',
+		text: 'website',
 		Icon: PhCursor,
-		href: 'https://diogonogueira-dev.vercel.app'
+		href: 'https://diogo.wtf'
 	}
 ]
 

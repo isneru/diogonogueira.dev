@@ -17,24 +17,26 @@ const { project } = defineProps<Props>()
 			y: 0,
 			transition: { delay: 0.2 + project.id * 0.08 }
 		}"
-		class="flex max-w-sm flex-col rounded-lg bg-primary-3/40 backdrop-blur-sm border border-primary-1/20 shadow-md shadow-primary-1/10 p-3 hover:shadow-lg hover:shadow-primary-1/20 transition-shadow duration-300">
+		class="bg-burnt-sienna-3/40 border-burnt-sienna-1/20 shadow-burnt-sienna-1/10 hover:shadow-burnt-sienna-1/20 flex max-w-sm flex-col rounded-lg border p-3 shadow-md backdrop-blur-sm transition-shadow duration-300 hover:shadow-lg">
 		<img
-			class="h-full max-h-40 w-full rounded-lg object-cover border border-primary-1/20 shadow-md shadow-primary-1/10"
+			class="border-burnt-sienna-1/20 shadow-burnt-sienna-1/10 h-full max-h-40 w-full rounded-lg border object-cover shadow-md"
 			draggable="false"
 			:src="project.img.path"
 			:alt="project.img.alt" />
 		<div class="flex h-full flex-col">
-			<span class="my-2 text-2xl font-bold tracking-tight px-2">
+			<span class="my-2 px-2 text-2xl font-bold tracking-tight">
 				{{ project.name }}
 			</span>
-			<p class="mb-6 font-normal text-text px-2">{{ project.description }}</p>
+			<p class="text-gunmetal mb-6 px-2 font-normal">
+				{{ project.description }}
+			</p>
 			<div class="mt-auto flex w-full items-center gap-3">
 				<a
 					v-if="project.links.repo"
 					:href="project.links.repo"
 					rel="noreferrer"
 					target="_blank"
-					class="inline-flex w-full items-center justify-center gap-2 rounded-lg bg-text px-3 py-2 text-center text-sm font-medium text-background transition-colors focus:outline-none focus:ring-2 focus:ring-background hover:bg-primary-1">
+					class="bg-gunmetal text-antiflash-white focus:ring-antiflash-white hover:bg-burnt-sienna-1 inline-flex w-full items-center justify-center gap-2 rounded-lg px-3 py-2 text-center text-sm font-medium transition-colors focus:ring-2 focus:outline-none">
 					Repository
 					<svg
 						aria-hidden="true"
@@ -57,7 +59,7 @@ const { project } = defineProps<Props>()
 					:href="project.links.demo"
 					rel="noreferrer"
 					target="_blank"
-					class="inline-flex w-1/2 items-center justify-center gap-2 rounded-lg bg-text px-3 py-2 text-center text-sm font-medium text-background transition-colors focus:outline-none focus:ring-2 focus:ring-background hover:bg-primary-1">
+					class="bg-gunmetal text-antiflash-white focus:ring-antiflash-white hover:bg-burnt-sienna-1 inline-flex w-1/2 items-center justify-center gap-2 rounded-lg px-3 py-2 text-center text-sm font-medium transition-colors focus:ring-2 focus:outline-none">
 					Demo
 					<svg
 						aria-hidden="true"

@@ -1,20 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Cascadia+Mono:ital,wght@0,200..700;1,200..700&family=Outfit:wght@100..900&display=swap');
 @import 'tailwindcss';
 @plugin '@tailwindcss/typography';
 
 @theme {
-	--font-display: 'Outfit', 'sans-serif';
-	--color-primary-1: #d77a61;
-	--color-primary-2: #d8b4a0;
-	--color-primary-3: #dbd3d8;
-	--color-background: #eff1f3;
-	--color-text: #223843;
+	--font-sans: 'Outfit', 'sans-serif';
+	--font-mono: 'Cascadia Mono', 'monospace';
+	--color-burnt-sienna-1: #d77a61;
+	--color-burnt-sienna-2: #d8b4a0;
+	--color-burnt-sienna-3: #dbd3d8;
+	--color-antiflash-white: #eff1f3;
+	--color-gunmetal: #223843;
 	--breakpoint-print: 'print';
 	--animate-ripple: ripple 2s ease-out infinite;
 
 	@keyframes ripple {
 		0% {
-			box-shadow: 0 0 0 0 var(--color-text);
+			box-shadow: 0 0 0 0 var(--color-gunmetal);
 		}
 		70% {
 			box-shadow: 0 0 0 7px rgba(255, 0, 0, 0);
@@ -27,12 +28,12 @@
 
 @layer base {
 	body {
-		@apply bg-background text-text px-8 lg:px-40 font-display antialiased pt-24 pb-10;
+		@apply bg-antiflash-white text-gunmetal min-h-screen font-sans antialiased;
 	}
 }
 
 @layer utilities {
 	::selection {
-		@apply bg-primary-1 text-text;
+		@apply bg-burnt-sienna-1 text-gunmetal;
 	}
 }
