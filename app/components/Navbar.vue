@@ -1,5 +1,4 @@
 <script lang="ts" setup>
-import { motion } from 'motion-v'
 import { computed } from 'vue'
 import { useRoute } from 'vue-router'
 
@@ -9,14 +8,17 @@ const pathname = computed(() => route.path)
 
 const routes = computed(() => [
 	{
-		label: 'guestbook',
-		to: '/guestbook',
-		active: pathname.value.includes('/guestbook')
+		label: 'blog',
+		to: '/blog'
 	},
 	{
+		label: 'guestbook',
+		to: '/guestbook'
+	},
+	{
+		// TODO: make this in a better way so we can use the native active-class from NuxtLink, for now it'll stay without active indicator, sorry!
 		label: `curriculum (${pathname.value.includes('en') ? 'pt' : 'en'})`,
-		to: `/curriculum/${pathname.value.endsWith('en') ? 'pt' : 'en'}`,
-		active: pathname.value.includes('/curriculum')
+		to: `/curriculum/${pathname.value.endsWith('en') ? 'pt' : 'en'}`
 	}
 ])
 </script>
@@ -29,11 +31,8 @@ const routes = computed(() => [
 			<div class="flex items-center justify-between">
 				<NuxtLink
 					aria-label="Home"
-					class="transition-colors duration-200"
-					:class="{
-						'text-burnt-sienna-1': pathname === '/',
-						'hover:text-burnt-sienna-1': pathname !== '/'
-					}"
+					class="hover:text-burnt-sienna-1 transition-colors duration-200"
+					active-class="text-burnt-sienna-1"
 					to="/">
 					diogo
 				</NuxtLink>
@@ -43,11 +42,8 @@ const routes = computed(() => [
 						<NuxtLink
 							:aria-label="`Go to ${route.label} page`"
 							:to="route.to"
-							:class="{
-								'text-burnt-sienna-1': route.active,
-								'hover:text-burnt-sienna-1': !route.active
-							}"
-							class="px-3 py-1 transition-colors duration-200">
+							active-class="text-burnt-sienna-1"
+							class="hover:text-burnt-sienna-1 px-3 py-1 transition-colors duration-200">
 							{{ route.label }}
 						</NuxtLink>
 					</li>
@@ -91,11 +87,8 @@ const routes = computed(() => [
 						<NuxtLink
 							:aria-label="`Go to ${route.label} page`"
 							:to="route.to"
-							:class="{
-								'text-burnt-sienna-1': route.active,
-								'hover:text-burnt-sienna-1': !route.active
-							}"
-							class="block px-3 py-2 text-sm transition-colors duration-200"
+							active-class="text-burnt-sienna-1"
+							class="hover:text-burnt-sienna-1 block px-3 py-2 text-sm transition-colors duration-200"
 							@click="isMenuOpen = false">
 							{{ route.label }}
 						</NuxtLink>

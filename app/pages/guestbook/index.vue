@@ -35,7 +35,7 @@ const {
 				:animate="{ opacity: 1, x: 0, transition: { delay: 0.15 } }"
 				to="/guestbook/sign"
 				class="bg-gunmetal hover:bg-burnt-sienna-1 text-antiflash-white animate-ripple ml-auto inline-block rounded-lg border px-4 py-2 font-medium transition-colors">
-				sign yours
+				sign my guestbook
 			</MotionNuxtLink>
 		</div>
 		<p v-if="status !== 'success' && !error">loading...</p>

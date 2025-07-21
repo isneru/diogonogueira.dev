@@ -1,7 +1,5 @@
 <script lang="ts" setup>
 import { getSeoMeta } from '@@/utils'
-import { motion } from 'motion-v'
-import { projects } from '@@/utils'
 
 useSeoMeta(getSeoMeta())
 </script>
@@ -16,5 +14,4 @@ useSeoMeta(getSeoMeta())
 	<p class="text-sm leading-relaxed font-medium md:text-base">
 		a frontend developer who chose to hard code his life.
 	</p>
-	<Playing />
 </template>

@@ -31,9 +31,9 @@ const routesSEO: Record<string, SeoMeta> = {
 	},
 
 	'/curriculum/pt': {
-		title: `Diogo Nogueira's Curriculum`,
-		ogTitle: `Diogo Nogueira's Curriculum`,
-		twitterTitle: `Diogo Nogueira's Curriculum`,
+		title: `Curriculum de Diogo Nogueira`,
+		ogTitle: `Curriculum de Diogo Nogueira`,
+		twitterTitle: `Curriculum de Diogo Nogueira`,
 		description: 'All the good bits.',
 		ogDescription: 'All the good bits.',
 		twitterDescription: 'All the good bits.',
@@ -74,9 +74,9 @@ const routesSEO: Record<string, SeoMeta> = {
 			'diogo, nogueira, dev, neru, portfolio, curriculo, developer, guestbook'
 	},
 	'/guestbook/sign': {
-		title: `Diogo Nogueira's Guestbook`,
-		ogTitle: `Diogo Nogueira's Guestbook`,
-		twitterTitle: `Diogo Nogueira's Guestbook`,
+		title: `Sign Diogo Nogueira's Guestbook`,
+		ogTitle: `Sign Diogo Nogueira's Guestbook`,
+		twitterTitle: `Sign Diogo Nogueira's Guestbook`,
 		description: 'Leave a message!',
 		ogDescription: 'Leave a message!',
 		twitterDescription: 'Leave a message!',
