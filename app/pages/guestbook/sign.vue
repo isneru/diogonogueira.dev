@@ -38,6 +38,10 @@ const submit = async () => {
 	submitting.value = false
 	navigateTo({ path: '/guestbook/' })
 }
+
+definePageMeta({
+	layout: 'unrestricted-width'
+})
 </script>
 
 <template>

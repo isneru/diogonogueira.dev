@@ -12,10 +12,22 @@
 	--color-gunmetal: #223843;
 	--breakpoint-print: 'print';
 	--animate-ripple: ripple 2s ease-out infinite;
+	--animate-ripple-hover: ripple-hover 2s ease-out infinite;
 
 	@keyframes ripple {
 		0% {
 			box-shadow: 0 0 0 0 var(--color-gunmetal);
+		}
+		70% {
+			box-shadow: 0 0 0 7px rgba(255, 0, 0, 0);
+		}
+		100% {
+			box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+		}
+	}
+	@keyframes ripple-hover {
+		0% {
+			box-shadow: 0 0 0 0 var(--color-burnt-sienna-1);
 		}
 		70% {
 			box-shadow: 0 0 0 7px rgba(255, 0, 0, 0);

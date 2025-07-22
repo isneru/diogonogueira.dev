@@ -16,9 +16,9 @@ const routes = computed(() => [
 		to: '/guestbook'
 	},
 	{
-		// TODO: make this in a better way so we can use the native active-class from NuxtLink, for now it'll stay without active indicator, sorry!
 		label: `curriculum (${pathname.value.includes('en') ? 'pt' : 'en'})`,
-		to: `/curriculum/${pathname.value.endsWith('en') ? 'pt' : 'en'}`
+		to: `/curriculum/${pathname.value.endsWith('en') ? 'pt' : 'en'}`,
+		active: pathname.value.includes('curriculum')
 	}
 ])
 </script>
@@ -43,6 +43,7 @@ const routes = computed(() => [
 							:aria-label="`Go to ${route.label} page`"
 							:to="route.to"
 							active-class="text-burnt-sienna-1"
+							:class="{ 'text-burnt-sienna-1': route.active }"
 							class="hover:text-burnt-sienna-1 px-3 py-1 transition-colors duration-200">
 							{{ route.label }}
 						</NuxtLink>
@@ -88,6 +89,7 @@ const routes = computed(() => [
 							:aria-label="`Go to ${route.label} page`"
 							:to="route.to"
 							active-class="text-burnt-sienna-1"
+							:class="{ 'text-burnt-sienna-1': route.active }"
 							class="hover:text-burnt-sienna-1 block px-3 py-2 text-sm transition-colors duration-200"
 							@click="isMenuOpen = false">
 							{{ route.label }}

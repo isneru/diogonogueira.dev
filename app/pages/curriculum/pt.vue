@@ -4,7 +4,7 @@ import { getSeoMeta, me as info } from '@@/utils'
 useSeoMeta(getSeoMeta())
 
 definePageMeta({
-	layout: 'curriculum'
+	layout: 'unrestricted-width'
 })
 
 const me = info('pt')

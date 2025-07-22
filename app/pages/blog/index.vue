@@ -5,7 +5,13 @@ const { data: posts } = useAsyncData(() => {
 </script>
 
 <template>
-	<Header title="Blog" />
+	<Header show-back-link title="blog">
+		<template v-if="posts?.length" #subtitle>
+			<p>
+				{{ posts?.length }} {{ posts?.length === 1 ? 'post' : 'posts' }} found
+			</p>
+		</template>
+	</Header>
 	<div v-if="posts?.length">
 		<div v-for="post in posts" :key="post.id">
 			<NuxtLink :to="post.path">
@@ -13,11 +19,13 @@ const { data: posts } = useAsyncData(() => {
 			</NuxtLink>
 			<p>
 				{{
-					new Date(post.date).toLocaleDateString('en-GB', {
-						day: '2-digit',
-						month: 'short',
-						year: 'numeric'
-					})
+					new Date(post.date)
+						.toLocaleDateString('en-US', {
+							day: '2-digit',
+							month: 'long',
+							year: 'numeric'
+						})
+						.toLowerCase()
 				}}
 			</p>
 			<p>{{ post.description }}</p>
