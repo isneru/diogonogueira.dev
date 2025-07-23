@@ -1,7 +1,11 @@
 <script setup lang="ts">
+import { getSeoMeta } from '~~/utils'
+
 const { data: posts } = useAsyncData(() => {
 	return queryCollection('blog').order('date', 'DESC').all()
 })
+
+useSeoMeta(getSeoMeta())
 </script>
 
 <template>

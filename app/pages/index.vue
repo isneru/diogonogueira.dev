@@ -1,17 +1,27 @@
 <script lang="ts" setup>
-import { getSeoMeta } from '@@/utils'
+import { getSeoMeta, projects } from '@@/utils'
+
+const age = Math.floor(
+	(Date.now() - new Date('2003-01-19').getTime()) /
+		(1000 * 60 * 60 * 24 * 365.25)
+)
 
 useSeoMeta(getSeoMeta())
 </script>
 
 <template>
-	<Header :title="'diogo nogueira'" class="text-burnt-sienna-1 mb-2!">
+	<Header :title="'diogo nogueira'" class="text-burnt-sienna-1">
+		<template #popover> {{ age }} years old (he/him) </template>
 		<template #subtitle>
+			<p>
+				a <span class="text-burnt-sienna-2">frontend developer</span> who chose
+				to hard code his life.
+			</p>
 			<p>aka <span class="text-burnt-sienna-2">neru</span></p>
-			<p class="italic">he/him</p>
 		</template>
 	</Header>
-	<p class="text-sm leading-relaxed font-medium md:text-base">
-		a frontend developer who chose to hard code his life.
-	</p>
+	<p class="mb-1 font-semibold uppercase">Projects</p>
+	<div class="space-y-4">
+		<Card v-for="project in projects" :key="project.id" :project="project" />
+	</div>
 </template>
