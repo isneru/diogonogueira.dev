@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { Tldr } from '#components'
+
 const slug = useRoute().params.slug
 const { data: post } = await useAsyncData(`blog-${slug}`, () => {
 	return queryCollection('blog').path(`/blog/${slug}`).first()

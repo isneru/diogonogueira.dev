@@ -32,7 +32,6 @@ useSeoMeta(getSeoMeta())
 						.toLowerCase()
 				}}
 			</p>
-			<p>{{ post.description }}</p>
 		</div>
 	</div>
 	<div v-else><p>no posts yet, check back later</p></div>
