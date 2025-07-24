@@ -1,5 +1,6 @@
 <script lang="ts" setup>
 import { getSeoMeta, projects } from '@@/utils'
+import { motion } from 'motion-v'
 
 const age = Math.floor(
 	(Date.now() - new Date('2003-01-19').getTime()) /
@@ -20,7 +21,12 @@ useSeoMeta(getSeoMeta())
 			<p>aka <span class="text-burnt-sienna-2">neru</span></p>
 		</template>
 	</Header>
-	<p class="mb-1 font-semibold uppercase">Projects</p>
+	<motion.p
+		:initial="{ opacity: 0, y: 20 }"
+		:animate="{ opacity: 1, y: 0, transition: { delay: 0.5 } }"
+		class="mb-1 font-semibold uppercase"
+		>Projects</motion.p
+	>
 	<div class="space-y-4">
 		<Card v-for="project in projects" :key="project.id" :project="project" />
 	</div>

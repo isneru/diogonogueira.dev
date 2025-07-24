@@ -10,13 +10,16 @@ useSeoMeta(getSeoMeta())
 
 <template>
 	<Header show-back-link title="blog">
-		<template v-if="posts?.length" #subtitle>
+		<!-- 	<template v-if="posts?.length" #subtitle>
 			<p>
 				{{ posts?.length }} {{ posts?.length === 1 ? 'post' : 'posts' }} found
 			</p>
+		</template> -->
+		<template #subtitle>
+			page under construction, check back later for updates
 		</template>
 	</Header>
-	<div v-if="posts?.length">
+	<!-- <div v-if="posts?.length">
 		<div v-for="post in posts" :key="post.id">
 			<NuxtLink :to="post.path">
 				{{ post.title }}
@@ -34,5 +37,5 @@ useSeoMeta(getSeoMeta())
 			</p>
 		</div>
 	</div>
-	<div v-else><p>no posts yet, check back later</p></div>
+	<div v-else><p>no posts yet, check back later</p></div> -->
 </template>

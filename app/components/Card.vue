@@ -18,7 +18,7 @@ const { project } = defineProps<Props>()
 		:animate="{
 			opacity: 1,
 			y: 0,
-			transition: { delay: 0.2 + project.id * 0.08 }
+			transition: { delay: 0.5 + project.id * 0.08 }
 		}"
 		class="bg-burnt-sienna-3/40 border-burnt-sienna-1/20 shadow-burnt-sienna-1/10 hover:shadow-burnt-sienna-1/20 flex w-full flex-col gap-2 rounded-lg border p-3 shadow-md backdrop-blur-sm transition-shadow duration-300 hover:shadow-lg md:flex-row md:gap-6">
 		<div class="flex h-full flex-col">
@@ -30,7 +30,7 @@ const { project } = defineProps<Props>()
 			</p>
 		</div>
 		<img
-			class="border-burnt-sienna-1/20 shadow-burnt-sienna-1/10 ml-auto h-full max-h-40 w-full rounded-lg border object-cover shadow-md md:max-w-1/3"
+			class="border-burnt-sienna-1/20 shadow-burnt-sienna-1/10 ml-auto aspect-video h-full max-h-40 w-full rounded-lg border object-cover shadow-md md:max-w-2/5"
 			draggable="false"
 			:src="project.img.path"
 			:alt="project.img.alt" />

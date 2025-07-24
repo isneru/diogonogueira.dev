@@ -23,7 +23,8 @@ const routes = computed(() => [
 ])
 </script>
 <template>
-	<div class="fixed top-0 right-0 left-0 z-50 flex justify-center px-6 pt-6">
+	<div
+		class="fixed top-0 right-0 left-0 z-50 flex justify-center px-6 pt-6 font-mono">
 		<nav
 			aria-label="Main navigation"
 			class="bg-burnt-sienna-3/40 border-burnt-sienna-1/10 w-full rounded-xl border px-6 py-4 text-lg font-semibold shadow-[0_1px_4px_0_#D77A6120] backdrop-blur-[8px] transition-all duration-300 ease-in-out select-none md:w-[calc(100%-3rem)] lg:w-[calc(100%-4rem)] xl:max-w-7xl print:hidden"
