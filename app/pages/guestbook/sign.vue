@@ -38,20 +38,24 @@ const submit = async () => {
 	submitting.value = false
 	navigateTo({ path: '/guestbook/' })
 }
+
+definePageMeta({
+	layout: 'unrestricted-width'
+})
 </script>
 
 <template>
-	<div class="flex flex-col xl:flex-row items-center gap-10 w-full h-[80vh]">
+	<div class="flex h-[80vh] w-full flex-col items-center gap-10 xl:flex-row">
 		<div
-			class="flex flex-col items-center xl:items-start justify-center w-full gap-4">
-			<p class="font-bold text-3xl relative">
+			class="flex w-full flex-col items-center justify-center gap-4 xl:items-start">
+			<p class="relative text-3xl font-bold">
 				<span
-					class="absolute -left-5 top-1 rounded-full text-primary-1 text-xl">
+					class="text-burnt-sienna-1 absolute top-1 -left-5 rounded-full text-xl">
 					#
 				</span>
 				What is this?
 			</p>
-			<p class="leading-relaxed text-base md:text-lg max-w-4/5">
+			<p class="max-w-4/5 text-base leading-relaxed md:text-lg">
 				Welcome to my digital guestbook! This is a cozy little corner of the
 				internet where you can drop a message, share your thoughts, or simply
 				say hello. Whether you're here to leave some kind words, give feedback,
@@ -62,16 +66,18 @@ const submit = async () => {
 		</div>
 		<div
 			id="divider"
-			class="w-4/5 h-px xl:w-px xl:h-4/5 bg-primary-1/20 flex mx-auto" />
+			class="bg-burnt-sienna-1/20 mx-auto flex h-px w-4/5 xl:h-4/5 xl:w-px" />
 		<div class="flex w-full items-center justify-center">
 			<form
 				@submit.prevent="submit"
-				class="flex flex-col gap-6 justify-center items-center rounded-lg bg-primary-3/40 backdrop-blur-sm border border-primary-1/20 shadow-md shadow-primary-1/10 p-4 w-full max-w-lg">
-				<div class="w-full flex flex-col">
-					<label for="name" class="block font-semibold text-lg pl-2 relative">
-						<span class="absolute -left-2 text-primary-1 text-lg"> # </span>
+				class="bg-burnt-sienna-3/40 border-burnt-sienna-1/20 shadow-burnt-sienna-1/10 flex w-full max-w-lg flex-col items-center justify-center gap-6 rounded-lg border p-4 shadow-md backdrop-blur-sm">
+				<div class="flex w-full flex-col">
+					<label for="name" class="relative block pl-2 text-lg font-semibold">
+						<span class="text-burnt-sienna-1 absolute -left-2 text-lg">
+							#
+						</span>
 						<Icon
-							class="absolute top-full size-5! translate-y-1/2 -left-0.5 text-primary-1"
+							class="text-burnt-sienna-1 absolute top-full -left-0.5 size-5! translate-y-1/2"
 							name="material-symbols:subdirectory-arrow-right-rounded" />
 						name
 					</label>
@@ -79,15 +85,17 @@ const submit = async () => {
 						id="name"
 						v-model="name"
 						placeholder="your name"
-						class="bg-background w-[calc(100%-1.5rem)] flex ml-auto rounded-md border-1 border-primary-2 px-3 py-2 transition placeholder:text-text focus:ring-2 focus:ring-primary-1/20 focus:outline-none" />
+						class="bg-antiflash-white border-burnt-sienna-2 placeholder:text-gunmetal focus:ring-burnt-sienna-1/20 ml-auto flex w-[calc(100%-1.5rem)] rounded-md border-1 px-3 py-2 transition focus:ring-2 focus:outline-none" />
 				</div>
-				<div class="w-full flex flex-col">
+				<div class="flex w-full flex-col">
 					<label
 						for="message"
-						class="block font-semibold text-lg pl-2 relative">
-						<span class="absolute -left-2 text-primary-1 text-lg"> # </span>
+						class="relative block pl-2 text-lg font-semibold">
+						<span class="text-burnt-sienna-1 absolute -left-2 text-lg">
+							#
+						</span>
 						<Icon
-							class="absolute top-full size-5! translate-y-1/2 -left-0.5 text-primary-1"
+							class="text-burnt-sienna-1 absolute top-full -left-0.5 size-5! translate-y-1/2"
 							name="material-symbols:subdirectory-arrow-right-rounded" />
 						message</label
 					>
@@ -96,32 +104,32 @@ const submit = async () => {
 						v-model="message"
 						rows="4"
 						placeholder="say something nice :)"
-						class="resize-none bg-background w-[calc(100%-1.5rem)] flex ml-auto rounded-md border-1 border-primary-2 px-3 py-2 transition placeholder:text-text focus:ring-2 focus:ring-primary-1/20 focus:outline-none"></textarea>
+						class="bg-antiflash-white border-burnt-sienna-2 placeholder:text-gunmetal focus:ring-burnt-sienna-1/20 ml-auto flex w-[calc(100%-1.5rem)] resize-none rounded-md border-1 px-3 py-2 transition focus:ring-2 focus:outline-none"></textarea>
 				</div>
-				<div class="h-[66px] relative grid place-items-center">
+				<div class="relative grid h-[66px] place-items-center">
 					<NuxtTurnstile :options="{ language: 'en' }" v-model="token" />
 					<Icon
 						name="tabler:border-corner-square"
-						class="absolute -top-2 -left-2 transform text-primary-1 size-6!" />
+						class="text-burnt-sienna-1 absolute -top-2 -left-2 size-6! transform" />
 					<Icon
 						name="tabler:border-corner-square"
-						class="absolute -top-2 -right-2 transform text-primary-1 size-6! rotate-90" />
+						class="text-burnt-sienna-1 absolute -top-2 -right-2 size-6! rotate-90 transform" />
 					<Icon
 						name="tabler:border-corner-square"
-						class="absolute -bottom-2 -left-2 transform text-primary-1 size-6! -rotate-90" />
+						class="text-burnt-sienna-1 absolute -bottom-2 -left-2 size-6! -rotate-90 transform" />
 					<Icon
 						name="tabler:border-corner-square"
-						class="absolute -bottom-2 -right-2 transform text-primary-1 size-6! rotate-180" />
+						class="text-burnt-sienna-1 absolute -right-2 -bottom-2 size-6! rotate-180 transform" />
 				</div>
 				<div class="relative w-full">
 					<button
 						type="submit"
 						:disabled="submitting"
-						class="bg-primary-1 text-background hover:bg-background hover:text-primary-1 w-full rounded-lg border-1 border-primary-1 px-4 py-2 font-medium transition focus:ring-2 focus:ring-primary-1 focus:outline-none hover:cursor-pointer disabled:opacity-50 disabled:cursor-not-allowed"
+						class="bg-burnt-sienna-1 text-antiflash-white hover:bg-antiflash-white hover:text-burnt-sienna-1 border-burnt-sienna-1 focus:ring-burnt-sienna-1 w-full rounded-lg border-1 px-4 py-2 font-medium transition hover:cursor-pointer focus:ring-2 focus:outline-none disabled:cursor-not-allowed disabled:opacity-50"
 						variant="button">
 						{{ submitting ? 'sending...' : 'submit' }}
 					</button>
-					<span v-if="error" class="absolute text-primary-1 text-sm">
+					<span v-if="error" class="text-burnt-sienna-1 absolute text-sm">
 						{{ error }}
 					</span>
 				</div>

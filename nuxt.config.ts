@@ -20,7 +20,8 @@ export default defineNuxtConfig({
 		'@nuxtjs/turnstile',
 		'@nuxt/scripts',
 		'nitro-cloudflare-dev',
-		'motion-v/nuxt'
+		'motion-v/nuxt',
+		'@nuxt/content'
 	],
 	experimental: {
 		viewTransition: true
