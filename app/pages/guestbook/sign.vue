@@ -106,21 +106,7 @@ definePageMeta({
 						placeholder="say something nice :)"
 						class="bg-antiflash-white border-burnt-sienna-2 placeholder:text-gunmetal focus:ring-burnt-sienna-1/20 ml-auto flex w-[calc(100%-1.5rem)] resize-none rounded-md border-1 px-3 py-2 transition focus:ring-2 focus:outline-none"></textarea>
 				</div>
-				<div class="relative grid h-[66px] place-items-center">
-					<NuxtTurnstile :options="{ language: 'en' }" v-model="token" />
-					<Icon
-						name="tabler:border-corner-square"
-						class="text-burnt-sienna-1 absolute -top-2 -left-2 size-6! transform" />
-					<Icon
-						name="tabler:border-corner-square"
-						class="text-burnt-sienna-1 absolute -top-2 -right-2 size-6! rotate-90 transform" />
-					<Icon
-						name="tabler:border-corner-square"
-						class="text-burnt-sienna-1 absolute -bottom-2 -left-2 size-6! -rotate-90 transform" />
-					<Icon
-						name="tabler:border-corner-square"
-						class="text-burnt-sienna-1 absolute -right-2 -bottom-2 size-6! rotate-180 transform" />
-				</div>
+				<NuxtTurnstile :options="{ language: 'en' }" v-model="token" />
 				<div class="relative w-full">
 					<button
 						type="submit"

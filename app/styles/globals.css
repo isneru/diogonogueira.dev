@@ -52,4 +52,8 @@
 	::selection {
 		@apply bg-burnt-sienna-1 text-gunmetal;
 	}
+
+	.card {
+		@apply bg-burnt-sienna-3/40 border-burnt-sienna-1/20 shadow-burnt-sienna-1/10 hover:shadow-burnt-sienna-1/20 rounded-lg border shadow-md backdrop-blur-sm transition-shadow duration-300 hover:shadow-lg;
+	}
 }

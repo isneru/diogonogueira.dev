@@ -1,3 +1,5 @@
+import { useRoute } from 'vue-router'
+
 type SeoMeta = {
 	title: string
 	ogTitle: string
@@ -23,8 +25,8 @@ const routesSEO: Record<string, SeoMeta> = {
 		twitterDescription: 'Developer and Telecommunications Engineering student.',
 		ogUrl: 'https://diogo.wtf',
 		ogType: 'website',
-		ogImage: '/og/index.png',
-		twitterImage: '/og/index.png',
+		ogImage: 'https://diogo.wtf/og/index.png',
+		twitterImage: 'https://diogo.wtf/og/index.png',
 		ogLocale: 'en_US',
 		keywords:
 			'diogo, nogueira, dev, neru, home, portfolio, curriculum, developer'
@@ -39,8 +41,8 @@ const routesSEO: Record<string, SeoMeta> = {
 		twitterDescription: 'All the good bits.',
 		ogUrl: 'https://diogo.wtf/curriculum/pt',
 		ogType: 'website',
-		ogImage: '/og/cv-pt.png',
-		twitterImage: '/og/cv-pt.png',
+		ogImage: 'https://diogo.wtf/og/cv-pt.png',
+		twitterImage: 'https://diogo.wtf/og/cv-pt.png',
 		ogLocale: 'pt_PT',
 		keywords: 'diogo, nogueira, dev, neru, portfolio, curriculo, desenvolvedor'
 	},
@@ -53,8 +55,8 @@ const routesSEO: Record<string, SeoMeta> = {
 		twitterDescription: 'All the good bits.',
 		ogUrl: 'https://diogo.wtf/curriculum/en',
 		ogType: 'website',
-		ogImage: '/og/cv-en.png',
-		twitterImage: '/og/cv-en.png',
+		ogImage: 'https://diogo.wtf/og/cv-en.png',
+		twitterImage: 'https://diogo.wtf/og/cv-en.png',
 		ogLocale: 'en_US',
 		keywords: 'diogo, nogueira, dev, neru, portfolio, curriculo, developer'
 	},
@@ -67,8 +69,8 @@ const routesSEO: Record<string, SeoMeta> = {
 		twitterDescription: 'All messages written are here.',
 		ogUrl: 'https://diogo.wtf/guestbook',
 		ogType: 'website',
-		ogImage: '/og/guestbook.png',
-		twitterImage: '/og/guestbook.png',
+		ogImage: 'https://diogo.wtf/og/guestbook.png',
+		twitterImage: 'https://diogo.wtf/og/guestbook.png',
 		ogLocale: 'en_US',
 		keywords:
 			'diogo, nogueira, dev, neru, portfolio, curriculo, developer, guestbook'
@@ -82,8 +84,8 @@ const routesSEO: Record<string, SeoMeta> = {
 		twitterDescription: 'Leave a message!',
 		ogUrl: 'https://diogo.wtf/guestbook/sign',
 		ogType: 'website',
-		ogImage: '/og/guestbook-sign.png',
-		twitterImage: '/og/guestbook-sign.png',
+		ogImage: 'https://diogo.wtf/og/guestbook-sign.png',
+		twitterImage: 'https://diogo.wtf/og/guestbook-sign.png',
 		ogLocale: 'en_US',
 		keywords:
 			'diogo, nogueira, dev, neru, portfolio, curriculo, developer, guestbook'
@@ -97,8 +99,8 @@ const routesSEO: Record<string, SeoMeta> = {
 		twitterDescription: 'Thoughts and musings.',
 		ogUrl: 'https://diogo.wtf/blog',
 		ogType: 'website',
-		ogImage: '/og/blog.png',
-		twitterImage: '/og/blog.png',
+		ogImage: 'https://diogo.wtf/og/blog.png',
+		twitterImage: 'https://diogo.wtf/og/blog.png',
 		ogLocale: 'en_US',
 		keywords:
 			'diogo, nogueira, dev, neru, portfolio, curriculo, developer, guestbook'

@@ -20,7 +20,7 @@ const { project } = defineProps<Props>()
 			y: 0,
 			transition: { delay: 0.5 + project.id * 0.08 }
 		}"
-		class="bg-burnt-sienna-3/40 border-burnt-sienna-1/20 shadow-burnt-sienna-1/10 hover:shadow-burnt-sienna-1/20 flex w-full flex-col gap-2 rounded-lg border p-3 shadow-md backdrop-blur-sm transition-shadow duration-300 hover:shadow-lg md:flex-row md:gap-6">
+		class="card flex w-full flex-col gap-2 p-3 md:flex-row md:gap-6">
 		<div class="flex h-full flex-col">
 			<span class="my-2 px-2 text-2xl font-bold tracking-tight">
 				{{ project.name }}

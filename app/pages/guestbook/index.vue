@@ -32,7 +32,18 @@ const {
 		</template>
 	</Header>
 
-	<p v-if="status !== 'success' && !error">loading...</p>
+	<motion.p
+		:initial="{ opacity: 0, y: -20 }"
+		:animate="{
+			opacity: 1,
+			y: 0,
+			transition: {
+				delay: 0.5
+			}
+		}"
+		v-if="status !== 'success' && !error"
+		>loading...</motion.p
+	>
 	<p v-else-if="error" class="text-burnt-sienna-1">
 		{{ 'something went wrong. try again later :(' }}
 	</p>
@@ -50,7 +61,7 @@ const {
 					delay: entries[entries.length - 1 - idx]!.id! * 0.1 + 0.5
 				}
 			}"
-			class="bg-burnt-sienna-3/40 border-burnt-sienna-1/20 shadow-burnt-sienna-1/10 w-full rounded-lg border py-3 shadow-md backdrop-blur-sm">
+			class="card w-full py-3">
 			<p class="text-burnt-sienna-1 mb-1 px-3 text-xl font-bold">
 				{{ entry.name }}
 			</p>

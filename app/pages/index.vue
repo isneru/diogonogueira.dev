@@ -28,6 +28,6 @@ useSeoMeta(getSeoMeta())
 		>Projects</motion.p
 	>
 	<div class="space-y-4">
-		<Card v-for="project in projects" :key="project.id" :project="project" />
+		<Project v-for="project in projects" :key="project.id" :project="project" />
 	</div>
 </template>

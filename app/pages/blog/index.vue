@@ -20,22 +20,7 @@ useSeoMeta(getSeoMeta())
 		</template>
 	</Header>
 	<!-- <div v-if="posts?.length">
-		<div v-for="post in posts" :key="post.id">
-			<NuxtLink :to="post.path">
-				{{ post.title }}
-			</NuxtLink>
-			<p>
-				{{
-					new Date(post.date)
-						.toLocaleDateString('en-US', {
-							day: '2-digit',
-							month: 'long',
-							year: 'numeric'
-						})
-						.toLowerCase()
-				}}
-			</p>
-		</div>
+		<BlogLink v-for="post in posts" :key="post.id" :blog="post" />
 	</div>
 	<div v-else><p>no posts yet, check back later</p></div> -->
 </template>
