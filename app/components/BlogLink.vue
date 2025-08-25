@@ -1,8 +1,10 @@
 <script lang="ts" setup>
-import { type BlogCollectionItem } from '@nuxt/content'
-
 type Props = {
-	blog: BlogCollectionItem
+	blog: {
+		title: string
+		path: string
+		date?: string
+	}
 }
 
 const { blog } = defineProps<Props>()
