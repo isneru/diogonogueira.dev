@@ -1,11 +1,6 @@
 <script lang="ts" setup>
-import { getSeoMeta, projects } from '@@/utils'
+import { age, getSeoMeta, projects } from '@@/utils'
 import { motion } from 'motion-v'
-
-const age = Math.floor(
-	(Date.now() - new Date('2003-01-19').getTime()) /
-		(1000 * 60 * 60 * 24 * 365.25)
-)
 
 useSeoMeta(getSeoMeta())
 </script>

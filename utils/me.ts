@@ -9,6 +9,11 @@ import {
 
 const name = 'Diogo Nogueira'
 
+export const age = Math.floor(
+	(Date.now() - new Date('2003-01-19').getTime()) /
+		(1000 * 60 * 60 * 24 * 365.25)
+)
+
 const about = {
 	en: 'Computer Engineering Student and Self-taught Front-end Developer',
 	pt: 'Estudante de Engenharia Informática e Desenvolvedor Front-end Autodidata'
@@ -257,6 +262,7 @@ export const me = (lang: 'pt' | 'en') => ({
 	langs: langs[lang],
 	info,
 	name,
+	age,
 	skills,
 	certificates,
 	sections: sections[lang]

@@ -42,7 +42,6 @@ export default defineNuxtConfig({
 			],
 			link: [
 				{ rel: 'icon', type: 'image/png', href: '/favicon.png' },
-				{ rel: 'canonical', href: 'https://diogo.wtf/' },
 				{ rel: 'sitemap', type: 'application/xml', href: '/sitemap.xml' }
 			]
 		}
